@@ -163,18 +163,65 @@ class ConversationService {
       return data.summary;
     }
     
+    // Exchange Rate (USD to BRL)
+    if (data.rate && data.base === 'USD') {
+      return `O dólar americano está cotado em R$ ${data.rate.toFixed(2)} reais hoje, ${data.date}.`;
+    }
+    
+    // Exchange Rate (generic)
+    if (data.rate && data.base && data.target) {
+      return `1 ${data.base} = ${data.rate.toFixed(2)} ${data.target} hoje, ${data.date}.`;
+    }
+    
     // Crypto
-    if (data.price) {
+    if (data.price && data.coin) {
       const change = data.change24h > 0 ? 'subiu' : 'caiu';
-      return `${data.coin || 'A moeda'} está cotada em $${data.price} USD, ${change} ${Math.abs(data.change24h).toFixed(2)}% nas últimas 24 horas.`;
+      return `${data.coin.charAt(0).toUpperCase() + data.coin.slice(1)} está cotado em $${data.price.toLocaleString('en-US')} USD, ${change} ${Math.abs(data.change24h).toFixed(2)}% nas últimas 24 horas.`;
     }
     
     // Weather
+    if (data.current && data.current.temperature !== undefined) {
+      return `A temperatura atual em ${data.city} é ${data.current.temperature}°C. Vento: ${data.current.windspeed} km/h.`;
+    }
+    
     if (data.temperature !== undefined) {
       return `A temperatura atual é ${data.temperature}°C, com sensação térmica de ${data.apparentTemperature}°C. Vento: ${data.windspeed} km/h.`;
     }
     
-    // Exchange
+    // Country Info
+    if (data.population && data.capital) {
+      return `${data.name} tem capital em ${data.capital}, população de ${data.population.toLocaleString('pt-BR')} habitantes, e fica na região ${data.region}.`;
+    }
+    
+    // Books
+    if (data.books && data.books.length > 0) {
+      const book = data.books[0];
+      return `Encontrei: "${book.title}" por ${book.author}, publicado em ${book.year}.`;
+    }
+    
+    // Movies/Shows
+    if (data.shows && data.shows.length > 0) {
+      const show = data.shows[0];
+      return `Encontrei: "${show.name}" (${show.year}), gêneros: ${show.genres.join(', ')}. Nota: ${show.rating}/10.`;
+    }
+    
+    // News
+    if (data.articles && data.articles.length > 0) {
+      const article = data.articles[0];
+      return `Última notícia: ${article.title}. ${article.description}`;
+    }
+    
+    // Quote
+    if (data.quote && data.author) {
+      return `"${data.quote}" - ${data.author}`;
+    }
+    
+    // Space (NASA)
+    if (data.title && data.explanation) {
+      return `Imagem do dia da NASA: "${data.title}". ${data.explanation.substring(0, 200)}...`;
+    }
+    
+    // Generic Exchange
     if (data.rates) {
       const brl = data.rates.BRL?.toFixed(2);
       const eur = data.rates.EUR?.toFixed(2);
