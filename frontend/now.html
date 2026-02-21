@@ -237,7 +237,7 @@
 </head>
 <body>
   
-  <div class="status-text" id="status">Clique no orb para falar</div>
+  <div class="status-text" id="status">Iniciando... aguarde 2 segundos</div>
   
   <div class="orb-container">
     <div class="orb" id="orb"></div>
@@ -259,8 +259,10 @@
     const state = {
       isListening: false,
       isSpeaking: false,
+      continuousMode: true,  // NOVO: modo contínuo ativo
       recognition: null,
-      synthesis: window.speechSynthesis
+      synthesis: window.speechSynthesis,
+      lastSpeechTime: 0
     };
 
     // Elementos DOM
@@ -270,7 +272,7 @@
     const responseText = document.getElementById('responseText');
     const voiceButton = document.getElementById('voiceButton');
 
-    // Inicializa reconhecimento de voz
+    // Inicializa reconhecimento de voz CONTÍNUO
     function initSpeechRecognition() {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
       
@@ -282,42 +284,97 @@
 
       state.recognition = new SpeechRecognition();
       state.recognition.lang = 'pt-BR';
-      state.recognition.continuous = false;
-      state.recognition.interimResults = false;
+      state.recognition.continuous = true;  // CONTÍNUO!
+      state.recognition.interimResults = true;  // Resultados parciais
 
       state.recognition.onstart = () => {
-        console.log('🎤 Escutando...');
+        console.log('🎤 NOW está escutando continuamente...');
         state.isListening = true;
         orb.classList.add('listening');
         voiceButton.classList.add('active');
-        status.textContent = 'Estou escutando...';
+        status.textContent = 'NOW ouvindo... (diga "NOW" para ativar)';
       };
 
       state.recognition.onresult = async (event) => {
-        const transcript = event.results[0][0].transcript;
-        console.log('📝 Ouvido:', transcript);
+        const result = event.results[event.results.length - 1];
+        const transcript = result[0].transcript.toLowerCase();
         
-        status.textContent = 'Pensando';
-        orb.classList.remove('listening');
-        orb.classList.add('thinking');
+        console.log('📝 Ouvido:', transcript, '(final:', result.isFinal + ')');
         
-        await processQuestion(transcript);
+        // Detecta wake word "NOW"
+        if (transcript.includes('now') && result.isFinal) {
+          console.log('🎯 Wake word detectado!');
+          
+          // Toca som de confirmação
+          playBeep();
+          
+          // Remove "now" do texto e processa o resto
+          const question = transcript.replace(/now/gi, '').trim();
+          
+          if (question.length > 2) {
+            status.textContent = '🎯 Pergunta detectada! Processando...';
+            orb.classList.remove('listening');
+            orb.classList.add('thinking');
+            
+            await processQuestion(question);
+            
+            // Volta a escutar após responder
+            setTimeout(() => {
+              if (state.continuousMode && !state.isSpeaking) {
+                status.textContent = 'NOW ouvindo... (diga "NOW" para ativar)';
+                orb.classList.remove('thinking');
+                orb.classList.add('listening');
+              }
+            }, 1000);
+          } else {
+            status.textContent = 'NOW pronto! Pode perguntar...';
+            // Se só falou "NOW", aguarda a pergunta
+            setTimeout(() => {
+              status.textContent = 'NOW ouvindo... (diga "NOW" para ativar)';
+            }, 2000);
+          }
+        }
       };
 
       state.recognition.onerror = (event) => {
         console.error('❌ Erro:', event.error);
-        state.isListening = false;
-        orb.classList.remove('listening', 'thinking');
-        voiceButton.classList.remove('active');
-        status.textContent = 'Erro ao escutar. Tente novamente.';
+        
+        // Ignora erros de "no-speech" em modo contínuo
+        if (event.error === 'no-speech' && state.continuousMode) {
+          return;
+        }
+        
+        // Reinicia automaticamente em modo contínuo
+        if (state.continuousMode && !state.isSpeaking) {
+          setTimeout(() => {
+            if (state.continuousMode) {
+              console.log('🔄 Reiniciando reconhecimento...');
+              state.recognition.start();
+            }
+          }, 1000);
+        }
       };
 
       state.recognition.onend = () => {
+        console.log('🔚 Reconhecimento parou');
         state.isListening = false;
-        voiceButton.classList.remove('active');
         
-        if (!state.isSpeaking) {
+        // Auto-restart em modo contínuo
+        if (state.continuousMode && !state.isSpeaking) {
+          setTimeout(() => {
+            if (state.continuousMode) {
+              console.log('🔄 Reiniciando modo contínuo...');
+              try {
+                state.recognition.start();
+              } catch (e) {
+                console.log('⚠️  Aguardando para reiniciar...');
+              }
+            }
+          }, 500);
+        } else {
+          voiceButton.classList.remove('active');
           orb.classList.remove('listening', 'thinking');
+          status.textContent = 'Clique para ativar voz';
         }
       };
     }
@@ -412,6 +469,25 @@
       }, 10000);
     }
 
+    // Toca beep de confirmação
+    function playBeep() {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      
+      oscillator.frequency.value = 800; // Frequência em Hz
+      oscillator.type = 'sine';
+      
+      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+      
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.1);
+    }
+
     // Fala a resposta
     function speak(text) {
       if (state.synthesis.speaking) {
@@ -435,25 +511,42 @@
 
       utterance.onstart = () => {
         state.isSpeaking = true;
-        orb.classList.remove('thinking');
-        status.textContent = 'Respondendo...';
+        orb.classList.remove('thinking', 'listening');
+        status.textContent = '🔊 Respondendo...';
       };
 
       utterance.onend = () => {
         state.isSpeaking = false;
-        orb.classList.remove('listening', 'thinking');
-        status.textContent = 'Clique no orb para falar';
+        
+        // Volta ao modo de escuta contínua
+        if (state.continuousMode) {
+          setTimeout(() => {
+            orb.classList.add('listening');
+            status.textContent = 'NOW ouvindo... (diga "NOW" para ativar)';
+          }, 500);
+        } else {
+          orb.classList.remove('listening', 'thinking');
+          status.textContent = 'Clique para ativar voz';
+        }
       };
 
       state.synthesis.speak(utterance);
     }
 
-    // Inicia/para escuta
+    // Inicia/para escuta contínua
     function toggleListening() {
-      if (state.isListening) {
-        state.recognition.stop();
-      } else {
+      state.continuousMode = !state.continuousMode;
+      
+      if (state.continuousMode) {
+        console.log('▶️  Modo contínuo ATIVADO');
+        status.textContent = 'NOW ouvindo... (diga "NOW" para ativar)';
         state.recognition.start();
+      } else {
+        console.log('⏸️  Modo contínuo DESATIVADO');
+        status.textContent = 'Modo contínuo desativado. Clique para reativar.';
+        state.recognition.stop();
+        orb.classList.remove('listening', 'thinking');
+        voiceButton.classList.remove('active');
       }
     }
 
@@ -473,12 +566,23 @@
       }
 
       console.log('✅ NOW AI iniciado!');
-      console.log('🎤 Clique no orb para começar a falar');
+      console.log('🎤 Modo contínuo ativo - Diga "NOW" seguido de sua pergunta');
+      
+      // INICIA AUTOMATICAMENTE em modo contínuo após 2 segundos
+      setTimeout(() => {
+        console.log('🚀 Ativando escuta contínua automaticamente...');
+        status.textContent = 'NOW ouvindo... (diga "NOW" para ativar)';
+        try {
+          state.recognition.start();
+        } catch (e) {
+          console.log('⚠️  Aguarde um momento...');
+        }
+      }, 2000);
     });
 
-    // Atalho de teclado (Espaço)
+    // Atalho de teclado (Espaço para toggle)
     document.addEventListener('keydown', (e) => {
-      if (e.code === 'Space' && !state.isListening) {
+      if (e.code === 'Space') {
         e.preventDefault();
         toggleListening();
       }
