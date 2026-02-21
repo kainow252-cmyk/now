@@ -386,11 +386,21 @@
         console.log('📝 Ouvido:', transcript, '(final:', result.isFinal + ')');
         
         // Detecta wake words múltiplas: "NOW", "AGORA", "NAU", etc
-        const wakeWords = ['now', 'agora', 'nau', 'naul'];
+        const wakeWords = ['now', 'agora', 'nau', 'naul', 'no ', ' no'];
         const hasWakeWord = wakeWords.some(word => transcript.includes(word));
         
-        if (hasWakeWord && result.isFinal) {
-          console.log('🎯 Wake word detectado!');
+        // Detecta perguntas comuns mesmo sem wake word
+        const commonQuestions = [
+          'que horas', 'quantas horas', 'hora', 'horas',
+          'que dia', 'dia é', 'data',
+          'quem é você', 'quem você', 'o que você',
+          'olá', 'oi', 'hello',
+          'ajuda', 'help'
+        ];
+        const isCommonQuestion = commonQuestions.some(q => transcript.includes(q));
+        
+        if ((hasWakeWord || isCommonQuestion) && result.isFinal) {
+          console.log('🎯 Comando detectado!');
           
           // Toca som de confirmação
           playBeep();
@@ -398,11 +408,18 @@
           // Remove todas as wake words do texto
           let question = transcript;
           wakeWords.forEach(word => {
-            question = question.replace(new RegExp(word, 'gi'), '');
+            question = question.replace(new RegExp(word, 'gi'), ' ');
           });
-          question = question.trim();
           
-          // Comando especial: "NOW cadastro voz"
+          // Remove espaços extras e limpa
+          question = question.replace(/\s+/g, ' ').trim();
+          
+          // Se ficou vazio após limpar, usa o texto original
+          if (question.length === 0) {
+            question = transcript;
+          }
+          
+          // Comando especial: "cadastro voz"
           if (question.includes('cadastro') && question.includes('voz')) {
             status.textContent = '🔧 Abrindo cadastro de voz...';
             speak('Abrindo página de cadastro de voz');
@@ -413,7 +430,8 @@
             return;
           }
           
-          if (question.length > 2) {
+          // Se tem pelo menos 3 caracteres, processa
+          if (question.length >= 3) {
             status.textContent = '🎯 Pergunta detectada! Processando...';
             orb.classList.remove('listening');
             orb.classList.add('thinking');
