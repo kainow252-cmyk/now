@@ -395,11 +395,17 @@
           'que dia', 'dia é', 'data',
           'quem é você', 'quem você', 'o que você',
           'olá', 'oi', 'hello',
-          'ajuda', 'help'
+          'ajuda', 'help',
+          'pode', 'responder', 'dólar', 'valor', 'preço',
+          'quanto', 'custa', 'como', 'onde', 'quando', 'porque'
         ];
         const isCommonQuestion = commonQuestions.some(q => transcript.includes(q));
         
-        if ((hasWakeWord || isCommonQuestion) && result.isFinal) {
+        // NOVO: Processa qualquer frase com 5+ palavras (provavelmente é pergunta)
+        const wordCount = transcript.split(' ').length;
+        const isLongPhrase = wordCount >= 5;
+        
+        if ((hasWakeWord || isCommonQuestion || isLongPhrase) && result.isFinal) {
           console.log('🎯 Comando detectado!');
           
           // Toca som de confirmação
