@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-02-21T20:13:55.285Z",
-  "totalItems": 90,
+  "lastUpdate": "2026-02-21T20:24:38.458Z",
+  "totalItems": 120,
   "knowledge": [
     {
       "category": "science",
@@ -951,6 +951,322 @@
       "url": "https://github.com/nimbusdotstorage/Nimbus",
       "timestamp": 1771704835284,
       "id": "GitHub-1771704835284-0.59830969591142"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771705477357,
+      "id": "arXiv-1771705477357-0.9453654556903279"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771705477357,
+      "id": "arXiv-1771705477357-0.3098580179957555"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771705477357,
+      "id": "arXiv-1771705477357-0.6823608968384749"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771705477357,
+      "id": "arXiv-1771705477357-0.12377262037274694"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771705477357,
+      "id": "arXiv-1771705477357-0.5345933706776063"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771705477357,
+      "id": "arXiv-1771705477357-0.8152666426058814"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771705477357,
+      "id": "arXiv-1771705477357-0.06990066615141477"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771705477357,
+      "id": "arXiv-1771705477357-0.8314297299523801"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771705477357,
+      "id": "arXiv-1771705477357-0.5505432234159748"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771705477357,
+      "id": "arXiv-1771705477357-0.5000155978666159"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Event for HTML Prop change",
+      "score": -2,
+      "url": "https://stackoverflow.com/questions/79893681/event-for-html-prop-change",
+      "tags": [
+        "javascript",
+        "html",
+        "reactjs"
+      ],
+      "timestamp": 1771705477507,
+      "id": "StackOverflow-1771705477507-0.355126540221987"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why my executable app doesn&#39;t start and show CITATION.rst error?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893691/why-my-executable-app-doesnt-start-and-show-citation-rst-error",
+      "tags": [
+        "python",
+        "pyinstaller",
+        "photutils"
+      ],
+      "timestamp": 1771705477507,
+      "id": "StackOverflow-1771705477507-0.43642779687298416"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "High failure rate for Gaming Hosting business?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893682/high-failure-rate-for-gaming-hosting-business",
+      "tags": [
+        "stripe-payments",
+        "laravel-cashier"
+      ],
+      "timestamp": 1771705477507,
+      "id": "StackOverflow-1771705477507-0.9549779599353552"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "OpenArgs of &quot;List items edit form&quot;",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893687/openargs-of-list-items-edit-form",
+      "tags": [
+        "vba",
+        "ms-access"
+      ],
+      "timestamp": 1771705477507,
+      "id": "StackOverflow-1771705477507-0.7380888644620247"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "inexplicable 403 error in custom search api cx engine for specific domains",
+      "score": -1,
+      "url": "https://stackoverflow.com/questions/79893689/inexplicable-403-error-in-custom-search-api-cx-engine-for-specific-domains",
+      "tags": [
+        "php"
+      ],
+      "timestamp": 1771705477507,
+      "id": "StackOverflow-1771705477507-0.8547942127804937"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why does foo(int()) compile but foo(unsigned int()) fails to parse unless I use a type alias?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893663/why-does-fooint-compile-but-foounsigned-int-fails-to-parse-unless-i-use",
+      "tags": [
+        "c++"
+      ],
+      "timestamp": 1771705477507,
+      "id": "StackOverflow-1771705477507-0.5432805927502184"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Bypassing VPN to host a Minecraft server",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893652/bypassing-vpn-to-host-a-minecraft-server",
+      "tags": [
+        "docker",
+        "minecraft",
+        "vpn",
+        "docker-network",
+        "debian-based"
+      ],
+      "timestamp": 1771705477507,
+      "id": "StackOverflow-1771705477507-0.7611938207884712"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Using std::apply in a class template",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893672/using-stdapply-in-a-class-template",
+      "tags": [
+        "c++",
+        "templates",
+        "c++17"
+      ],
+      "timestamp": 1771705477507,
+      "id": "StackOverflow-1771705477507-0.5313957639743851"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to create a textbox that switches its content based on a variable?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893668/how-to-create-a-textbox-that-switches-its-content-based-on-a-variable",
+      "tags": [
+        "latex",
+        "resume"
+      ],
+      "timestamp": 1771705477507,
+      "id": "StackOverflow-1771705477507-0.5343657443736476"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "What is generativity of Type-&gt;Type functions?",
+      "score": 3,
+      "url": "https://stackoverflow.com/questions/79893643/what-is-generativity-of-type-type-functions",
+      "tags": [
+        "haskell",
+        "functional-programming",
+        "language-lawyer",
+        "type-families"
+      ],
+      "timestamp": 1771705477507,
+      "id": "StackOverflow-1771705477507-0.1936791172798289"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "github/spec-kit",
+      "description": "💫 Toolkit to help you get started with Spec-Driven Development",
+      "stars": 70993,
+      "url": "https://github.com/github/spec-kit",
+      "timestamp": 1771705478458,
+      "id": "GitHub-1771705478458-0.6777094696422481"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "danielmiessler/Fabric",
+      "description": "Fabric is an open-source framework for augmenting humans using AI. It provides a modular system for solving specific problems using a crowdsourced set of AI prompts that can be used anywhere.",
+      "stars": 39220,
+      "url": "https://github.com/danielmiessler/Fabric",
+      "timestamp": 1771705478458,
+      "id": "GitHub-1771705478458-0.2885116139386932"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "datawhalechina/happy-llm",
+      "description": "📚 从零开始的大语言模型原理与实践教程",
+      "stars": 26007,
+      "url": "https://github.com/datawhalechina/happy-llm",
+      "timestamp": 1771705478458,
+      "id": "GitHub-1771705478458-0.37799853290433405"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "huggingface/open-r1",
+      "description": "Fully open reproduction of DeepSeek-R1",
+      "stars": 25890,
+      "url": "https://github.com/huggingface/open-r1",
+      "timestamp": 1771705478458,
+      "id": "GitHub-1771705478458-0.11128833395575799"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "permissionlesstech/bitchat",
+      "description": "bluetooth mesh chat, IRC vibes",
+      "stars": 25189,
+      "url": "https://github.com/permissionlesstech/bitchat",
+      "timestamp": 1771705478458,
+      "id": "GitHub-1771705478458-0.8224091148890578"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "BloopAI/vibe-kanban",
+      "description": "Get 10X more out of Claude Code, Codex or any coding agent",
+      "stars": 21564,
+      "url": "https://github.com/BloopAI/vibe-kanban",
+      "timestamp": 1771705478458,
+      "id": "GitHub-1771705478458-0.6120947982533014"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "davila7/claude-code-templates",
+      "description": "CLI tool for configuring and monitoring Claude Code",
+      "stars": 21034,
+      "url": "https://github.com/davila7/claude-code-templates",
+      "timestamp": 1771705478458,
+      "id": "GitHub-1771705478458-0.8364055865201006"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "charmbracelet/crush",
+      "description": "Glamourous agentic coding for all 💘",
+      "stars": 20248,
+      "url": "https://github.com/charmbracelet/crush",
+      "timestamp": 1771705478458,
+      "id": "GitHub-1771705478458-0.5863585307799986"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "yetone/avante.nvim",
+      "description": "Use your Neovim like using Cursor AI IDE!",
+      "stars": 17406,
+      "url": "https://github.com/yetone/avante.nvim",
+      "timestamp": 1771705478458,
+      "id": "GitHub-1771705478458-0.9665251632307825"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "google-gemini/cookbook",
+      "description": "Examples and guides for using the Gemini API",
+      "stars": 16529,
+      "url": "https://github.com/google-gemini/cookbook",
+      "timestamp": 1771705478458,
+      "id": "GitHub-1771705478458-0.05316632097282459"
     }
   ]
 }

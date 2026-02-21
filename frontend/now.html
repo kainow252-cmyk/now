@@ -313,6 +313,17 @@
           // Remove "now" do texto e processa o resto
           const question = transcript.replace(/now/gi, '').trim();
           
+          // Comando especial: "NOW cadastro voz"
+          if (question.includes('cadastro') && question.includes('voz')) {
+            status.textContent = '🔧 Abrindo cadastro de voz...';
+            speak('Abrindo página de cadastro de voz');
+            
+            setTimeout(() => {
+              window.location.href = '/voice-setup.html?reconfig=true';
+            }, 1500);
+            return;
+          }
+          
           if (question.length > 2) {
             status.textContent = '🎯 Pergunta detectada! Processando...';
             orb.classList.remove('listening');
@@ -455,6 +466,9 @@
       }
       if (q.includes('data') || q.includes('dia')) {
         return `Hoje é ${new Date().toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}.`;
+      }
+      if (q.includes('ajuda') || q.includes('comandos')) {
+        return 'Posso responder perguntas sobre tecnologia, ciência, hora, data e muito mais. Diga "NOW cadastro voz" para reconfigurar seu reconhecimento de voz.';
       }
       
       return 'Ainda estou aprendendo sobre isso. Meu conhecimento está crescendo automaticamente a cada 30 minutos!';

@@ -462,16 +462,22 @@
 
     finishButton.addEventListener('click', finishSetup);
 
-    // Verifica se já tem perfil
+    // Verifica se já tem perfil - REDIRECIONA AUTOMATICAMENTE
     window.addEventListener('load', () => {
       const existingProfile = localStorage.getItem('now-voice-profile');
+      const forceReconfigure = new URLSearchParams(window.location.search).get('reconfig');
       
-      if (existingProfile) {
-        const choice = confirm('Você já tem um perfil de voz cadastrado. Deseja recadastrar?');
+      if (existingProfile && !forceReconfigure) {
+        // Redireciona automaticamente se já tem perfil
+        console.log('✅ Perfil de voz já cadastrado, redirecionando...');
+        status.textContent = '✅ Você já tem um perfil cadastrado! Redirecionando...';
         
-        if (!choice) {
+        setTimeout(() => {
           window.location.href = '/now.html';
-        }
+        }, 1500);
+      } else if (forceReconfigure) {
+        // Mostra aviso de reconfiguração
+        status.textContent = '🔄 Reconfigurando perfil de voz...';
       }
     });
   </script>
