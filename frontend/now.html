@@ -325,7 +325,8 @@
       synthesis: window.speechSynthesis,
       lastSpeechTime: 0,
       voiceAuthEnabled: false,  // NOVO: autenticação por voz
-      ownerProfile: null  // NOVO: perfil do dono
+      ownerProfile: null,  // NOVO: perfil do dono
+      ttsUnlocked: false  // NOVO: TTS desbloqueado no mobile
     };
 
     // Elementos DOM
@@ -627,6 +628,15 @@
     function speak(text) {
       console.log('🔊 Tentando falar:', text);
       
+      // NOVO: No Chrome mobile, precisa de interação do usuário primeiro
+      // Vamos FORÇAR uma utterance vazia para "desbloquear" o TTS
+      if (!state.synthesis.speaking && !state.ttsUnlocked) {
+        console.log('🔓 Desbloqueando TTS no mobile...');
+        const dummyUtterance = new SpeechSynthesisUtterance('');
+        state.synthesis.speak(dummyUtterance);
+        state.ttsUnlocked = true;
+      }
+      
       if (state.synthesis.speaking) {
         console.log('⚠️  Cancelando fala anterior...');
         state.synthesis.cancel();
@@ -637,7 +647,7 @@
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'pt-BR';
         utterance.rate = 1.0;
-        utterance.pitch = 1.0;
+        utterance.pitch = 1.1;  // AUMENTA pitch para voz mais feminina
         utterance.volume = 1.0;
 
         // Carrega vozes se necessário
@@ -661,12 +671,27 @@
 
     // Configura voz e fala
     function setVoiceAndSpeak(utterance, voices, text) {
-      // Tenta usar voz em português
-      const ptVoice = voices.find(v => v.lang.startsWith('pt')) || voices[0];
+      // Tenta usar voz FEMININA em português
+      console.log(`🔍 Procurando voz feminina entre ${voices.length} vozes...`);
       
-      if (ptVoice) {
-        utterance.voice = ptVoice;
-        console.log(`🎤 Usando voz: ${ptVoice.name} (${ptVoice.lang})`);
+      // Lista todas as vozes PT para debug
+      const ptVoices = voices.filter(v => v.lang.startsWith('pt'));
+      console.log('🗣️  Vozes PT disponíveis:', ptVoices.map(v => `${v.name} (${v.lang})`));
+      
+      // Prioridade: vozes com "female" ou nomes femininos no nome
+      const femaleVoice = ptVoices.find(v => 
+        v.name.toLowerCase().includes('female') ||
+        v.name.toLowerCase().includes('feminina') ||
+        v.name.toLowerCase().includes('luciana') ||
+        v.name.toLowerCase().includes('marcia') ||
+        v.name.toLowerCase().includes('google') && v.name.includes('pt-BR')
+      );
+      
+      const selectedVoice = femaleVoice || ptVoices[0] || voices[0];
+      
+      if (selectedVoice) {
+        utterance.voice = selectedVoice;
+        console.log(`🎤 Usando voz: ${selectedVoice.name} (${selectedVoice.lang})`);
       } else {
         console.log('⚠️  Nenhuma voz encontrada, usando padrão');
       }
@@ -716,11 +741,24 @@
 
     // Inicia/para escuta contínua
     function toggleListening() {
+      // NOVO: No primeiro clique, desbloqueia TTS no mobile
+      if (!state.ttsUnlocked) {
+        console.log('🔓 Primeiro toque - desbloqueando TTS no mobile...');
+        const dummyUtterance = new SpeechSynthesisUtterance('');
+        state.synthesis.speak(dummyUtterance);
+        state.ttsUnlocked = true;
+        
+        // Fala uma mensagem de boas-vindas
+        setTimeout(() => {
+          speak('NOW ativado! Pode falar.');
+        }, 300);
+      }
+      
       state.continuousMode = !state.continuousMode;
       
       if (state.continuousMode) {
         console.log('▶️  Modo contínuo ATIVADO');
-        status.textContent = 'NOW ouvindo... (diga "NOW" para ativar)';
+        status.textContent = 'NOW ouvindo... (diga "AGORA" + pergunta)';
         state.recognition.start();
       } else {
         console.log('⏸️  Modo contínuo DESATIVADO');
