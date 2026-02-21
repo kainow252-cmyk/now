@@ -178,6 +178,50 @@
       fill: #ff0064;
     }
 
+    /* Debug info */
+    .debug-info {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(0, 247, 255, 0.3);
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 12px;
+      max-width: 250px;
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+    }
+
+    .debug-info h4 {
+      margin: 0 0 10px 0;
+      color: #00f7ff;
+      font-size: 14px;
+    }
+
+    .debug-info p {
+      margin: 5px 0;
+      opacity: 0.9;
+    }
+
+    .debug-info .status-indicator {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+
+    .debug-info .status-indicator.active {
+      background: #00ff00;
+      box-shadow: 0 0 5px #00ff00;
+    }
+
+    .debug-info .status-indicator.inactive {
+      background: #ff0000;
+      box-shadow: 0 0 5px #ff0000;
+    }
+
     /* Loading dots */
     .loading-dots {
       display: inline-block;
@@ -238,6 +282,23 @@
 <body>
   
   <div class="status-text" id="status">Iniciando... aguarde 2 segundos</div>
+
+  <!-- Debug Info -->
+  <div class="debug-info" id="debugInfo">
+    <h4>🔍 Status do Sistema</h4>
+    <p>
+      <span class="status-indicator" id="micStatus"></span>
+      <span>Microfone: <span id="micText">Verificando...</span></span>
+    </p>
+    <p>
+      <span class="status-indicator" id="listenStatus"></span>
+      <span>Escuta: <span id="listenText">Aguardando...</span></span>
+    </p>
+    <p style="margin-top: 10px; font-size: 11px; opacity: 0.7;">
+      Última detecção:<br>
+      <span id="lastHeard">Nenhuma</span>
+    </p>
+  </div>
   
   <div class="orb-container">
     <div class="orb" id="orb"></div>
@@ -273,6 +334,13 @@
     const responseBox = document.getElementById('responseBox');
     const responseText = document.getElementById('responseText');
     const voiceButton = document.getElementById('voiceButton');
+    
+    // Debug elements
+    const micStatus = document.getElementById('micStatus');
+    const micText = document.getElementById('micText');
+    const listenStatus = document.getElementById('listenStatus');
+    const listenText = document.getElementById('listenText');
+    const lastHeard = document.getElementById('lastHeard');
 
     // Inicializa reconhecimento de voz CONTÍNUO
     function initSpeechRecognition() {
@@ -294,12 +362,26 @@
         state.isListening = true;
         orb.classList.add('listening');
         voiceButton.classList.add('active');
-        status.textContent = 'NOW ouvindo... (diga "NOW" para ativar)';
+        status.textContent = '🎤 Escutando... Diga "NOW" + sua pergunta';
+        
+        // Update debug info
+        micStatus.className = 'status-indicator active';
+        micText.textContent = 'Ativo ✓';
+        listenStatus.className = 'status-indicator active';
+        listenText.textContent = 'Escutando ✓';
       };
 
       state.recognition.onresult = async (event) => {
         const result = event.results[event.results.length - 1];
         const transcript = result[0].transcript.toLowerCase();
+        
+        // Update last heard
+        lastHeard.textContent = `"${transcript}" ${result.isFinal ? '✓' : '...'}`;
+        
+        // Mostra o que está sendo ouvido na tela
+        if (!result.isFinal) {
+          status.textContent = `🎤 Ouvindo: "${transcript}"...`;
+        }
         
         console.log('📝 Ouvido:', transcript, '(final:', result.isFinal + ')');
         
@@ -352,8 +434,13 @@
       state.recognition.onerror = (event) => {
         console.error('❌ Erro:', event.error);
         
+        // Update debug
+        listenStatus.className = 'status-indicator inactive';
+        listenText.textContent = `Erro: ${event.error}`;
+        
         // Ignora erros de "no-speech" em modo contínuo
         if (event.error === 'no-speech' && state.continuousMode) {
+          listenText.textContent = 'Aguardando fala...';
           return;
         }
         
@@ -362,6 +449,7 @@
           setTimeout(() => {
             if (state.continuousMode) {
               console.log('🔄 Reiniciando reconhecimento...');
+              listenText.textContent = 'Reiniciando...';
               state.recognition.start();
             }
           }, 1000);
