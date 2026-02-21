@@ -14,6 +14,7 @@ const huggingfaceService = require('./services/huggingface.service');  // 🆕 H
 const aiRouterService = require('./services/ai-router.service');  // 🆕 Smart Fallback
 const conversationService = require('./services/conversation.service');  // 🆕 Smart Conversation
 const KnowledgeWorker = require('./workers/knowledge-worker');  // 🆕 Autonomous Learning
+const voiceAuthService = require('./services/voice-auth.service');  // 🆕 Voice Authentication
 
 // Initialize Knowledge Worker
 const knowledgeWorker = new KnowledgeWorker();
@@ -1342,6 +1343,84 @@ app.post('/api/knowledge/search', async (req, res) => {
       count: results.length,
       query 
     });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// =============================================================================
+// VOICE AUTHENTICATION - Owner Voice Recognition (v6.0 - NEW!)
+// =============================================================================
+
+// Register voice profile
+app.post('/api/voice/register', async (req, res) => {
+  try {
+    const { userId = 'owner', samples } = req.body;
+    
+    if (!samples || samples.length < 3) {
+      return res.status(400).json({ 
+        success: false, 
+        error: 'At least 3 voice samples required' 
+      });
+    }
+
+    const result = voiceAuthService.registerProfile(userId, samples);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Authenticate voice
+app.post('/api/voice/authenticate', async (req, res) => {
+  try {
+    const { userId = 'owner', features } = req.body;
+    
+    if (!features) {
+      return res.status(400).json({ 
+        success: false, 
+        error: 'Audio features required' 
+      });
+    }
+
+    const result = voiceAuthService.authenticate(userId, features);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Get voice auth stats
+app.get('/api/voice/stats', (req, res) => {
+  try {
+    const stats = voiceAuthService.getStats();
+    res.json({ success: true, ...stats });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Check if user has profile
+app.get('/api/voice/profile/:userId', (req, res) => {
+  try {
+    const { userId } = req.params;
+    const hasProfile = voiceAuthService.hasProfile(userId);
+    res.json({ 
+      success: true, 
+      userId,
+      hasProfile 
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Remove voice profile
+app.delete('/api/voice/profile/:userId', (req, res) => {
+  try {
+    const { userId } = req.params;
+    const result = voiceAuthService.removeProfile(userId);
+    res.json(result);
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }

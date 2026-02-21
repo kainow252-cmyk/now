@@ -262,7 +262,9 @@
       continuousMode: true,  // NOVO: modo contínuo ativo
       recognition: null,
       synthesis: window.speechSynthesis,
-      lastSpeechTime: 0
+      lastSpeechTime: 0,
+      voiceAuthEnabled: false,  // NOVO: autenticação por voz
+      ownerProfile: null  // NOVO: perfil do dono
     };
 
     // Elementos DOM
@@ -568,6 +570,9 @@
       console.log('✅ NOW AI iniciado!');
       console.log('🎤 Modo contínuo ativo - Diga "NOW" seguido de sua pergunta');
       
+      // Carrega perfil de voz
+      loadVoiceProfile();
+      
       // INICIA AUTOMATICAMENTE em modo contínuo após 2 segundos
       setTimeout(() => {
         console.log('🚀 Ativando escuta contínua automaticamente...');
@@ -579,6 +584,24 @@
         }
       }, 2000);
     });
+
+    // Carrega perfil de voz do localStorage
+    function loadVoiceProfile() {
+      const profileData = localStorage.getItem('now-voice-profile');
+      
+      if (profileData) {
+        state.ownerProfile = JSON.parse(profileData);
+        state.voiceAuthEnabled = state.ownerProfile.enabled;
+        
+        if (state.voiceAuthEnabled) {
+          console.log('🔒 Autenticação de voz ATIVADA');
+          console.log(`   Perfil criado em: ${new Date(state.ownerProfile.createdAt).toLocaleString()}`);
+        }
+      } else {
+        console.log('⚠️  Nenhum perfil de voz cadastrado');
+        console.log('   Acesse /voice-setup.html para cadastrar');
+      }
+    }
 
     // Atalho de teclado (Espaço para toggle)
     document.addEventListener('keydown', (e) => {
