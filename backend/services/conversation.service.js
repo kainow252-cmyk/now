@@ -49,30 +49,47 @@ class ConversationService {
       // 3. Fallback para IA (Groq -> Gemini -> HuggingFace)
       console.log('🤖 Usando IA para responder...');
       
-      // Adiciona histórico de conversa
-      const history = this.getHistory(userId);
-      const contextualMessage = this.buildContextualMessage(question, history);
-      
-      const aiResult = await aiRouterService.chat(contextualMessage);
-      
-      // Salva na história
-      this.addToHistory(userId, { role: 'user', content: question });
-      this.addToHistory(userId, { role: 'assistant', content: aiResult.text || aiResult.response });
-      
-      return {
-        success: true,
-        answer: aiResult.text || aiResult.response || aiResult.message,
-        source: 'ai',
-        provider: aiResult.provider,
-        confidence: 0.7
-      };
+      try {
+        // Adiciona histórico de conversa
+        const history = this.getHistory(userId);
+        const contextualMessage = this.buildContextualMessage(question, history);
+        
+        const aiResult = await aiRouterService.chat(contextualMessage);
+        
+        // Salva na história
+        this.addToHistory(userId, { role: 'user', content: question });
+        this.addToHistory(userId, { role: 'assistant', content: aiResult.text || aiResult.response });
+        
+        return {
+          success: true,
+          answer: aiResult.text || aiResult.response || aiResult.message,
+          source: 'ai',
+          provider: aiResult.provider,
+          confidence: 0.7
+        };
+      } catch (aiError) {
+        console.log('⚠️  IA indisponível, usando respostas locais');
+        
+        // 4. Fallback final: respostas locais simples
+        const localAnswer = this.getSimpleAnswer(question);
+        return {
+          success: true,
+          answer: localAnswer,
+          source: 'local-fallback',
+          confidence: 0.6
+        };
+      }
 
     } catch (error) {
       console.error('❌ Erro ao processar pergunta:', error.message);
+      
+      // Última tentativa: resposta local
+      const fallbackAnswer = this.getSimpleAnswer(question);
       return {
-        success: false,
-        error: error.message,
-        answer: 'Desculpe, não consegui processar sua pergunta no momento.'
+        success: true,
+        answer: fallbackAnswer,
+        source: 'emergency-fallback',
+        confidence: 0.5
       };
     }
   }
@@ -234,6 +251,57 @@ class ConversationService {
     }
 
     console.log(`🧹 Limpeza concluída. Cache local: ${this.localKnowledge.size} itens`);
+  }
+
+  /**
+   * Respostas locais simples (fallback offline)
+   */
+  getSimpleAnswer(question) {
+    const q = question.toLowerCase();
+    
+    // Saudações
+    if (q.includes('olá') || q.includes('oi') || q.includes('hello')) {
+      return 'Olá! Sou o NOW AI, seu assistente inteligente. Como posso ajudar?';
+    }
+    
+    // Identificação
+    if (q.includes('quem é você') || q.includes('o que você é') || q.includes('quem você')) {
+      return 'Sou o NOW AI, um assistente inteligente estilo JARVIS. Posso responder perguntas, buscar conhecimento e conversar naturalmente em português.';
+    }
+    
+    // Funcionamento
+    if (q.includes('como você funciona') || q.includes('como funciona')) {
+      return 'Funciono com inteligência multi-camada: busco conhecimento local, depois em APIs gratuitas (GitHub, StackOverflow, arXiv, Wikipedia, etc), e aprendo sozinho a cada 30 minutos.';
+    }
+    
+    // Hora
+    if (q.includes('hora') || q.includes('horas')) {
+      return `São ${new Date().toLocaleTimeString('pt-BR')} agora.`;
+    }
+    
+    // Data
+    if (q.includes('data') || q.includes('dia') || q.includes('hoje')) {
+      const data = new Date();
+      return `Hoje é ${data.toLocaleDateString('pt-BR', { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      })}.`;
+    }
+    
+    // Ajuda
+    if (q.includes('ajuda') || q.includes('help') || q.includes('comandos')) {
+      return 'Posso responder perguntas sobre tecnologia, ciência, notícias, hora, data e muito mais. Meu conhecimento cresce automaticamente!';
+    }
+    
+    // Capacidades
+    if (q.includes('o que você sabe') || q.includes('o que você pode')) {
+      return 'Tenho conhecimento sobre tecnologia (GitHub, StackOverflow), ciência (arXiv), notícias gerais, e estou sempre aprendendo mais. Pergunte qualquer coisa!';
+    }
+    
+    // Resposta padrão
+    return 'Interessante pergunta! Estou sempre aprendendo. Atualmente coleto conhecimento de 8 fontes a cada 30 minutos. Tente perguntar sobre tecnologia, ciência ou eventos atuais!';
   }
 }
 
