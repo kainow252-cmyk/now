@@ -362,7 +362,7 @@
         state.isListening = true;
         orb.classList.add('listening');
         voiceButton.classList.add('active');
-        status.textContent = '🎤 Escutando... Diga "NOW" + sua pergunta';
+        status.textContent = '🎤 Escutando... Diga "AGORA" + sua pergunta';
         
         // Update debug info
         micStatus.className = 'status-indicator active';
@@ -385,15 +385,22 @@
         
         console.log('📝 Ouvido:', transcript, '(final:', result.isFinal + ')');
         
-        // Detecta wake word "NOW"
-        if (transcript.includes('now') && result.isFinal) {
+        // Detecta wake words múltiplas: "NOW", "AGORA", "NAU", etc
+        const wakeWords = ['now', 'agora', 'nau', 'naul'];
+        const hasWakeWord = wakeWords.some(word => transcript.includes(word));
+        
+        if (hasWakeWord && result.isFinal) {
           console.log('🎯 Wake word detectado!');
           
           // Toca som de confirmação
           playBeep();
           
-          // Remove "now" do texto e processa o resto
-          const question = transcript.replace(/now/gi, '').trim();
+          // Remove todas as wake words do texto
+          let question = transcript;
+          wakeWords.forEach(word => {
+            question = question.replace(new RegExp(word, 'gi'), '');
+          });
+          question = question.trim();
           
           // Comando especial: "NOW cadastro voz"
           if (question.includes('cadastro') && question.includes('voz')) {
@@ -670,7 +677,7 @@
       }
 
       console.log('✅ NOW AI iniciado!');
-      console.log('🎤 Modo contínuo ativo - Diga "NOW" seguido de sua pergunta');
+      console.log('🎤 Modo contínuo ativo - Diga "AGORA" ou "NOW" seguido de sua pergunta');
       
       // Carrega perfil de voz
       loadVoiceProfile();
