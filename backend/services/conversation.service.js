@@ -3,6 +3,7 @@
 
 const aiRouterService = require('./ai-router.service');
 const freeAPIsService = require('./free-apis.service');
+const worldKnowledge = require('./world-knowledge.service');
 
 class ConversationService {
   constructor() {
@@ -29,8 +30,25 @@ class ConversationService {
         };
       }
 
-      // 2. Tenta APIs gratuitas de conhecimento
-      console.log('🔍 Buscando em APIs de conhecimento...');
+      // 2. Tenta WORLD KNOWLEDGE (30+ APIs)
+      console.log('🌍 Buscando em World Knowledge (30+ APIs)...');
+      const worldResult = await worldKnowledge.intelligentQuery(question);
+      
+      if (worldResult.success) {
+        // Adiciona ao conhecimento local para próximas consultas
+        this.addToLocalKnowledge(question, worldResult);
+        
+        return {
+          success: true,
+          answer: this.formatKnowledgeResponse(worldResult),
+          source: 'world-knowledge',
+          confidence: 0.95,
+          data: worldResult
+        };
+      }
+
+      // 3. Fallback para APIs antigas
+      console.log('🔍 Buscando em APIs de conhecimento antigas...');
       const knowledgeResult = await freeAPIsService.query(question);
       
       if (knowledgeResult.success) {
@@ -40,7 +58,7 @@ class ConversationService {
         return {
           success: true,
           answer: this.formatKnowledgeResponse(knowledgeResult),
-          source: 'api',
+          source: 'free-api',
           confidence: 0.9,
           data: knowledgeResult
         };

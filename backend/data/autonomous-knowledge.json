@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-02-21T20:24:38.458Z",
-  "totalItems": 120,
+  "lastUpdate": "2026-02-21T20:54:39.765Z",
+  "totalItems": 150,
   "knowledge": [
     {
       "category": "science",
@@ -1267,6 +1267,321 @@
       "url": "https://github.com/google-gemini/cookbook",
       "timestamp": 1771705478458,
       "id": "GitHub-1771705478458-0.05316632097282459"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771707278583,
+      "id": "arXiv-1771707278583-0.4743201153451777"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771707278583,
+      "id": "arXiv-1771707278583-0.7195263862442838"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771707278583,
+      "id": "arXiv-1771707278583-0.7989085977220327"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771707278583,
+      "id": "arXiv-1771707278583-0.6617411215852393"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771707278583,
+      "id": "arXiv-1771707278583-0.2891006692664826"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771707278583,
+      "id": "arXiv-1771707278583-0.9403498265308512"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771707278583,
+      "id": "arXiv-1771707278583-0.8625797510214839"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771707278583,
+      "id": "arXiv-1771707278583-0.9130302396743941"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771707278583,
+      "id": "arXiv-1771707278583-0.33344547459804397"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771707278583,
+      "id": "arXiv-1771707278583-0.1661959394904784"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Optimizing Node.js worker threads memory pooling for heavy Monte Carlo slot simulations (RTP verification)",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893699/optimizing-node-js-worker-threads-memory-pooling-for-heavy-monte-carlo-slot-simu",
+      "tags": [
+        "node.js",
+        "math",
+        "memory-management",
+        "montecarlo",
+        "worker-thread"
+      ],
+      "timestamp": 1771707278812,
+      "id": "StackOverflow-1771707278812-0.35104622227921034"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Pusher and push notifications",
+      "score": -1,
+      "url": "https://stackoverflow.com/questions/79893706/pusher-and-push-notifications",
+      "tags": [
+        "ios",
+        "swift",
+        "pusher"
+      ],
+      "timestamp": 1771707278812,
+      "id": "StackOverflow-1771707278812-0.07118050820486199"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Event for HTML Prop change",
+      "score": -2,
+      "url": "https://stackoverflow.com/questions/79893681/event-for-html-prop-change",
+      "tags": [
+        "javascript",
+        "html",
+        "reactjs"
+      ],
+      "timestamp": 1771707278812,
+      "id": "StackOverflow-1771707278812-0.8233130691265294"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why my executable app doesn&#39;t start and show CITATION.rst error?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893691/why-my-executable-app-doesnt-start-and-show-citation-rst-error",
+      "tags": [
+        "python",
+        "pyinstaller",
+        "photutils"
+      ],
+      "timestamp": 1771707278812,
+      "id": "StackOverflow-1771707278812-0.1396020517000982"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "High failure rate for Gaming Hosting business?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893682/high-failure-rate-for-gaming-hosting-business",
+      "tags": [
+        "stripe-payments",
+        "laravel-cashier"
+      ],
+      "timestamp": 1771707278812,
+      "id": "StackOverflow-1771707278812-0.5671194048310646"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "inexplicable 403 error in custom search api cx engine for specific domains",
+      "score": -2,
+      "url": "https://stackoverflow.com/questions/79893689/inexplicable-403-error-in-custom-search-api-cx-engine-for-specific-domains",
+      "tags": [
+        "php"
+      ],
+      "timestamp": 1771707278812,
+      "id": "StackOverflow-1771707278812-0.347089518925342"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why does wildcard not work in (the prerequisites of) a static pattern rule?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893697/why-does-wildcard-not-work-in-the-prerequisites-of-a-static-pattern-rule",
+      "tags": [
+        "makefile",
+        "gnu-make"
+      ],
+      "timestamp": 1771707278812,
+      "id": "StackOverflow-1771707278812-0.08765755571353573"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "OpenArgs of &quot;List items edit form&quot;",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893687/openargs-of-list-items-edit-form",
+      "tags": [
+        "vba",
+        "ms-access"
+      ],
+      "timestamp": 1771707278812,
+      "id": "StackOverflow-1771707278812-0.8144214892957393"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why does foo(int()) compile but foo(unsigned int()) fails to parse unless I use a type alias?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893663/why-does-fooint-compile-but-foounsigned-int-fails-to-parse-unless-i-use",
+      "tags": [
+        "c++"
+      ],
+      "timestamp": 1771707278812,
+      "id": "StackOverflow-1771707278812-0.9114334803862498"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Using std::apply in a class template",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893672/using-stdapply-in-a-class-template",
+      "tags": [
+        "c++",
+        "templates",
+        "c++17"
+      ],
+      "timestamp": 1771707278812,
+      "id": "StackOverflow-1771707278812-0.6385409358648457"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "NirDiamant/RAG_Techniques",
+      "description": "This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. RAG systems combine information retrieval with generative models to provide accurate and contextually rich responses.",
+      "stars": 25522,
+      "url": "https://github.com/NirDiamant/RAG_Techniques",
+      "timestamp": 1771707279765,
+      "id": "GitHub-1771707279765-0.30825698599270157"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "black-forest-labs/flux",
+      "description": "Official inference repo for FLUX.1 models",
+      "stars": 25221,
+      "url": "https://github.com/black-forest-labs/flux",
+      "timestamp": 1771707279765,
+      "id": "GitHub-1771707279765-0.5683067426480128"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "lbjlaq/Antigravity-Manager",
+      "description": "Professional Antigravity Account Manager & Switcher. One-click seamless account switching for Antigravity Tools. Built with Tauri v2 + React (Rust).专业的 Antigravity 账号管理与切换工具。为 Antigravity 提供一键无缝账号切换功能。",
+      "stars": 23875,
+      "url": "https://github.com/lbjlaq/Antigravity-Manager",
+      "timestamp": 1771707279765,
+      "id": "GitHub-1771707279765-0.9342184293745779"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "QwenLM/qwen-code",
+      "description": "An open-source AI agent that lives in your terminal.",
+      "stars": 19162,
+      "url": "https://github.com/QwenLM/qwen-code",
+      "timestamp": 1771707279765,
+      "id": "GitHub-1771707279765-0.6469725201818493"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "ourongxing/newsnow",
+      "description": "Elegant reading of real-time and hottest news",
+      "stars": 18093,
+      "url": "https://github.com/ourongxing/newsnow",
+      "timestamp": 1771707279765,
+      "id": "GitHub-1771707279765-0.8778570490177766"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "shareAI-lab/learn-claude-code",
+      "description": "Bash is all you need -  A nano Claude Code–like agent, built from 0 to 1",
+      "stars": 17334,
+      "url": "https://github.com/shareAI-lab/learn-claude-code",
+      "timestamp": 1771707279765,
+      "id": "GitHub-1771707279765-0.4139554709474713"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "HKUDS/DeepCode",
+      "description": "\"DeepCode: Open Agentic Coding (Paper2Code & Text2Web & Text2Backend)\"",
+      "stars": 14565,
+      "url": "https://github.com/HKUDS/DeepCode",
+      "timestamp": 1771707279765,
+      "id": "GitHub-1771707279765-0.6425779076461844"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Billionmail/BillionMail",
+      "description": "BillionMail gives you open-source MailServer, NewsLetter,  Email Marketing — fully self-hosted, dev-friendly, and free from monthly fees. Join the discord: https://discord.gg/asfXzBUhZr",
+      "stars": 13545,
+      "url": "https://github.com/Billionmail/BillionMail",
+      "timestamp": 1771707279765,
+      "id": "GitHub-1771707279765-0.683960245280802"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "MemoriLabs/Memori",
+      "description": "SQL Native Memory Layer for LLMs, AI Agents & Multi-Agent Systems",
+      "stars": 12127,
+      "url": "https://github.com/MemoriLabs/Memori",
+      "timestamp": 1771707279765,
+      "id": "GitHub-1771707279765-0.7940468490730446"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "apple/pkl",
+      "description": "A configuration as code language with rich validation and tooling.",
+      "stars": 11051,
+      "url": "https://github.com/apple/pkl",
+      "timestamp": 1771707279765,
+      "id": "GitHub-1771707279765-0.9734179514625394"
     }
   ]
 }

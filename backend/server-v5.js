@@ -1426,6 +1426,309 @@ app.delete('/api/voice/profile/:userId', (req, res) => {
   }
 });
 
+// =============================================================================
+// WORLD KNOWLEDGE API - 30+ Free Knowledge Sources (v6.0 - NEW!)
+// =============================================================================
+
+const worldKnowledge = require('./services/world-knowledge.service');
+
+// Intelligent Auto-Query (detecta intenção)
+app.post('/api/world/query', async (req, res) => {
+  try {
+    const { question } = req.body;
+    if (!question) {
+      return res.status(400).json({ success: false, error: 'Question required' });
+    }
+    const result = await worldKnowledge.intelligentQuery(question);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Multi-Source Query (busca em várias fontes)
+app.post('/api/world/multi-search', async (req, res) => {
+  try {
+    const { question } = req.body;
+    if (!question) {
+      return res.status(400).json({ success: false, error: 'Question required' });
+    }
+    const result = await worldKnowledge.multiSourceQuery(question);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Wikipedia
+app.get('/api/world/wikipedia/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+    const { lang = 'pt' } = req.query;
+    const result = await worldKnowledge.searchWikipedia(query, lang);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Wikidata
+app.get('/api/world/wikidata/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+    const result = await worldKnowledge.searchWikidata(query);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// DBpedia
+app.get('/api/world/dbpedia/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+    const result = await worldKnowledge.searchDBpedia(query);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// ArXiv (Scientific Papers)
+app.get('/api/world/arxiv/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+    const { limit = 5 } = req.query;
+    const result = await worldKnowledge.searchArxiv(query, parseInt(limit));
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// PubMed (Medical Research)
+app.get('/api/world/pubmed/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+    const { limit = 5 } = req.query;
+    const result = await worldKnowledge.searchPubMed(query, parseInt(limit));
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Books
+app.get('/api/world/books/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+    const { limit = 5 } = req.query;
+    const result = await worldKnowledge.searchBooks(query, parseInt(limit));
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Movies/TV Shows
+app.get('/api/world/movies/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+    const { limit = 5 } = req.query;
+    const result = await worldKnowledge.searchMovies(query, parseInt(limit));
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Music
+app.get('/api/world/music/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+    const { type = 'artist', limit = 5 } = req.query;
+    const result = await worldKnowledge.searchMusic(query, type, parseInt(limit));
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Crypto Prices
+app.get('/api/world/crypto/:coin', async (req, res) => {
+  try {
+    const { coin } = req.params;
+    const { currency = 'usd' } = req.query;
+    const result = await worldKnowledge.getCryptoPrice(coin, currency);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Weather
+app.get('/api/world/weather/:city', async (req, res) => {
+  try {
+    const { city } = req.params;
+    const result = await worldKnowledge.getWeather(decodeURIComponent(city));
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Country Info
+app.get('/api/world/country/:name', async (req, res) => {
+  try {
+    const { name } = req.params;
+    const result = await worldKnowledge.getCountryInfo(decodeURIComponent(name));
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Exchange Rate
+app.get('/api/world/exchange/:base', async (req, res) => {
+  try {
+    const { base } = req.params;
+    const { target = 'BRL' } = req.query;
+    const result = await worldKnowledge.getExchangeRate(base, target);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// News
+app.get('/api/world/news', async (req, res) => {
+  try {
+    const { country = 'br', category = 'general' } = req.query;
+    const result = await worldKnowledge.getNews(country, category);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Space (NASA APOD)
+app.get('/api/world/space', async (req, res) => {
+  try {
+    const result = await worldKnowledge.getSpaceData();
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Random Quote
+app.get('/api/world/quote', async (req, res) => {
+  try {
+    const result = await worldKnowledge.getQuote();
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Holidays
+app.get('/api/world/holidays', async (req, res) => {
+  try {
+    const { country = 'BR', year } = req.query;
+    const result = await worldKnowledge.getHolidays(country, year ? parseInt(year) : undefined);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Cocktails
+app.get('/api/world/cocktails/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+    const result = await worldKnowledge.searchCocktails(query);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Recipes
+app.get('/api/world/recipes/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+    const result = await worldKnowledge.searchRecipes(query);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Sports Scores
+app.get('/api/world/sports', async (req, res) => {
+  try {
+    const { league = 'Brazilian Serie A' } = req.query;
+    const result = await worldKnowledge.getSportsScores(league);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// GitHub Trending
+app.get('/api/world/github', async (req, res) => {
+  try {
+    const { language = '', since = 'daily' } = req.query;
+    const result = await worldKnowledge.getGitHubTrending(language, since);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Stack Overflow Hot Questions
+app.get('/api/world/stackoverflow', async (req, res) => {
+  try {
+    const { tag = '' } = req.query;
+    const result = await worldKnowledge.getStackOverflowQuestions(tag);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Reddit Hot Posts
+app.get('/api/world/reddit/:subreddit', async (req, res) => {
+  try {
+    const { subreddit } = req.params;
+    const { limit = 10 } = req.query;
+    const result = await worldKnowledge.getRedditPosts(subreddit, parseInt(limit));
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Available Sources
+app.get('/api/world/sources', async (req, res) => {
+  try {
+    const sources = worldKnowledge.getAvailableSources();
+    res.json({ success: true, sources });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Cache Stats
+app.get('/api/world/cache-stats', async (req, res) => {
+  try {
+    const stats = worldKnowledge.getCacheStats();
+    res.json({ success: true, stats });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
 // Serve Frontend
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/index.html'));
