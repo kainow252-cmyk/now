@@ -1,0 +1,41 @@
+# NOW - Python Voice Assistant
+# Requirements for building NOW from scratch
+
+# Core Dependencies
+openai>=1.0.0              # OpenAI API (GPT-4, Whisper, TTS)
+python-dotenv>=1.0.0       # Environment variables
+
+# Speech Recognition (Ears)
+SpeechRecognition>=3.10.0  # Google Speech Recognition
+pyaudio>=0.2.13            # Audio input/output
+pydub>=0.25.1              # Audio processing
+
+# Text-to-Speech (Mouth)
+pyttsx3>=2.90              # Offline TTS (robot voice)
+elevenlabs>=0.2.0          # Premium TTS (realistic voice) - Optional
+pygame>=2.5.0              # Audio playback for OpenAI TTS
+
+# Computer Control (Actions)
+pyautogui>=0.9.54          # GUI automation
+keyboard>=0.13.5           # Keyboard control
+mouse>=0.7.1               # Mouse control
+pyperclip>=1.8.2           # Clipboard management
+
+# Web & Internet
+requests>=2.31.0           # HTTP requests
+beautifulsoup4>=4.12.0     # Web scraping
+selenium>=4.15.0           # Browser automation
+
+# System & OS
+psutil>=5.9.0              # System monitoring
+watchdog>=3.0.0            # File system monitoring
+
+# Data & Storage
+python-dateutil>=2.8.2     # Date utilities
+pytz>=2023.3               # Timezone support
+
+# Optional - Advanced Features
+# whisper @ git+https://github.com/openai/whisper.git  # OpenAI Whisper (local)
+# torch>=2.0.0             # For local AI models
+# transformers>=4.35.0     # For local LLMs
+# langchain>=0.0.300       # For advanced AI chains

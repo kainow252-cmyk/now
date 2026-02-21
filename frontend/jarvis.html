@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JARVIS - AI Assistant Interface</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000000;
+      color: #00d9ff;
+      font-family: 'Courier New', monospace;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Holographic Grid Background */
+    .holographic-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(0deg, transparent 24%, rgba(0, 217, 255, 0.05) 25%, rgba(0, 217, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, 0.05) 75%, rgba(0, 217, 255, 0.05) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(0, 217, 255, 0.05) 25%, rgba(0, 217, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, 0.05) 75%, rgba(0, 217, 255, 0.05) 76%, transparent 77%, transparent);
+      background-size: 50px 50px;
+      z-index: -1;
+      animation: gridMove 20s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+      100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+    }
+
+    /* Scan Lines */
+    .scan-lines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        transparent 50%,
+        rgba(0, 217, 255, 0.05) 50%
+      );
+      background-size: 100% 4px;
+      z-index: 1;
+      pointer-events: none;
+      animation: scanlines 10s linear infinite;
+    }
+
+    @keyframes scanlines {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 100%; }
+    }
+
+    /* Central Orb (JARVIS Core) */
+    .jarvis-core {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      z-index: 10;
+    }
+
+    .orb {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #00d9ff, #0066ff, #000033);
+      box-shadow: 
+        0 0 60px rgba(0, 217, 255, 0.8),
+        0 0 120px rgba(0, 217, 255, 0.4),
+        inset 0 0 60px rgba(0, 217, 255, 0.2);
+      animation: orbPulse 2s ease-in-out infinite, orbFloat 6s ease-in-out infinite;
+      position: relative;
+    }
+
+    @keyframes orbPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .orb::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 217, 255, 0.3);
+      animation: ringExpand 3s ease-out infinite;
+    }
+
+    @keyframes ringExpand {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+    }
+
+    /* Holographic Panels */
+    .holo-panel {
+      position: fixed;
+      background: rgba(0, 20, 40, 0.7);
+      border: 1px solid rgba(0, 217, 255, 0.5);
+      border-radius: 10px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+      animation: panelGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes panelGlow {
+      0%, 100% { box-shadow: 0 0 30px rgba(0, 217, 255, 0.3); }
+      50% { box-shadow: 0 0 50px rgba(0, 217, 255, 0.6); }
+    }
+
+    .panel-top-left {
+      top: 20px;
+      left: 20px;
+      width: 300px;
+    }
+
+    .panel-top-right {
+      top: 20px;
+      right: 20px;
+      width: 350px;
+    }
+
+    .panel-bottom-left {
+      bottom: 20px;
+      left: 20px;
+      width: 280px;
+    }
+
+    .panel-bottom-right {
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+    }
+
+    .panel-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #00d9ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+      padding-bottom: 8px;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+      font-size: 12px;
+    }
+
+    .stat-label {
+      color: #0099cc;
+    }
+
+    .stat-value {
+      color: #00ff99;
+      font-weight: bold;
+    }
+
+    /* Progress Bars */
+    .progress-bar {
+      height: 6px;
+      background: rgba(0, 217, 255, 0.2);
+      border-radius: 3px;
+      overflow: hidden;
+      margin: 8px 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00d9ff, #00ff99);
+      box-shadow: 0 0 10px rgba(0, 217, 255, 0.8);
+      animation: progressMove 2s ease-in-out infinite;
+    }
+
+    @keyframes progressMove {
+      0% { transform: translateX(-10%); }
+      50% { transform: translateX(0); }
+      100% { transform: translateX(-10%); }
+    }
+
+    /* Command Input */
+    .command-input-container {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      z-index: 20;
+    }
+
+    .command-input {
+      width: 100%;
+      background: rgba(0, 20, 40, 0.9);
+      border: 2px solid rgba(0, 217, 255, 0.6);
+      border-radius: 25px;
+      padding: 15px 25px;
+      color: #00d9ff;
+      font-size: 16px;
+      font-family: 'Courier New', monospace;
+      outline: none;
+      box-shadow: 0 0 30px rgba(0, 217, 255, 0.4);
+      transition: all 0.3s;
+    }
+
+    .command-input:focus {
+      box-shadow: 0 0 50px rgba(0, 217, 255, 0.8);
+      border-color: #00ff99;
+    }
+
+    .command-input::placeholder {
+      color: rgba(0, 217, 255, 0.4);
+    }
+
+    /* Voice Status */
+    .voice-status {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      font-size: 24px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .voice-status.listening {
+      opacity: 1;
+      animation: voicePulse 1s ease-in-out infinite;
+    }
+
+    @keyframes voicePulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+    }
+
+    /* Wake Word Toggle */
+    .wake-word-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(0, 20, 40, 0.9);
+      border: 2px solid rgba(0, 217, 255, 0.6);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      transition: all 0.3s;
+      z-index: 30;
+    }
+
+    .wake-word-toggle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(0, 217, 255, 0.8);
+    }
+
+    .wake-word-toggle.active {
+      background: rgba(0, 217, 255, 0.2);
+      border-color: #00ff99;
+      box-shadow: 0 0 40px rgba(0, 255, 153, 0.8);
+    }
+
+    /* Response Display */
+    .response-display {
+      position: fixed;
+      bottom: 150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      max-height: 200px;
+      overflow-y: auto;
+      background: rgba(0, 20, 40, 0.95);
+      border: 1px solid rgba(0, 217, 255, 0.5);
+      border-radius: 15px;
+      padding: 20px;
+      display: none;
+      z-index: 15;
+    }
+
+    .response-text {
+      color: #00ff99;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Circular Data Viz */
+    .circular-viz {
+      width: 100px;
+      height: 100px;
+      margin: 10px auto;
+      position: relative;
+    }
+
+    .circular-viz svg {
+      transform: rotate(-90deg);
+    }
+
+    .circular-viz circle {
+      fill: none;
+      stroke-width: 8;
+      stroke-linecap: round;
+    }
+
+    .circular-bg {
+      stroke: rgba(0, 217, 255, 0.2);
+    }
+
+    .circular-progress {
+      stroke: #00d9ff;
+      stroke-dasharray: 283;
+      stroke-dashoffset: 70;
+      animation: circularProgress 3s ease-in-out infinite;
+    }
+
+    @keyframes circularProgress {
+      0%, 100% { stroke-dashoffset: 70; }
+      50% { stroke-dashoffset: 200; }
+    }
+
+    /* Typing Effect */
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .typing-text {
+      overflow: hidden;
+      border-right: 2px solid #00d9ff;
+      white-space: nowrap;
+      animation: typing 3s steps(40, end) infinite, blink 0.75s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Mini Widgets */
+    .mini-widget {
+      background: rgba(0, 50, 100, 0.3);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 8px;
+      padding: 10px;
+      margin: 8px 0;
+      font-size: 11px;
+    }
+
+    .widget-value {
+      font-size: 18px;
+      color: #00ff99;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Holographic Grid Background -->
+  <div class="holographic-grid"></div>
+  <div class="scan-lines"></div>
+
+  <!-- Central JARVIS Orb -->
+  <div class="jarvis-core">
+    <div class="orb" id="jarvisOrb"></div>
+  </div>
+
+  <!-- Voice Status -->
+  <div class="voice-status" id="voiceStatus">
+    🎤 LISTENING...
+  </div>
+
+  <!-- Top Left Panel: System Status -->
+  <div class="holo-panel panel-top-left">
+    <div class="panel-title">⚡ SYSTEM STATUS</div>
+    <div class="stat-row">
+      <span class="stat-label">CPU Usage:</span>
+      <span class="stat-value" id="cpuUsage">23%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: 23%;"></div>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Memory:</span>
+      <span class="stat-value" id="memUsage">4.2 GB / 16 GB</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: 26%;"></div>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">AI Models:</span>
+      <span class="stat-value">13 ONLINE</span>
+    </div>
+    <div class="circular-viz">
+      <svg width="100" height="100">
+        <circle class="circular-bg" cx="50" cy="50" r="45"></circle>
+        <circle class="circular-progress" cx="50" cy="50" r="45"></circle>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Top Right Panel: Real-Time Data -->
+  <div class="holo-panel panel-top-right">
+    <div class="panel-title">📊 REAL-TIME DATA</div>
+    <div class="mini-widget">
+      <div class="stat-label">🪙 Bitcoin</div>
+      <div class="widget-value" id="btcPrice">$68,408</div>
+      <div style="color: #00ff99;">+1.29% ↑</div>
+    </div>
+    <div class="mini-widget">
+      <div class="stat-label">🌤️ Weather - São Paulo</div>
+      <div class="widget-value" id="weather">25.5°C</div>
+      <div style="color: #00d9ff;">Vento: 13.3 km/h</div>
+    </div>
+    <div class="mini-widget">
+      <div class="stat-label">💱 USD → BRL</div>
+      <div class="widget-value" id="exchange">5.21</div>
+    </div>
+  </div>
+
+  <!-- Bottom Left Panel: APIs Status -->
+  <div class="holo-panel panel-bottom-left">
+    <div class="panel-title">🌐 APIS STATUS</div>
+    <div class="stat-row">
+      <span class="stat-label">📰 News</span>
+      <span class="stat-value">✓ ONLINE</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">📚 Books</span>
+      <span class="stat-value">✓ ONLINE</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">🎬 Movies</span>
+      <span class="stat-value">✓ ONLINE</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">🪙 Crypto</span>
+      <span class="stat-value">✓ ONLINE</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">🌤️ Weather</span>
+      <span class="stat-value">✓ ONLINE</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Total:</span>
+      <span class="stat-value">11/13 APIs</span>
+    </div>
+  </div>
+
+  <!-- Bottom Right Panel: Commands Log -->
+  <div class="holo-panel panel-bottom-right">
+    <div class="panel-title">💬 COMMAND LOG</div>
+    <div id="commandLog" style="font-size: 11px; max-height: 150px; overflow-y: auto;">
+      <div style="color: #0099cc; margin: 5px 0;">
+        <span style="color: #00ff99;">&gt;</span> System initialized
+      </div>
+      <div style="color: #0099cc; margin: 5px 0;">
+        <span style="color: #00ff99;">&gt;</span> 13 APIs loaded
+      </div>
+      <div style="color: #0099cc; margin: 5px 0;">
+        <span style="color: #00ff99;">&gt;</span> Voice recognition ready
+      </div>
+    </div>
+  </div>
+
+  <!-- Command Input -->
+  <div class="command-input-container">
+    <input 
+      type="text" 
+      class="command-input" 
+      id="commandInput" 
+      placeholder="Digite um comando ou use 'NOW' para ativar voz..."
+    />
+  </div>
+
+  <!-- Response Display -->
+  <div class="response-display" id="responseDisplay">
+    <div class="response-text" id="responseText"></div>
+  </div>
+
+  <!-- Wake Word Toggle -->
+  <div class="wake-word-toggle" id="wakeWordToggle" title="Ativar/Desativar wake word 'NOW'">
+    🎤
+  </div>
+
+  <script>
+    // JARVIS Interface Logic
+    const jarvisOrb = document.getElementById('jarvisOrb');
+    const voiceStatus = document.getElementById('voiceStatus');
+    const commandInput = document.getElementById('commandInput');
+    const responseDisplay = document.getElementById('responseDisplay');
+    const responseText = document.getElementById('responseText');
+    const wakeWordToggle = document.getElementById('wakeWordToggle');
+    const commandLog = document.getElementById('commandLog');
+
+    let wakeWordActive = false;
+    let recognition = null;
+
+    // Initialize Speech Recognition
+    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      recognition = new SpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = false;
+      recognition.lang = 'pt-BR';
+
+      recognition.onstart = () => {
+        voiceStatus.classList.add('listening');
+        jarvisOrb.style.boxShadow = '0 0 80px rgba(0, 255, 153, 0.8), 0 0 160px rgba(0, 255, 153, 0.4)';
+      };
+
+      recognition.onend = () => {
+        voiceStatus.classList.remove('listening');
+        jarvisOrb.style.boxShadow = '0 0 60px rgba(0, 217, 255, 0.8), 0 0 120px rgba(0, 217, 255, 0.4)';
+        if (wakeWordActive) {
+          setTimeout(() => recognition.start(), 1000);
+        }
+      };
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[event.results.length - 1][0].transcript.toLowerCase();
+        addToLog(`Heard: "${transcript}"`);
+        
+        if (transcript.includes('now') || transcript.includes('nau')) {
+          const command = transcript.replace(/now|nau/gi, '').trim();
+          if (command) {
+            processCommand(command);
+          }
+        }
+      };
+
+      recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+      };
+    }
+
+    // Wake Word Toggle
+    wakeWordToggle.addEventListener('click', () => {
+      wakeWordActive = !wakeWordActive;
+      wakeWordToggle.classList.toggle('active', wakeWordActive);
+      
+      if (wakeWordActive) {
+        recognition?.start();
+        addToLog('Wake word "NOW" activated');
+        speak('Sistema de voz ativado');
+      } else {
+        recognition?.stop();
+        addToLog('Wake word deactivated');
+      }
+    });
+
+    // Command Input
+    commandInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const command = commandInput.value.trim();
+        if (command) {
+          processCommand(command);
+          commandInput.value = '';
+        }
+      }
+    });
+
+    // Process Command
+    async function processCommand(command) {
+      addToLog(`Command: ${command}`);
+      showResponse('Processing...');
+
+      try {
+        const response = await fetch('/api/knowledge/query', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: command })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          let resultText = '';
+          if (data.articles) {
+            resultText = `Encontrei ${data.total} notícias: ${data.articles[0].title}`;
+          } else if (data.books) {
+            resultText = `Encontrei ${data.total} livros: ${data.books[0].title} por ${data.books[0].author}`;
+          } else if (data.movies) {
+            resultText = `Encontrei ${data.total} filmes: ${data.movies[0].name} (${data.movies[0].year})`;
+          } else if (data.price) {
+            resultText = `Bitcoin está em $${data.price.toFixed(2)}, variação de ${data.change24h.toFixed(2)}%`;
+          } else if (data.temperature) {
+            resultText = `Temperatura: ${data.temperature}°C, vento ${data.windspeed} km/h`;
+          } else if (data.summary) {
+            resultText = data.summary;
+          } else {
+            resultText = JSON.stringify(data).substring(0, 200);
+          }
+          
+          showResponse(resultText);
+          speak(resultText);
+        } else {
+          showResponse('Comando não reconhecido');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        showResponse('Erro ao processar comando');
+      }
+    }
+
+    // Show Response
+    function showResponse(text) {
+      responseText.textContent = text;
+      responseDisplay.style.display = 'block';
+      setTimeout(() => {
+        responseDisplay.style.display = 'none';
+      }, 10000);
+    }
+
+    // Add to Command Log
+    function addToLog(message) {
+      const logEntry = document.createElement('div');
+      logEntry.style.cssText = 'color: #0099cc; margin: 5px 0;';
+      logEntry.innerHTML = `<span style="color: #00ff99;">&gt;</span> ${message}`;
+      commandLog.insertBefore(logEntry, commandLog.firstChild);
+      
+      // Keep only last 10 entries
+      while (commandLog.children.length > 10) {
+        commandLog.removeChild(commandLog.lastChild);
+      }
+    }
+
+    // Text to Speech
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'pt-BR';
+      utterance.rate = 1.0;
+      utterance.pitch = 0.9;
+      
+      // Try to use a female voice
+      const voices = speechSynthesis.getVoices();
+      const femaleVoice = voices.find(v => v.name.includes('Female') || v.name.includes('Feminino'));
+      if (femaleVoice) utterance.voice = femaleVoice;
+      
+      speechSynthesis.speak(utterance);
+    }
+
+    // Update Real-Time Data
+    async function updateRealTimeData() {
+      try {
+        // Bitcoin Price
+        const btc = await fetch('/api/knowledge/crypto/bitcoin').then(r => r.json());
+        if (btc.success) {
+          document.getElementById('btcPrice').textContent = `$${btc.price.toLocaleString()}`;
+        }
+
+        // Weather
+        const weather = await fetch('/api/knowledge/weather?lat=-23.5505&lon=-46.6333').then(r => r.json());
+        if (weather.success) {
+          document.getElementById('weather').textContent = `${weather.temperature}°C`;
+        }
+
+        // Exchange Rate
+        const exchange = await fetch('/api/knowledge/exchange/USD').then(r => r.json());
+        if (exchange.success) {
+          document.getElementById('exchange').textContent = exchange.rates.BRL.toFixed(2);
+        }
+      } catch (error) {
+        console.error('Error updating data:', error);
+      }
+    }
+
+    // Initialize
+    window.addEventListener('load', () => {
+      addToLog('JARVIS Interface initialized');
+      speak('Olá. Sistema JARVIS inicializado e pronto para comandos.');
+      updateRealTimeData();
+      setInterval(updateRealTimeData, 60000); // Update every minute
+    });
+
+    // Simulate CPU/Memory updates
+    setInterval(() => {
+      const cpu = Math.floor(Math.random() * 20) + 15;
+      document.getElementById('cpuUsage').textContent = `${cpu}%`;
+    }, 5000);
+  </script>
+</body>
+</html>

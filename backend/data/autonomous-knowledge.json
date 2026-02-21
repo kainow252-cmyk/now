@@ -1,0 +1,324 @@
+{
+  "lastUpdate": "2026-02-21T20:05:33.681Z",
+  "totalItems": 30,
+  "knowledge": [
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771704332668,
+      "id": "arXiv-1771704332668-0.9791050433771487"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771704332668,
+      "id": "arXiv-1771704332668-0.1623817371585594"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771704332668,
+      "id": "arXiv-1771704332668-0.7778302524983618"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771704332668,
+      "id": "arXiv-1771704332668-0.027369369548764677"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771704332668,
+      "id": "arXiv-1771704332668-0.6584389696679063"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771704332668,
+      "id": "arXiv-1771704332668-0.09292420385361022"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771704332668,
+      "id": "arXiv-1771704332668-0.06652470596788862"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771704332668,
+      "id": "arXiv-1771704332668-0.11396290170260293"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771704332668,
+      "id": "arXiv-1771704332668-0.3321594414938984"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771704332668,
+      "id": "arXiv-1771704332668-0.4263153248610847"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why my executable app doesn&#39;t start and show CITATION.rst error?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893691/why-my-executable-app-doesnt-start-and-show-citation-rst-error",
+      "tags": [
+        "python",
+        "pyinstaller",
+        "photutils"
+      ],
+      "timestamp": 1771704332873,
+      "id": "StackOverflow-1771704332874-0.07020606557941722"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "High failure rate for Gaming Hosting business?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893682/high-failure-rate-for-gaming-hosting-business",
+      "tags": [
+        "stripe-payments",
+        "laravel-cashier"
+      ],
+      "timestamp": 1771704332873,
+      "id": "StackOverflow-1771704332874-0.05663817499213453"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Event for HTML Prop change",
+      "score": -2,
+      "url": "https://stackoverflow.com/questions/79893681/event-for-html-prop-change",
+      "tags": [
+        "javascript",
+        "html",
+        "reactjs"
+      ],
+      "timestamp": 1771704332873,
+      "id": "StackOverflow-1771704332874-0.0683237383990829"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "OpenArgs of &quot;List items edit form&quot;",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893687/openargs-of-list-items-edit-form",
+      "tags": [
+        "vba",
+        "ms-access"
+      ],
+      "timestamp": 1771704332873,
+      "id": "StackOverflow-1771704332874-0.26747147528557336"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why does foo(int()) compile but foo(unsigned int()) fails to parse unless I use a type alias?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893663/why-does-fooint-compile-but-foounsigned-int-fails-to-parse-unless-i-use",
+      "tags": [
+        "c++"
+      ],
+      "timestamp": 1771704332873,
+      "id": "StackOverflow-1771704332874-0.22577910720459382"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Bypassing VPN to host a Minecraft server",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893652/bypassing-vpn-to-host-a-minecraft-server",
+      "tags": [
+        "docker",
+        "minecraft",
+        "vpn",
+        "docker-network",
+        "debian-based"
+      ],
+      "timestamp": 1771704332873,
+      "id": "StackOverflow-1771704332874-0.262854843865858"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Using std::apply in a class template",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893672/using-stdapply-in-a-class-template",
+      "tags": [
+        "c++",
+        "templates",
+        "c++17"
+      ],
+      "timestamp": 1771704332873,
+      "id": "StackOverflow-1771704332874-0.17563013287321882"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to create a textbox that switches its content based on a variable?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893668/how-to-create-a-textbox-that-switches-its-content-based-on-a-variable",
+      "tags": [
+        "latex",
+        "resume"
+      ],
+      "timestamp": 1771704332873,
+      "id": "StackOverflow-1771704332874-0.15706637852755656"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "What is generativity of Type-&gt;Type functions?",
+      "score": 3,
+      "url": "https://stackoverflow.com/questions/79893643/what-is-generativity-of-type-type-functions",
+      "tags": [
+        "haskell",
+        "functional-programming",
+        "language-lawyer",
+        "type-families"
+      ],
+      "timestamp": 1771704332873,
+      "id": "StackOverflow-1771704332874-0.2751976562153742"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Live camera feed API for spring backend",
+      "score": -2,
+      "url": "https://stackoverflow.com/questions/79893623/live-camera-feed-api-for-spring-backend",
+      "tags": [
+        "java",
+        "ffmpeg",
+        "spring-webflux"
+      ],
+      "timestamp": 1771704332873,
+      "id": "StackOverflow-1771704332874-0.9158374686717123"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "modelcontextprotocol/servers",
+      "description": "Model Context Protocol Servers",
+      "stars": 79085,
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "timestamp": 1771704333680,
+      "id": "GitHub-1771704333680-0.7443088379447542"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "github/spec-kit",
+      "description": "💫 Toolkit to help you get started with Spec-Driven Development",
+      "stars": 70989,
+      "url": "https://github.com/github/spec-kit",
+      "timestamp": 1771704333680,
+      "id": "GitHub-1771704333680-0.9565643817733773"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stars": 56878,
+      "url": "https://github.com/obra/superpowers",
+      "timestamp": 1771704333680,
+      "id": "GitHub-1771704333680-0.4729377271000177"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "CherryHQ/cherry-studio",
+      "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs",
+      "stars": 39999,
+      "url": "https://github.com/CherryHQ/cherry-studio",
+      "timestamp": 1771704333680,
+      "id": "GitHub-1771704333680-0.45461678205640643"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "danielmiessler/Fabric",
+      "description": "Fabric is an open-source framework for augmenting humans using AI. It provides a modular system for solving specific problems using a crowdsourced set of AI prompts that can be used anywhere.",
+      "stars": 39218,
+      "url": "https://github.com/danielmiessler/Fabric",
+      "timestamp": 1771704333680,
+      "id": "GitHub-1771704333680-0.5819609880142167"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "datawhalechina/happy-llm",
+      "description": "📚 从零开始的大语言模型原理与实践教程",
+      "stars": 26007,
+      "url": "https://github.com/datawhalechina/happy-llm",
+      "timestamp": 1771704333680,
+      "id": "GitHub-1771704333680-0.9520846694377136"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "huggingface/open-r1",
+      "description": "Fully open reproduction of DeepSeek-R1",
+      "stars": 25890,
+      "url": "https://github.com/huggingface/open-r1",
+      "timestamp": 1771704333680,
+      "id": "GitHub-1771704333680-0.46939910921002115"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zama-ai/fhevm",
+      "description": "FHEVM, a full-stack framework for integrating Fully Homomorphic Encryption (FHE) with blockchain applications",
+      "stars": 25762,
+      "url": "https://github.com/zama-ai/fhevm",
+      "timestamp": 1771704333680,
+      "id": "GitHub-1771704333680-0.0692666294824631"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "NirDiamant/RAG_Techniques",
+      "description": "This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. RAG systems combine information retrieval with generative models to provide accurate and contextually rich responses.",
+      "stars": 25521,
+      "url": "https://github.com/NirDiamant/RAG_Techniques",
+      "timestamp": 1771704333680,
+      "id": "GitHub-1771704333680-0.2425834348109206"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "black-forest-labs/flux",
+      "description": "Official inference repo for FLUX.1 models",
+      "stars": 25221,
+      "url": "https://github.com/black-forest-labs/flux",
+      "timestamp": 1771704333680,
+      "id": "GitHub-1771704333680-0.37267964369219886"
+    }
+  ]
+}

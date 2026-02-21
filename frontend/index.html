@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOW - Your AI Assistant</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+      color: #00f6ff;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .header {
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 246, 255, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-shadow: 0 0 20px rgba(0, 246, 255, 0.8);
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .status-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #00ff00;
+      box-shadow: 0 0 10px #00ff00;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Main Container */
+    .container {
+      flex: 1;
+      display: flex;
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 246, 255, 0.2);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sidebar h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #00f6ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .module-btn {
+      background: rgba(0, 246, 255, 0.1);
+      border: 1px solid rgba(0, 246, 255, 0.3);
+      color: #00f6ff;
+      padding: 15px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 14px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .module-btn:hover {
+      background: rgba(0, 246, 255, 0.2);
+      transform: translateX(5px);
+    }
+
+    .module-btn.active {
+      background: rgba(0, 246, 255, 0.3);
+      border-color: #00f6ff;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Voice Interface */
+    .voice-interface {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(0, 246, 255, 0.3);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(0, 246, 255, 0.2);
+    }
+
+    .voice-orb {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 30px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 246, 255, 0.3), transparent);
+      border: 3px solid #00f6ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .voice-orb:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px rgba(0, 246, 255, 0.5);
+    }
+
+    .voice-orb.listening {
+      animation: listening 1.5s infinite;
+      border-color: #00ff00;
+      box-shadow: 0 0 60px rgba(0, 255, 0, 0.6);
+    }
+
+    .voice-orb.speaking {
+      animation: speaking 0.8s infinite;
+      border-color: #00f6ff;
+      box-shadow: 0 0 60px rgba(0, 246, 255, 0.8);
+    }
+
+    @keyframes listening {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    @keyframes speaking {
+      0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 60px rgba(0, 246, 255, 0.8);
+      }
+      50% { 
+        transform: scale(1.15);
+        box-shadow: 0 0 80px rgba(0, 246, 255, 1);
+      }
+    }
+
+    .voice-icon {
+      font-size: 60px;
+    }
+
+    .voice-status {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #00f6ff;
+    }
+
+    .voice-transcript {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0, 246, 255, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      min-height: 80px;
+      margin-top: 20px;
+      text-align: left;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    /* Chat Area */
+    .chat-area {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 246, 255, 0.2);
+      border-radius: 20px;
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-height: 500px;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .message {
+      padding: 15px 20px;
+      border-radius: 15px;
+      max-width: 80%;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .message.user {
+      background: rgba(0, 246, 255, 0.2);
+      border: 1px solid rgba(0, 246, 255, 0.4);
+      align-self: flex-end;
+    }
+
+    .message.assistant {
+      background: rgba(0, 255, 0, 0.1);
+      border: 1px solid rgba(0, 255, 0, 0.3);
+      align-self: flex-start;
+    }
+
+    .message-time {
+      font-size: 11px;
+      opacity: 0.6;
+      margin-top: 5px;
+    }
+
+    /* Quick Actions */
+    .quick-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .quick-btn {
+      background: rgba(0, 246, 255, 0.1);
+      border: 1px solid rgba(0, 246, 255, 0.3);
+      color: #00f6ff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 13px;
+    }
+
+    .quick-btn:hover {
+      background: rgba(0, 246, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 246, 255, 0.5);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 246, 255, 0.8);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+
+      .header {
+        padding: 15px 20px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .voice-orb {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">NOW</div>
+    <div class="status-indicator">
+      <div class="status-dot"></div>
+      <span>Online</span>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>Módulos</h3>
+      <button class="module-btn active" data-module="home">
+        🏠 Home
+      </button>
+      <button class="module-btn" data-module="calendar">
+        📅 Agenda Inteligente
+      </button>
+      <button class="module-btn" data-module="finance">
+        📊 Investimentos
+      </button>
+      <button class="module-btn" data-module="social">
+        📱 Redes Sociais
+      </button>
+      <button class="module-btn" data-module="research">
+        🔎 Pesquisa Profunda
+      </button>
+      <button class="module-btn" data-module="travel">
+        ✈️ Viagens
+      </button>
+      <button class="module-btn" data-module="memory">
+        🧠 Memória
+      </button>
+      <button class="module-btn" data-module="code">
+        💻 Códigos & Sites
+      </button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Voice Interface -->
+      <div class="voice-interface">
+        <div class="voice-orb" id="voiceOrb">
+          <div class="voice-icon">🎤</div>
+        </div>
+        <div class="voice-status" id="voiceStatus">Clique no microfone ou diga "NOW"</div>
+        <div class="voice-transcript" id="transcript">Aguardando comando...</div>
+        <div style="margin-top: 15px; font-size: 12px; opacity: 0.7; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <span id="voiceIndicator">🎙️ OpenAI Voice Active</span>
+        </div>
+        
+        <div class="quick-actions">
+          <button class="quick-btn" onclick="quickCommand('Bom dia NOW! Como está o dia hoje?')">☀️ Bom Dia</button>
+          <button class="quick-btn" onclick="quickCommand('Como está o mercado financeiro hoje?')">📊 Mercado</button>
+          <button class="quick-btn" onclick="quickCommand('Me dê dicas de produtividade')">🎯 Produtividade</button>
+          <button class="quick-btn" onclick="quickCommand('Crie um resumo das notícias de tecnologia')">📰 Tech News</button>
+          <button class="quick-btn" onclick="quickCommand('Qual é minha agenda hoje?')">📅 Agenda</button>
+          <button class="quick-btn" onclick="quickCommand('Boa noite NOW! Como foi meu dia?')">🌙 Boa Noite</button>
+        </div>
+      </div>
+
+      <!-- Chat Area -->
+      <div class="chat-area">
+        <div class="chat-messages" id="chatMessages">
+          <div class="message assistant">
+            <div>Olá! Sou a NOW, sua assistente pessoal e empresarial. Estou sempre ouvindo e pronta para ajudar.</div>
+            <div class="message-time" id="welcomeTime"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Voice Recognition Setup
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = SpeechRecognition ? new SpeechRecognition() : null;
+    
+    // Speech Synthesis Setup
+    const synth = window.speechSynthesis;
+    
+    // Elements
+    const voiceOrb = document.getElementById('voiceOrb');
+    const voiceStatus = document.getElementById('voiceStatus');
+    const transcript = document.getElementById('transcript');
+    const chatMessages = document.getElementById('chatMessages');
+    
+    // State
+    let isListening = false;
+    let continuousMode = false;
+
+    // Initialize
+    if (recognition) {
+      recognition.continuous = false;
+      recognition.lang = 'pt-BR';
+      recognition.interimResults = true;
+      recognition.maxAlternatives = 1;
+
+      recognition.onstart = () => {
+        isListening = true;
+        voiceOrb.classList.add('listening');
+        voiceStatus.textContent = '🎤 Ouvindo...';
+      };
+
+      recognition.onresult = (event) => {
+        const result = event.results[event.results.length - 1];
+        const transcriptText = result[0].transcript;
+        
+        transcript.textContent = transcriptText;
+        
+        if (result.isFinal) {
+          processCommand(transcriptText);
+        }
+      };
+
+      recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        voiceStatus.textContent = '❌ Erro: ' + event.error;
+        voiceOrb.classList.remove('listening');
+        isListening = false;
+      };
+
+      recognition.onend = () => {
+        isListening = false;
+        voiceOrb.classList.remove('listening');
+        voiceStatus.textContent = 'Clique no microfone ou diga "NOW"';
+        
+        // Restart wake word detection after command processing
+        if (wakeWordListening) {
+          setTimeout(() => {
+            startWakeWordDetection();
+          }, 2000);
+        }
+        
+        // Restart if continuous mode
+        if (continuousMode) {
+          setTimeout(() => {
+            try {
+              recognition.start();
+            } catch (e) {
+              console.log('Recognition restart failed:', e);
+            }
+          }, 100);
+        }
+      };
+    } else {
+      voiceStatus.textContent = '❌ Seu navegador não suporta reconhecimento de voz';
+    }
+
+    // Voice Orb Click
+    voiceOrb.addEventListener('click', () => {
+      if (!recognition) return;
+      
+      if (isListening) {
+        recognition.stop();
+        continuousMode = false;
+      } else {
+        try {
+          recognition.start();
+        } catch (e) {
+          console.log('Recognition already started');
+        }
+      }
+    });
+
+    // Process Command
+    async function processCommand(command) {
+      addMessage(command, 'user');
+      voiceStatus.textContent = '🤔 NOW está pensando...';
+      
+      try {
+        // Call voice API
+        const response = await fetch('/api/voice/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: command,
+            userId: 'web-user',
+            voice: 'nova',
+            speed: 1.0
+          })
+        });
+
+        const data = await response.json();
+        
+        if (data.success) {
+          // Add text response
+          addMessage(data.text, 'assistant');
+          
+          // Play audio if available
+          if (data.audio && data.audio.audioUrl) {
+            playAudio(data.audio.audioUrl);
+            voiceStatus.textContent = '🔊 NOW está falando...';
+          } else {
+            // Fallback to browser TTS
+            speak(data.text);
+            voiceStatus.textContent = 'Pronto para ouvir';
+          }
+        } else {
+          throw new Error(data.error || 'Erro desconhecido');
+        }
+      } catch (error) {
+        console.error('API Error:', error);
+        // Fallback to mock response
+        const response = generateResponse(command);
+        addMessage(response, 'assistant');
+        speak(response);
+        voiceStatus.textContent = 'Pronto para ouvir';
+      }
+    }
+
+    // Generate Response (Mock - replace with API)
+    function generateResponse(command) {
+      const lowerCommand = command.toLowerCase();
+      
+      if (lowerCommand.includes('bom dia')) {
+        return `Bom dia! ☀️ Hoje é ${new Date().toLocaleDateString('pt-BR')}. Sua agenda está organizada e tenho 3 atualizações importantes para você.`;
+      } else if (lowerCommand.includes('organiza') || lowerCommand.includes('agenda')) {
+        return 'Organizando sua agenda... Você tem 2 reuniões hoje: às 10h (Financeiro) e às 15h (Estratégia). Deseja revisar os detalhes?';
+      } else if (lowerCommand.includes('notícias') || lowerCommand.includes('investimento')) {
+        return 'Analisando mercado financeiro... Bitcoin subiu 3.2% hoje. Há oportunidades em tecnologia. Deseja um relatório completo?';
+      } else if (lowerCommand.includes('post')) {
+        return 'Criando post sobre investimentos e tecnologia. Sugestão: "Oportunidades em IA estão transformando o mercado. Hora de investir estrategicamente." Deseja publicar?';
+      } else if (lowerCommand.includes('boa noite')) {
+        return 'Boa noite! 🌙 Hoje você completou 85% das tarefas prioritárias. Amanhã sugiro focar em análise financeira. Descanso produtivo!';
+      } else {
+        return 'Entendi. Processando sua solicitação... Como posso ajudar especificamente?';
+      }
+    }
+
+    // Add Message to Chat
+    function addMessage(text, type) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${type}`;
+      
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+      
+      messageDiv.innerHTML = `
+        <div>${text}</div>
+        <div class="message-time">${timeStr}</div>
+      `;
+      
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Audio Player
+    let currentAudio = null;
+
+    // Play Audio from API
+    function playAudio(audioUrl) {
+      // Stop current audio if playing
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
+      }
+
+      // Create and play new audio
+      currentAudio = new Audio(audioUrl);
+      
+      currentAudio.onplay = () => {
+        voiceStatus.textContent = '🔊 NOW está falando...';
+        voiceOrb.classList.remove('listening');
+        voiceOrb.classList.add('speaking');
+      };
+
+      currentAudio.onended = () => {
+        voiceStatus.textContent = 'Pronto para ouvir';
+        voiceOrb.classList.remove('speaking');
+        currentAudio = null;
+      };
+
+      currentAudio.onerror = (e) => {
+        console.error('Audio playback error:', e);
+        voiceStatus.textContent = '❌ Erro ao reproduzir áudio';
+        voiceOrb.classList.remove('speaking');
+        currentAudio = null;
+      };
+
+      // Play audio
+      currentAudio.play().catch(err => {
+        console.error('Autoplay blocked:', err);
+        voiceStatus.textContent = '🔇 Clique para ouvir a resposta';
+        
+        // Allow manual play on next click
+        voiceOrb.addEventListener('click', () => {
+          if (currentAudio) {
+            currentAudio.play();
+          }
+        }, { once: true });
+      });
+    }
+
+    // Speak Response (Fallback - Browser TTS)
+    function speak(text) {
+      if (!synth) return;
+      
+      // Cancel any ongoing speech
+      synth.cancel();
+      
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'pt-BR';
+      utterance.rate = 1.0;
+      utterance.pitch = 1.0;
+      
+      // Try to find a Portuguese voice
+      const voices = synth.getVoices();
+      const ptVoice = voices.find(voice => voice.lang.startsWith('pt'));
+      if (ptVoice) {
+        utterance.voice = ptVoice;
+      }
+
+      utterance.onstart = () => {
+        voiceStatus.textContent = '🔊 NOW está falando...';
+        voiceOrb.classList.add('listening');
+      };
+
+      utterance.onend = () => {
+        voiceStatus.textContent = 'Pronto para ouvir';
+        voiceOrb.classList.remove('listening');
+      };
+      
+      synth.speak(utterance);
+    }
+
+    // Quick Command
+    async function quickCommand(command) {
+      transcript.textContent = command;
+      await processCommand(command);
+    }
+
+    // Module Buttons
+    document.querySelectorAll('.module-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.module-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const module = btn.dataset.module;
+        const response = `Módulo ${btn.textContent.trim()} ativado. Como posso ajudar?`;
+        addMessage(response, 'assistant');
+        speak(response);
+      });
+    });
+
+    // Set welcome time
+    const now = new Date();
+    document.getElementById('welcomeTime').textContent = 
+      now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+
+    // Load voices (for speech synthesis)
+    if (synth) {
+      // Voices load asynchronously
+      if (speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = () => {
+          synth.getVoices();
+        };
+      }
+    }
+
+    // ====================================================================
+    // 🎤 WAKE WORD DETECTION - "NOW"
+    // ====================================================================
+    
+    let wakeWordListening = false;
+    let wakeWordRecognition = null;
+    
+    function startWakeWordDetection() {
+      if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+        console.log('Wake word detection not supported');
+        return;
+      }
+      
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      wakeWordRecognition = new SpeechRecognition();
+      
+      wakeWordRecognition.continuous = true;
+      wakeWordRecognition.interimResults = true;
+      wakeWordRecognition.lang = 'pt-BR';
+      
+      wakeWordRecognition.onstart = () => {
+        wakeWordListening = true;
+        voiceStatus.textContent = '👂 Escutando "NOW"...';
+        console.log('Wake word detection started');
+      };
+      
+      wakeWordRecognition.onresult = (event) => {
+        const results = event.results;
+        const lastResult = results[results.length - 1];
+        
+        if (lastResult.isFinal) {
+          const transcript = lastResult[0].transcript.toLowerCase().trim();
+          console.log('Heard:', transcript);
+          
+          // Check for wake word variations
+          if (transcript.includes('now') || 
+              transcript.includes('nau') || 
+              transcript.includes('náu') ||
+              transcript.includes('hey now') ||
+              transcript.includes('ei now')) {
+            
+            console.log('🎉 Wake word detected!');
+            
+            // Visual feedback
+            voiceOrb.classList.add('listening');
+            voiceStatus.textContent = '✅ NOW ativada! Fale agora...';
+            
+            // Play activation sound (beep)
+            playBeep();
+            
+            // Stop wake word detection temporarily
+            wakeWordRecognition.stop();
+            
+            // Start command recognition
+            setTimeout(() => {
+              startVoiceRecognition();
+            }, 500);
+          }
+        }
+      };
+      
+      wakeWordRecognition.onerror = (event) => {
+        console.error('Wake word detection error:', event.error);
+        if (event.error === 'no-speech') {
+          // Restart automatically
+          setTimeout(() => {
+            if (wakeWordListening) {
+              wakeWordRecognition.start();
+            }
+          }, 1000);
+        }
+      };
+      
+      wakeWordRecognition.onend = () => {
+        console.log('Wake word detection ended');
+        // Restart automatically if still listening
+        if (wakeWordListening && !isListening) {
+          setTimeout(() => {
+            try {
+              wakeWordRecognition.start();
+            } catch (e) {
+              console.error('Error restarting wake word detection:', e);
+            }
+          }, 500);
+        }
+      };
+      
+      // Start detection
+      try {
+        wakeWordRecognition.start();
+      } catch (e) {
+        console.error('Error starting wake word detection:', e);
+      }
+    }
+    
+    function stopWakeWordDetection() {
+      wakeWordListening = false;
+      if (wakeWordRecognition) {
+        wakeWordRecognition.stop();
+        wakeWordRecognition = null;
+      }
+    }
+    
+    function playBeep() {
+      // Create audio context for beep sound
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      
+      oscillator.frequency.value = 800;
+      oscillator.type = 'sine';
+      
+      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+      
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.1);
+    }
+    
+    // Modified startVoiceRecognition to work with wake word
+    function startVoiceRecognition() {
+      if (isListening) return;
+      
+      // Stop wake word detection while processing command
+      stopWakeWordDetection();
+      
+      if (!recognition) {
+        voiceStatus.textContent = '❌ Reconhecimento de voz não suportado';
+        return;
+      }
+      
+      isListening = true;
+      voiceOrb.classList.add('listening');
+      voiceStatus.textContent = '🎤 Escutando...';
+      transcript.textContent = '';
+      
+      try {
+        recognition.start();
+      } catch (e) {
+        console.error('Error starting recognition:', e);
+        isListening = false;
+        voiceOrb.classList.remove('listening');
+        // Restart wake word detection
+        startWakeWordDetection();
+      }
+    }
+    
+    // Add toggle button for wake word
+    const wakeWordToggle = document.createElement('button');
+    wakeWordToggle.className = 'quick-btn';
+    wakeWordToggle.innerHTML = '🎙️ Wake Word: OFF';
+    wakeWordToggle.style.cssText = `
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 246, 255, 0.2);
+      border: 1px solid rgba(0, 246, 255, 0.4);
+      color: #00f6ff;
+      padding: 12px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    `;
+    
+    wakeWordToggle.addEventListener('click', () => {
+      if (wakeWordListening) {
+        stopWakeWordDetection();
+        wakeWordToggle.innerHTML = '🎙️ Wake Word: OFF';
+        wakeWordToggle.style.background = 'rgba(0, 246, 255, 0.2)';
+        voiceStatus.textContent = 'Wake word desativada';
+      } else {
+        startWakeWordDetection();
+        wakeWordToggle.innerHTML = '🎙️ Wake Word: ON';
+        wakeWordToggle.style.background = 'rgba(0, 255, 0, 0.3)';
+        wakeWordToggle.style.borderColor = 'rgba(0, 255, 0, 0.6)';
+      }
+    });
+    
+    document.body.appendChild(wakeWordToggle);
+    
+    // Modified voice button to toggle wake word
+    voiceBtn.addEventListener('click', () => {
+      if (!wakeWordListening) {
+        // Start wake word detection
+        startWakeWordDetection();
+        wakeWordToggle.innerHTML = '🎙️ Wake Word: ON';
+        wakeWordToggle.style.background = 'rgba(0, 255, 0, 0.3)';
+        wakeWordToggle.style.borderColor = 'rgba(0, 255, 0, 0.6)';
+      } else {
+        // Just start regular voice recognition
+        startVoiceRecognition();
+      }
+    });
+    
+    // Auto-start wake word detection on page load (optional)
+    // Uncomment the line below to enable auto-start
+    // setTimeout(() => startWakeWordDetection(), 2000);
+    
+    console.log('🎤 Wake Word System Ready! Say "NOW" to activate.');
+  </script>
+</body>
+</html>

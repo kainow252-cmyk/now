@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOW AI - Assistente Inteligente</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      color: #ffffff;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Orb Central */
+    .orb-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin-bottom: 40px;
+    }
+
+    .orb {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, 
+        rgba(0, 247, 255, 0.8), 
+        rgba(0, 150, 255, 0.4), 
+        rgba(138, 43, 226, 0.6)
+      );
+      box-shadow: 
+        0 0 60px rgba(0, 247, 255, 0.6),
+        inset 0 0 40px rgba(0, 150, 255, 0.4);
+      animation: pulse 2s ease-in-out infinite;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .orb:hover {
+      transform: scale(1.05);
+      box-shadow: 
+        0 0 80px rgba(0, 247, 255, 0.8),
+        inset 0 0 60px rgba(0, 150, 255, 0.6);
+    }
+
+    .orb.listening {
+      animation: pulse-fast 0.5s ease-in-out infinite;
+      background: radial-gradient(circle at 30% 30%, 
+        rgba(255, 0, 100, 0.8), 
+        rgba(255, 50, 150, 0.6), 
+        rgba(200, 0, 255, 0.4)
+      );
+      box-shadow: 
+        0 0 100px rgba(255, 0, 100, 0.8),
+        inset 0 0 60px rgba(255, 50, 150, 0.6);
+    }
+
+    .orb.thinking {
+      animation: rotate 2s linear infinite;
+      background: radial-gradient(circle at 30% 30%, 
+        rgba(255, 200, 0, 0.8), 
+        rgba(255, 150, 0, 0.6), 
+        rgba(255, 100, 0, 0.4)
+      );
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes pulse-fast {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Status Text */
+    .status-text {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      height: 30px;
+      opacity: 0.8;
+    }
+
+    /* Response Box (oculta por padrão) */
+    .response-box {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 600px;
+      width: 90%;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(0, 247, 255, 0.3);
+      border-radius: 20px;
+      padding: 20px 30px;
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .response-box.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .response-box p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #00f7ff;
+    }
+
+    /* Voice Button */
+    .voice-button {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(0, 247, 255, 0.2);
+      border: 2px solid rgba(0, 247, 255, 0.5);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .voice-button:hover {
+      background: rgba(0, 247, 255, 0.4);
+      border-color: rgba(0, 247, 255, 0.8);
+      transform: translateX(-50%) scale(1.1);
+    }
+
+    .voice-button.active {
+      background: rgba(255, 0, 100, 0.4);
+      border-color: rgba(255, 0, 100, 0.8);
+      animation: pulse-button 1s infinite;
+    }
+
+    @keyframes pulse-button {
+      0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 100, 0.5); }
+      50% { box-shadow: 0 0 40px rgba(255, 0, 100, 0.8); }
+    }
+
+    .voice-icon {
+      width: 35px;
+      height: 35px;
+      fill: #00f7ff;
+    }
+
+    .voice-button.active .voice-icon {
+      fill: #ff0064;
+    }
+
+    /* Loading dots */
+    .loading-dots {
+      display: inline-block;
+      margin-left: 5px;
+    }
+
+    .loading-dots span {
+      animation: blink 1.4s infinite;
+      opacity: 0;
+    }
+
+    .loading-dots span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loading-dots span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    /* Scrollbar customizado */
+    .response-box::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .response-box::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+
+    .response-box::-webkit-scrollbar-thumb {
+      background: rgba(0, 247, 255, 0.5);
+      border-radius: 10px;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .orb-container {
+        width: 200px;
+        height: 200px;
+      }
+
+      .status-text {
+        font-size: 18px;
+      }
+
+      .response-box {
+        font-size: 14px;
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="status-text" id="status">Clique no orb para falar</div>
+  
+  <div class="orb-container">
+    <div class="orb" id="orb"></div>
+  </div>
+
+  <div class="response-box" id="responseBox">
+    <p id="responseText"></p>
+  </div>
+
+  <div class="voice-button" id="voiceButton">
+    <svg class="voice-icon" viewBox="0 0 24 24">
+      <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+      <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+    </svg>
+  </div>
+
+  <script>
+    // Estado da aplicação
+    const state = {
+      isListening: false,
+      isSpeaking: false,
+      recognition: null,
+      synthesis: window.speechSynthesis
+    };
+
+    // Elementos DOM
+    const orb = document.getElementById('orb');
+    const status = document.getElementById('status');
+    const responseBox = document.getElementById('responseBox');
+    const responseText = document.getElementById('responseText');
+    const voiceButton = document.getElementById('voiceButton');
+
+    // Inicializa reconhecimento de voz
+    function initSpeechRecognition() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      
+      if (!SpeechRecognition) {
+        console.error('Speech Recognition não suportado');
+        status.textContent = 'Navegador não suporta reconhecimento de voz';
+        return;
+      }
+
+      state.recognition = new SpeechRecognition();
+      state.recognition.lang = 'pt-BR';
+      state.recognition.continuous = false;
+      state.recognition.interimResults = false;
+
+      state.recognition.onstart = () => {
+        console.log('🎤 Escutando...');
+        state.isListening = true;
+        orb.classList.add('listening');
+        voiceButton.classList.add('active');
+        status.textContent = 'Estou escutando...';
+      };
+
+      state.recognition.onresult = async (event) => {
+        const transcript = event.results[0][0].transcript;
+        console.log('📝 Ouvido:', transcript);
+        
+        status.textContent = 'Pensando';
+        orb.classList.remove('listening');
+        orb.classList.add('thinking');
+        
+        await processQuestion(transcript);
+      };
+
+      state.recognition.onerror = (event) => {
+        console.error('❌ Erro:', event.error);
+        state.isListening = false;
+        orb.classList.remove('listening', 'thinking');
+        voiceButton.classList.remove('active');
+        status.textContent = 'Erro ao escutar. Tente novamente.';
+      };
+
+      state.recognition.onend = () => {
+        state.isListening = false;
+        voiceButton.classList.remove('active');
+        
+        if (!state.isSpeaking) {
+          orb.classList.remove('listening', 'thinking');
+        }
+      };
+    }
+
+    // Processa pergunta e obtém resposta
+    async function processQuestion(question) {
+      try {
+        const response = await fetch('/api/ai/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: question })
+        });
+
+        const data = await response.json();
+        
+        if (data.success) {
+          const answer = data.text || data.answer || data.response || 'Desculpe, não entendi.';
+          showResponse(answer);
+          speak(answer);
+        } else {
+          throw new Error(data.error || 'Erro desconhecido');
+        }
+
+      } catch (error) {
+        console.error('❌ Erro ao processar:', error);
+        const errorMsg = 'Desculpe, tive um problema ao processar sua pergunta.';
+        showResponse(errorMsg);
+        speak(errorMsg);
+      }
+    }
+
+    // Mostra resposta na tela
+    function showResponse(text) {
+      responseText.textContent = text;
+      responseBox.classList.add('show');
+      
+      // Esconde após 10 segundos
+      setTimeout(() => {
+        responseBox.classList.remove('show');
+      }, 10000);
+    }
+
+    // Fala a resposta
+    function speak(text) {
+      if (state.synthesis.speaking) {
+        state.synthesis.cancel();
+      }
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'pt-BR';
+      utterance.rate = 1.0;
+      utterance.pitch = 1.0;
+
+      // Tenta usar voz feminina em português
+      const voices = state.synthesis.getVoices();
+      const ptVoice = voices.find(v => 
+        v.lang.startsWith('pt') && v.name.toLowerCase().includes('female')
+      ) || voices.find(v => v.lang.startsWith('pt'));
+      
+      if (ptVoice) {
+        utterance.voice = ptVoice;
+      }
+
+      utterance.onstart = () => {
+        state.isSpeaking = true;
+        orb.classList.remove('thinking');
+        status.textContent = 'Respondendo...';
+      };
+
+      utterance.onend = () => {
+        state.isSpeaking = false;
+        orb.classList.remove('listening', 'thinking');
+        status.textContent = 'Clique no orb para falar';
+      };
+
+      state.synthesis.speak(utterance);
+    }
+
+    // Inicia/para escuta
+    function toggleListening() {
+      if (state.isListening) {
+        state.recognition.stop();
+      } else {
+        state.recognition.start();
+      }
+    }
+
+    // Event listeners
+    orb.addEventListener('click', toggleListening);
+    voiceButton.addEventListener('click', toggleListening);
+
+    // Inicializa quando a página carregar
+    window.addEventListener('load', () => {
+      initSpeechRecognition();
+      
+      // Carrega vozes (necessário para alguns navegadores)
+      if (state.synthesis.onvoiceschanged !== undefined) {
+        state.synthesis.onvoiceschanged = () => {
+          state.synthesis.getVoices();
+        };
+      }
+
+      console.log('✅ NOW AI iniciado!');
+      console.log('🎤 Clique no orb para começar a falar');
+    });
+
+    // Atalho de teclado (Espaço)
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && !state.isListening) {
+        e.preventDefault();
+        toggleListening();
+      }
+    });
+  </script>
+
+</body>
+</html>

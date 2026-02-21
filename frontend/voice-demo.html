@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎙️ NOW Voice Assistant - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .chat-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            min-height: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 18px;
+            border-radius: 15px;
+            max-width: 80%;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .user-message {
+            background: #667eea;
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .now-message {
+            background: #e9ecef;
+            color: #333;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #764ba2;
+        }
+
+        button {
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            color: #666;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        select {
+            padding: 10px 15px;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            font-size: 14px;
+            outline: none;
+            cursor: pointer;
+            background: white;
+        }
+
+        .audio-player {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .status {
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .status.loading {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .suggestion-chip {
+            padding: 8px 16px;
+            background: #e9ecef;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .suggestion-chip:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .voice-indicator {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .voice-indicator.speaking {
+            color: #667eea;
+            font-weight: bold;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎙️ NOW Voice Assistant</h1>
+        <p class="subtitle">Seu assistente pessoal com IA e voz</p>
+
+        <div id="status" class="status hidden"></div>
+
+        <div class="voice-indicator" id="voiceIndicator">
+            🔇 Pronto para ouvir
+        </div>
+
+        <div class="suggestions">
+            <div class="suggestion-chip" onclick="sendSuggestion('Bom dia NOW! Como você está?')">
+                👋 Bom dia
+            </div>
+            <div class="suggestion-chip" onclick="sendSuggestion('Como está o mercado hoje?')">
+                📊 Mercado
+            </div>
+            <div class="suggestion-chip" onclick="sendSuggestion('Me dê dicas de produtividade')">
+                🎯 Produtividade
+            </div>
+            <div class="suggestion-chip" onclick="sendSuggestion('Qual é minha agenda hoje?')">
+                📅 Agenda
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="voiceSelect">🎤 Voz:</label>
+                <select id="voiceSelect">
+                    <option value="nova" selected>Nova (Feminino) ⭐</option>
+                    <option value="alloy">Alloy (Neutro)</option>
+                    <option value="echo">Echo (Masculino)</option>
+                    <option value="fable">Fable (Masculino)</option>
+                    <option value="onyx">Onyx (Masculino grave)</option>
+                    <option value="shimmer">Shimmer (Feminino suave)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="speedSelect">⚡ Velocidade:</label>
+                <select id="speedSelect">
+                    <option value="0.75">0.75x (Lento)</option>
+                    <option value="1.0" selected>1.0x (Normal)</option>
+                    <option value="1.1">1.1x (Levemente rápido)</option>
+                    <option value="1.25">1.25x (Rápido)</option>
+                    <option value="1.5">1.5x (Muito rápido)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="message now-message">
+                👋 Olá! Eu sou o NOW, seu assistente pessoal com IA. Como posso ajudar você hoje?
+            </div>
+        </div>
+
+        <div class="input-container">
+            <input 
+                type="text" 
+                id="messageInput" 
+                placeholder="Digite sua mensagem..." 
+                onkeypress="handleKeyPress(event)"
+            >
+            <button onclick="sendMessage()" id="sendButton">
+                Enviar
+            </button>
+        </div>
+
+        <div class="audio-player hidden" id="audioPlayer">
+            <audio id="audioElement" controls></audio>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'https://3000-iigl23rg7f2e0o7sqzgdy-0e616f0a.sandbox.novita.ai';
+        
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.classList.remove('hidden');
+            
+            if (type === 'success' || type === 'error') {
+                setTimeout(() => {
+                    status.classList.add('hidden');
+                }, 3000);
+            }
+        }
+
+        function addMessage(text, isUser) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'now-message'}`;
+            messageDiv.textContent = (isUser ? '👤 ' : '🤖 ') + text;
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function updateVoiceIndicator(speaking) {
+            const indicator = document.getElementById('voiceIndicator');
+            if (speaking) {
+                indicator.textContent = '🔊 NOW está falando...';
+                indicator.classList.add('speaking');
+            } else {
+                indicator.textContent = '🔇 Pronto para ouvir';
+                indicator.classList.remove('speaking');
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+
+            const voice = document.getElementById('voiceSelect').value;
+            const speed = parseFloat(document.getElementById('speedSelect').value);
+            const sendButton = document.getElementById('sendButton');
+
+            // Adicionar mensagem do usuário
+            addMessage(message, true);
+            input.value = '';
+
+            // Desabilitar botão
+            sendButton.disabled = true;
+            showStatus('🤔 NOW está pensando...', 'loading');
+
+            try {
+                const response = await fetch(`${API_URL}/api/voice/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        userId: 'demo-user',
+                        voice: voice,
+                        speed: speed
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Adicionar resposta de texto
+                    addMessage(data.text, false);
+                    showStatus('✅ Resposta recebida!', 'success');
+
+                    // Tocar áudio se disponível
+                    if (data.audio && data.audio.audioUrl) {
+                        const audioPlayer = document.getElementById('audioPlayer');
+                        const audioElement = document.getElementById('audioElement');
+                        
+                        audioPlayer.classList.remove('hidden');
+                        audioElement.src = data.audio.audioUrl;
+                        
+                        updateVoiceIndicator(true);
+                        
+                        // Tocar automaticamente
+                        try {
+                            await audioElement.play();
+                        } catch (err) {
+                            console.log('Autoplay bloqueado, clique no player para ouvir');
+                        }
+
+                        // Quando terminar de tocar
+                        audioElement.onended = () => {
+                            updateVoiceIndicator(false);
+                        };
+                    }
+                } else {
+                    throw new Error(data.error || 'Erro desconhecido');
+                }
+            } catch (error) {
+                console.error('Erro:', error);
+                addMessage('Desculpe, ocorreu um erro. Tente novamente.', false);
+                showStatus('❌ Erro: ' + error.message, 'error');
+            } finally {
+                sendButton.disabled = false;
+            }
+        }
+
+        function sendSuggestion(text) {
+            document.getElementById('messageInput').value = text;
+            sendMessage();
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Carregar vozes disponíveis ao iniciar
+        async function loadVoices() {
+            try {
+                const response = await fetch(`${API_URL}/api/voice/voices`);
+                const data = await response.json();
+                console.log('Vozes disponíveis:', data);
+            } catch (error) {
+                console.error('Erro ao carregar vozes:', error);
+            }
+        }
+
+        // Inicializar
+        loadVoices();
+        
+        // Focar no input
+        document.getElementById('messageInput').focus();
+    </script>
+</body>
+</html>
