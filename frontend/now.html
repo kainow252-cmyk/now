@@ -325,28 +325,80 @@
     // Processa pergunta e obtém resposta
     async function processQuestion(question) {
       try {
-        const response = await fetch('/api/ai/chat', {
+        // Tenta primeiro o endpoint NOW (com fallback inteligente)
+        let response = await fetch('/api/now/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: question })
+          body: JSON.stringify({ question })
         });
 
-        const data = await response.json();
+        let data = await response.json();
+        
+        if (data.success && data.answer) {
+          showResponse(data.answer);
+          speak(data.answer);
+          return;
+        }
+
+        // Se falhou, tenta APIs de conhecimento gratuitas
+        response = await fetch('/api/knowledge/query', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question })
+        });
+
+        data = await response.json();
         
         if (data.success) {
-          const answer = data.text || data.answer || data.response || 'Desculpe, não entendi.';
+          const answer = formatKnowledgeResponse(data);
           showResponse(answer);
           speak(answer);
-        } else {
-          throw new Error(data.error || 'Erro desconhecido');
+          return;
         }
+
+        // Fallback local: respostas simples
+        const localAnswer = getLocalAnswer(question);
+        showResponse(localAnswer);
+        speak(localAnswer);
 
       } catch (error) {
         console.error('❌ Erro ao processar:', error);
-        const errorMsg = 'Desculpe, tive um problema ao processar sua pergunta.';
-        showResponse(errorMsg);
-        speak(errorMsg);
+        const localAnswer = getLocalAnswer(question);
+        showResponse(localAnswer);
+        speak(localAnswer);
       }
+    }
+
+    // Formata resposta das APIs de conhecimento
+    function formatKnowledgeResponse(data) {
+      if (data.summary) return data.summary;
+      if (data.price) return `${data.coin} está cotado em $${data.price} USD`;
+      if (data.temperature) return `Temperatura: ${data.temperature}°C`;
+      if (data.articles) return `Principais notícias: ${data.articles[0]?.title || 'Nenhuma notícia disponível'}`;
+      return JSON.stringify(data).slice(0, 200);
+    }
+
+    // Respostas locais simples (fallback offline)
+    function getLocalAnswer(question) {
+      const q = question.toLowerCase();
+      
+      if (q.includes('olá') || q.includes('oi')) {
+        return 'Olá! Sou o NOW AI, seu assistente inteligente. Como posso ajudar?';
+      }
+      if (q.includes('quem é você') || q.includes('o que você é')) {
+        return 'Sou o NOW AI, um assistente inteligente estilo JARVIS. Posso responder perguntas, buscar conhecimento e conversar naturalmente.';
+      }
+      if (q.includes('como você funciona')) {
+        return 'Funciono com inteligência multi-camada: primeiro busco no conhecimento local, depois em APIs gratuitas, e por último uso IA avançada. Também aprendo sozinho a cada 30 minutos.';
+      }
+      if (q.includes('hora') || q.includes('horas')) {
+        return `São ${new Date().toLocaleTimeString('pt-BR')} agora.`;
+      }
+      if (q.includes('data') || q.includes('dia')) {
+        return `Hoje é ${new Date().toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}.`;
+      }
+      
+      return 'Ainda estou aprendendo sobre isso. Meu conhecimento está crescendo automaticamente a cada 30 minutos!';
     }
 
     // Mostra resposta na tela
