@@ -308,34 +308,7 @@
     <p id="responseText"></p>
   </div>
   
-  <!-- Instrução inicial (some após primeira voz ou clique) -->
-  <div id="clickInstruction" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-       background: rgba(0, 247, 255, 0.1); backdrop-filter: blur(10px); border: 2px solid rgba(0, 247, 255, 0.3);
-       padding: 30px 40px; border-radius: 20px; text-align: center; z-index: 1000; animation: pulse 2s infinite;
-       font-size: 20px; color: #00f7ff; font-weight: 300; max-width: 80%; box-shadow: 0 0 40px rgba(0, 247, 255, 0.2);">
-    <div style="font-size: 48px; margin-bottom: 20px;">🎤</div>
-    <div style="margin-bottom: 10px; font-weight: 500;">Fale algo ou clique no botão</div>
-    <div style="font-size: 14px; opacity: 0.7; margin-bottom: 20px;">O sistema está ouvindo! Diga qualquer coisa para ativar o áudio</div>
-    <button id="testVoiceButton" 
-            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.6)';" 
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.4)';"
-            ontouchstart="this.style.transform='scale(0.95)';"
-            ontouchend="this.style.transform='scale(1)';"
-            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-            border: none; color: white; padding: 15px 30px; border-radius: 30px; font-size: 16px; 
-            font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-            transition: all 0.3s ease; margin-bottom: 15px; transform: scale(1);">
-      🔊 Testar Voz
-    </button>
-    <div style="font-size: 12px; opacity: 0.5;">Ex: "Que horas são?" ou "Olá"</div>
-  </div>
-
-  <div class="voice-button" id="voiceButton">
-    <svg class="voice-icon" viewBox="0 0 24 24">
-      <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
-      <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
-    </svg>
-  </div>
+  <!-- NENHUM botão visível - ativação 100% automática por voz -->
 
   <script>
     // Estado da aplicação
@@ -356,7 +329,7 @@
     const status = document.getElementById('status');
     const responseBox = document.getElementById('responseBox');
     const responseText = document.getElementById('responseText');
-    const voiceButton = document.getElementById('voiceButton');
+    // Botão removido - ativação 100% automática por voz
     
     // Debug elements
     const micStatus = document.getElementById('micStatus');
@@ -385,7 +358,7 @@
         state.isListening = true;
         orb.classList.add('listening');
         orb.classList.remove('thinking'); // Remove estado de pensamento
-        voiceButton.classList.add('active');
+        // voiceButton removido - apenas ORB visual
         status.textContent = 'NOW ouvindo... pode falar comigo';
         
         // Update debug info
@@ -575,7 +548,7 @@
             }
           }, 500);
         } else {
-          voiceButton.classList.remove('active');
+          // voiceButton removido
           orb.classList.remove('listening', 'thinking');
           status.textContent = 'Clique para ativar voz';
         }
@@ -978,13 +951,12 @@
         status.textContent = 'Modo contínuo desativado. Clique para reativar.';
         state.recognition.stop();
         orb.classList.remove('listening', 'thinking');
-        voiceButton.classList.remove('active');
+        // voiceButton removido
       }
     }
 
-    // Event listeners
-    orb.addEventListener('click', toggleListening);
-    voiceButton.addEventListener('click', toggleListening);
+    // Event listeners - REMOVIDOS, sistema 100% automático
+    // Não precisa mais de cliques para ativar
 
     // Inicializa quando a página carregar
     window.addEventListener('load', () => {
@@ -1003,65 +975,23 @@
       // Carrega perfil de voz
       loadVoiceProfile();
       
-      // AGUARDA PRIMEIRO CLIQUE para desbloquear áudio
-      const unlockAudio = () => {
-        if (!state.ttsUnlocked) {
-          console.log('🔓 PRIMEIRO CLIQUE - Desbloqueando áudio...');
-          
-          // Remove instrução visual
-          const instruction = document.getElementById('clickInstruction');
-          if (instruction) {
-            instruction.style.transition = 'opacity 0.5s ease';
-            instruction.style.opacity = '0';
-            setTimeout(() => instruction.remove(), 500);
-          }
-          
-          // Desbloqueia TTS com utterance vazio
-          const dummyUtterance = new SpeechSynthesisUtterance('');
-          state.synthesis.speak(dummyUtterance);
-          state.ttsUnlocked = true;
-          
-          // Remove listeners após primeiro clique
-          document.removeEventListener('click', unlockAudio);
-          document.removeEventListener('touchstart', unlockAudio);
-          orb.removeEventListener('click', unlockAudio);
-          
-          // Atualiza status
-          status.textContent = 'NOW ouvindo... pode falar comigo';
-          
-          // AGORA pode falar
-          setTimeout(() => {
-            speak('NOW ativado! Pode falar comigo.');
-          }, 300);
-        }
-      };
+      // ✨ ATIVAÇÃO 100% AUTOMÁTICA POR VOZ - SEM BOTÕES, SEM CLIQUES ✨
+      // O sistema desbloqueia o áudio automaticamente quando detecta a primeira voz
+      // Isso é feito no handler onresult acima (speak com immediate=true)
       
-      // Botão de teste de voz
-      const testVoiceBtn = document.getElementById('testVoiceButton');
-      if (testVoiceBtn) {
-        testVoiceBtn.addEventListener('click', () => {
-          console.log('🎤 BOTÃO TESTAR VOZ CLICADO');
-          unlockAudio();
-        });
-      }
-      
-      // Adiciona listeners para desbloquear no primeiro toque
-      document.addEventListener('click', unlockAudio, { once: true });
-      document.addEventListener('touchstart', unlockAudio, { once: true });
-      orb.addEventListener('click', unlockAudio, { once: true });
-      
-      // INICIA ESCUTA AUTOMATICAMENTE (mas NÃO fala até o primeiro clique)
+      // INICIA ESCUTA AUTOMATICAMENTE
       setTimeout(() => {
         console.log('🚀 Ativando escuta contínua automaticamente...');
-        status.textContent = '🎯 Clique no ORB para ativar o áudio';
+        console.log('🎤 Sistema 100% automático - apenas fale!');
+        status.textContent = 'NOW ouvindo... pode falar comigo';
         
         try {
           state.recognition.start();
-          status.textContent = 'NOW ouvindo... (clique para ativar áudio)';
+          console.log('✅ Reconhecimento de voz ativo - aguardando sua voz...');
         } catch (e) {
           console.log('⚠️  Aguarde um momento...');
         }
-      }, 2000);
+      }, 1000);  // Reduzido para 1 segundo (mais rápido)
     });
 
     // Carrega perfil de voz do localStorage
