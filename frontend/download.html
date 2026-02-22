@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download NOW AI - APK Android</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 30px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, 
+        rgba(0, 247, 255, 0.8), 
+        rgba(0, 150, 255, 0.4), 
+        rgba(138, 43, 226, 0.6)
+      );
+      box-shadow: 0 0 60px rgba(0, 247, 255, 0.6);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #00f7ff, #ff0064);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: #00f7ff;
+      margin-bottom: 10px;
+    }
+
+    .version {
+      color: #888;
+      font-size: 14px;
+    }
+
+    .download-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid #00f7ff;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 30px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 247, 255, 0.2);
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 20px 50px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      background: linear-gradient(135deg, #00f7ff, #ff0064);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0, 247, 255, 0.4);
+      margin: 20px 0;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 48px rgba(0, 247, 255, 0.6);
+    }
+
+    .download-btn:active {
+      transform: translateY(0);
+    }
+
+    .download-icon {
+      font-size: 32px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 4px solid #00f7ff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .info-box h3 {
+      color: #00f7ff;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .info-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .info-box li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .info-box li:last-child {
+      border-bottom: none;
+    }
+
+    .info-box li::before {
+      content: "✅ ";
+      margin-right: 10px;
+    }
+
+    .warning-box {
+      background: rgba(255, 100, 0, 0.1);
+      border-left: 4px solid #ff6400;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .warning-box h3 {
+      color: #ff6400;
+      margin-bottom: 15px;
+    }
+
+    .steps {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+
+    .step {
+      display: flex;
+      align-items: start;
+      margin-bottom: 25px;
+    }
+
+    .step-number {
+      background: linear-gradient(135deg, #00f7ff, #ff0064);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-right: 20px;
+    }
+
+    .step-content h4 {
+      color: #00f7ff;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .step-content p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #888;
+    }
+
+    .footer a {
+      color: #00f7ff;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+      
+      .subtitle {
+        font-size: 16px;
+      }
+      
+      .download-btn {
+        font-size: 18px;
+        padding: 15px 30px;
+      }
+      
+      .download-box {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo"></div>
+      <h1>NOW AI</h1>
+      <p class="subtitle">🎤 Assistente de Voz Inteligente</p>
+      <p class="version">Versão 1.0.0 - APK Android</p>
+    </div>
+
+    <div class="download-box">
+      <h2 style="margin-bottom: 20px;">📱 Baixar APK para Android</h2>
+      <p style="color: #ccc; margin-bottom: 30px;">
+        Versão com TTS nativo - Voz 100% funcional!
+      </p>
+      
+      <a href="https://github.com/kainow252-cmyk/now/releases/latest/download/app-debug.apk" 
+         class="download-btn"
+         id="downloadBtn">
+        <span class="download-icon">⬇️</span>
+        Baixar APK (Debug)
+      </a>
+      
+      <p style="color: #888; font-size: 14px; margin-top: 20px;">
+        Tamanho: ~10 MB | Android 7.0+
+      </p>
+      
+      <div style="margin-top: 30px;">
+        <a href="https://github.com/kainow252-cmyk/now/releases" 
+           style="color: #00f7ff; text-decoration: none;">
+          Ver todas as versões →
+        </a>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>✨ Recursos do APK</h3>
+      <ul>
+        <li>Voz feminina em português brasileiro (TTS nativo)</li>
+        <li>Reconhecimento de voz à distância</li>
+        <li>Interface limpa (apenas ORB visual)</li>
+        <li>30+ APIs integradas (clima, notícias, conversão, etc.)</li>
+        <li>Respostas instantâneas</li>
+        <li>Modo contínuo (sempre escutando)</li>
+        <li>Funciona offline para comandos básicos</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h3>⚠️ Importante</h3>
+      <p style="color: #ccc; line-height: 1.6;">
+        Este APK é uma versão <strong>debug</strong> (desenvolvimento). 
+        Você precisará habilitar "Instalar de fontes desconhecidas" nas 
+        configurações do Android para instalar.
+      </p>
+    </div>
+
+    <div class="steps">
+      <h3 style="color: #00f7ff; margin-bottom: 30px; text-align: center;">
+        📲 Como Instalar
+      </h3>
+      
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Baixar o APK</h4>
+          <p>Clique no botão de download acima. O arquivo será salvo no seu celular.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Habilitar Fontes Desconhecidas</h4>
+          <p>
+            Configurações → Segurança → Ative "Fontes desconhecidas"<br>
+            (Android 9+: Configurações → Apps → Acesso especial → Instalar apps desconhecidos)
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>Instalar o APK</h4>
+          <p>
+            Abra o arquivo baixado, toque em "Instalar" e aguarde. 
+            Pode aparecer um aviso de segurança, toque em "Instalar mesmo assim".
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Conceder Permissões</h4>
+          <p>
+            Ao abrir o app, permita o acesso ao <strong>microfone</strong> 
+            (essencial para reconhecimento de voz).
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h4>Testar!</h4>
+          <p>
+            Fale "Olá" ou "Que horas são?" e você deve ouvir a resposta! 🎉
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>🔊 Diferença: Web vs APK</h3>
+      <ul>
+        <li><strong>Web (Chrome):</strong> ❌ Voz bloqueada por política do navegador</li>
+        <li><strong>APK Nativo:</strong> ✅ Voz funciona 100% (usa API nativa do Android)</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>
+        <a href="https://github.com/kainow252-cmyk/now" target="_blank">
+          📂 Ver código-fonte no GitHub
+        </a>
+      </p>
+      <p style="margin-top: 10px;">
+        <a href="https://github.com/kainow252-cmyk/now/issues" target="_blank">
+          🐛 Reportar problemas
+        </a>
+      </p>
+      <p style="margin-top: 30px; font-size: 14px;">
+        NOW AI - Assistente de Voz Inteligente<br>
+        © 2026 - Open Source (MIT License)
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Log de download
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+      console.log('📱 Download do APK iniciado!');
+      
+      // Mostrar mensagem de sucesso
+      setTimeout(() => {
+        alert('📥 Download iniciado!\n\n✅ Siga os passos abaixo para instalar o APK.\n\n🔊 Após instalar, você terá voz funcionando 100%!');
+      }, 500);
+    });
+  </script>
+</body>
+</html>
