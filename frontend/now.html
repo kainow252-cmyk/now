@@ -667,18 +667,15 @@
     function speak(text) {
       console.log('🔊 Tentando falar:', text);
       
-      // NOVO: No Chrome mobile, precisa de interação do usuário primeiro
-      // Vamos FORÇAR uma utterance vazia para "desbloquear" o TTS
-      if (!state.synthesis.speaking && !state.ttsUnlocked) {
-        console.log('🔓 Desbloqueando TTS no mobile...');
-        const dummyUtterance = new SpeechSynthesisUtterance('');
-        state.synthesis.speak(dummyUtterance);
-        state.ttsUnlocked = true;
-      }
-      
       if (state.synthesis.speaking) {
         console.log('⚠️  Cancelando fala anterior...');
         state.synthesis.cancel();
+      }
+      
+      // FORÇAR resume() para mobile
+      if (state.synthesis.paused) {
+        console.log('▶️  Resumindo síntese pausada...');
+        state.synthesis.resume();
       }
 
       // Aguarda um momento para garantir que cancelou
@@ -771,8 +768,20 @@
 
       try {
         console.log('🚀 Chamando speak()...');
+        console.log('   Texto:', text.substring(0, 50) + '...');
+        console.log('   Lang:', utterance.lang);
+        console.log('   Voice:', utterance.voice?.name || 'default');
+        
         state.synthesis.speak(utterance);
-        console.log('✓ speak() chamado com sucesso');
+        console.log('✓ speak() chamado');
+        
+        // FORÇAR no mobile
+        setTimeout(() => {
+          if (!state.isSpeaking) {
+            console.log('⚠️  TTS não iniciou, tentando resume()...');
+            state.synthesis.resume();
+          }
+        }, 200);
       } catch (error) {
         console.error('❌ Erro ao chamar speak():', error);
       }
@@ -896,6 +905,31 @@
         toggleListening();
       }
     });
+
+    // NOVO: Desbloqueia TTS com qualquer interação do usuário
+    function unlockAudio() {
+      if (!state.ttsUnlocked) {
+        console.log('🔓 Desbloqueando áudio com interação do usuário...');
+        
+        // Tenta tocar um som vazio
+        const dummyUtterance = new SpeechSynthesisUtterance(' ');
+        state.synthesis.speak(dummyUtterance);
+        
+        // Força resume
+        setTimeout(() => {
+          state.synthesis.cancel();
+          state.synthesis.resume();
+        }, 100);
+        
+        state.ttsUnlocked = true;
+        console.log('✅ Áudio desbloqueado!');
+      }
+    }
+
+    // Adiciona listeners para desbloquear
+    document.addEventListener('click', unlockAudio, { once: false });
+    document.addEventListener('touchstart', unlockAudio, { once: false });
+    orb.addEventListener('click', unlockAudio);
   </script>
 
 </body>
