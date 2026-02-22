@@ -165,27 +165,35 @@ class ConversationService {
     
     // Exchange Rate (USD to BRL)
     if (data.rate && data.base === 'USD') {
-      return `O dólar americano está cotado em R$ ${data.rate.toFixed(2)} reais hoje, ${data.date}.`;
+      const valor = data.rate.toFixed(2).replace('.', ' vírgula ');
+      return `O dólar americano está cotado em ${valor} reais hoje.`;
     }
     
     // Exchange Rate (generic)
     if (data.rate && data.base && data.target) {
-      return `1 ${data.base} = ${data.rate.toFixed(2)} ${data.target} hoje, ${data.date}.`;
+      const valor = data.rate.toFixed(2).replace('.', ' vírgula ');
+      return `Um ${data.base} vale ${valor} ${data.target} hoje.`;
     }
     
     // Crypto
     if (data.price && data.coin) {
       const change = data.change24h > 0 ? 'subiu' : 'caiu';
-      return `${data.coin.charAt(0).toUpperCase() + data.coin.slice(1)} está cotado em $${data.price.toLocaleString('en-US')} USD, ${change} ${Math.abs(data.change24h).toFixed(2)}% nas últimas 24 horas.`;
+      const priceFormatted = Math.round(data.price).toLocaleString('pt-BR');
+      const changePercent = Math.abs(data.change24h).toFixed(1);
+      return `${data.coin.charAt(0).toUpperCase() + data.coin.slice(1)} está cotado em ${priceFormatted} dólares, ${change} ${changePercent} por cento hoje.`;
     }
     
     // Weather
     if (data.current && data.current.temperature !== undefined) {
-      return `A temperatura atual em ${data.city} é ${data.current.temperature}°C. Vento: ${data.current.windspeed} km/h.`;
+      const temp = Math.round(data.current.temperature);
+      const vento = Math.round(data.current.windspeed);
+      return `A temperatura atual em ${data.city} é ${temp} graus celsius. Vento de ${vento} quilômetros por hora.`;
     }
     
     if (data.temperature !== undefined) {
-      return `A temperatura atual é ${data.temperature}°C, com sensação térmica de ${data.apparentTemperature}°C. Vento: ${data.windspeed} km/h.`;
+      const temp = Math.round(data.temperature);
+      const vento = Math.round(data.windspeed);
+      return `A temperatura atual é ${temp} graus celsius. Vento de ${vento} quilômetros por hora.`;
     }
     
     // Country Info

@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-02-21T21:15:38.782Z",
-  "totalItems": 180,
+  "lastUpdate": "2026-02-22T13:59:03.123Z",
+  "totalItems": 270,
   "knowledge": [
     {
       "category": "science",
@@ -1895,6 +1895,951 @@
       "url": "https://github.com/mhamilton723/FeatUp",
       "timestamp": 1771708538781,
       "id": "GitHub-1771708538781-0.12948764328662854"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771708615317,
+      "id": "arXiv-1771708615317-0.11082396776089798"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771708615317,
+      "id": "arXiv-1771708615317-0.6380587800899187"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771708615317,
+      "id": "arXiv-1771708615317-0.8156239314807945"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771708615317,
+      "id": "arXiv-1771708615317-0.09032468708180419"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771708615317,
+      "id": "arXiv-1771708615317-0.7177622841774756"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771708615317,
+      "id": "arXiv-1771708615317-0.7987615376972779"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771708615317,
+      "id": "arXiv-1771708615317-0.4140929066436867"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771708615317,
+      "id": "arXiv-1771708615317-0.7451639290541145"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771708615317,
+      "id": "arXiv-1771708615317-0.41864463683816044"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771708615317,
+      "id": "arXiv-1771708615317-0.6716271033527714"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Optimizing Node.js worker threads memory pooling for heavy Monte Carlo slot simulations (RTP verification)",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79893699/optimizing-node-js-worker-threads-memory-pooling-for-heavy-monte-carlo-slot-simu",
+      "tags": [
+        "node.js",
+        "math",
+        "memory-management",
+        "montecarlo",
+        "worker-thread"
+      ],
+      "timestamp": 1771708615365,
+      "id": "StackOverflow-1771708615365-0.05936620381808888"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Pusher and push notifications",
+      "score": -1,
+      "url": "https://stackoverflow.com/questions/79893706/pusher-and-push-notifications",
+      "tags": [
+        "ios",
+        "swift",
+        "pusher"
+      ],
+      "timestamp": 1771708615365,
+      "id": "StackOverflow-1771708615365-0.5437674745505015"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "SurfaceControlViewHost.setView keeps asking for system level permission",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893711/surfacecontrolviewhost-setview-keeps-asking-for-system-level-permission",
+      "tags": [
+        "android"
+      ],
+      "timestamp": 1771708615365,
+      "id": "StackOverflow-1771708615365-0.27327486963590086"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Event for HTML Prop change",
+      "score": -4,
+      "url": "https://stackoverflow.com/questions/79893681/event-for-html-prop-change",
+      "tags": [
+        "javascript",
+        "html",
+        "reactjs"
+      ],
+      "timestamp": 1771708615365,
+      "id": "StackOverflow-1771708615365-0.7737034600286756"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why my executable app doesn&#39;t start and show CITATION.rst error?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893691/why-my-executable-app-doesnt-start-and-show-citation-rst-error",
+      "tags": [
+        "python",
+        "pyinstaller",
+        "photutils"
+      ],
+      "timestamp": 1771708615365,
+      "id": "StackOverflow-1771708615365-0.10535938717053295"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "High failure rate for Gaming Hosting business?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893682/high-failure-rate-for-gaming-hosting-business",
+      "tags": [
+        "stripe-payments",
+        "laravel-cashier"
+      ],
+      "timestamp": 1771708615365,
+      "id": "StackOverflow-1771708615365-0.9427595351324174"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "inexplicable 403 error in custom search api cx engine for specific domains",
+      "score": -3,
+      "url": "https://stackoverflow.com/questions/79893689/inexplicable-403-error-in-custom-search-api-cx-engine-for-specific-domains",
+      "tags": [
+        "php"
+      ],
+      "timestamp": 1771708615365,
+      "id": "StackOverflow-1771708615365-0.22119043173733477"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why does wildcard not work in (the prerequisites of) a static pattern rule?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893697/why-does-wildcard-not-work-in-the-prerequisites-of-a-static-pattern-rule",
+      "tags": [
+        "makefile",
+        "gnu-make"
+      ],
+      "timestamp": 1771708615365,
+      "id": "StackOverflow-1771708615365-0.7341476018594046"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "OpenArgs of &quot;List items edit form&quot;",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893687/openargs-of-list-items-edit-form",
+      "tags": [
+        "vba",
+        "ms-access"
+      ],
+      "timestamp": 1771708615365,
+      "id": "StackOverflow-1771708615365-0.49110412543502324"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why does foo(int()) compile but foo(unsigned int()) fails to parse unless I use a type alias?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893663/why-does-fooint-compile-but-foounsigned-int-fails-to-parse-unless-i-use",
+      "tags": [
+        "c++"
+      ],
+      "timestamp": 1771708615365,
+      "id": "StackOverflow-1771708615365-0.04815635555585862"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "HumanAIGC/EMO",
+      "description": "Emote Portrait Alive: Generating Expressive Portrait Videos with Audio2Video Diffusion Model under Weak Conditions",
+      "stars": 7642,
+      "url": "https://github.com/HumanAIGC/EMO",
+      "timestamp": 1771708616484,
+      "id": "GitHub-1771708616484-0.052651582550740095"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Zejun-Yang/AniPortrait",
+      "description": "AniPortrait: Audio-Driven Synthesis of Photorealistic Portrait Animation",
+      "stars": 5019,
+      "url": "https://github.com/Zejun-Yang/AniPortrait",
+      "timestamp": 1771708616484,
+      "id": "GitHub-1771708616484-0.39230482526088784"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Netflix/maestro",
+      "description": "Maestro: Netflix’s Workflow Orchestrator",
+      "stars": 3722,
+      "url": "https://github.com/Netflix/maestro",
+      "timestamp": 1771708616484,
+      "id": "GitHub-1771708616484-0.8872801708939426"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "CosmosShadow/gptpdf",
+      "description": "Using GPT to parse PDF",
+      "stars": 3562,
+      "url": "https://github.com/CosmosShadow/gptpdf",
+      "timestamp": 1771708616484,
+      "id": "GitHub-1771708616484-0.2217570243220679"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zhengkyl/qrframe",
+      "description": "code-based qr code designer",
+      "stars": 3361,
+      "url": "https://github.com/zhengkyl/qrframe",
+      "timestamp": 1771708616484,
+      "id": "GitHub-1771708616484-0.9376642908527213"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "togethercomputer/MoA",
+      "description": "Together Mixture-Of-Agents (MoA) –  65.1% on AlpacaEval with OSS models",
+      "stars": 2855,
+      "url": "https://github.com/togethercomputer/MoA",
+      "timestamp": 1771708616484,
+      "id": "GitHub-1771708616484-0.16161023153285248"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "poundifdef/smoothmq",
+      "description": "An improved drop-in replacement for SQS",
+      "stars": 2280,
+      "url": "https://github.com/poundifdef/smoothmq",
+      "timestamp": 1771708616484,
+      "id": "GitHub-1771708616484-0.9237793931555369"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "qhjqhj00/MemoRAG",
+      "description": "Empowering RAG with a memory-based data interface for all-purpose applications!",
+      "stars": 2210,
+      "url": "https://github.com/qhjqhj00/MemoRAG",
+      "timestamp": 1771708616484,
+      "id": "GitHub-1771708616484-0.15067170732355883"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "dockur/windows-arm",
+      "description": "Windows for ARM in a Docker container.",
+      "stars": 2070,
+      "url": "https://github.com/dockur/windows-arm",
+      "timestamp": 1771708616484,
+      "id": "GitHub-1771708616484-0.6744933604592809"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "nimbusdotstorage/Nimbus",
+      "description": "The future of file storage",
+      "stars": 1977,
+      "url": "https://github.com/nimbusdotstorage/Nimbus",
+      "timestamp": 1771708616484,
+      "id": "GitHub-1771708616484-0.9617708307035482"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771710416623,
+      "id": "arXiv-1771710416623-0.6673980878107431"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771710416623,
+      "id": "arXiv-1771710416623-0.8407241757187784"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771710416623,
+      "id": "arXiv-1771710416623-0.2631954245804471"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771710416623,
+      "id": "arXiv-1771710416623-0.5444712784288257"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771710416623,
+      "id": "arXiv-1771710416623-0.9391227031164964"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771710416623,
+      "id": "arXiv-1771710416623-0.4273098811612772"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771710416623,
+      "id": "arXiv-1771710416623-0.9506185568561996"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771710416623,
+      "id": "arXiv-1771710416623-0.18938692578459304"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771710416623,
+      "id": "arXiv-1771710416623-0.5687517312940338"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771710416623,
+      "id": "arXiv-1771710416623-0.8198435828145121"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Calling a Flask API from JS returns Unexpected token &#39;&lt;&#39;, &quot;&lt;!DOCTYPE &quot;... is not valid JSON",
+      "score": -3,
+      "url": "https://stackoverflow.com/questions/79893722/calling-a-flask-api-from-js-returns-unexpected-token-doctype-is-not",
+      "tags": [
+        "javascript",
+        "python",
+        "flask"
+      ],
+      "timestamp": 1771710416895,
+      "id": "StackOverflow-1771710416895-0.24490934554105115"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "JSP to PDF Conversion online",
+      "score": -7,
+      "url": "https://stackoverflow.com/questions/79893720/jsp-to-pdf-conversion-online",
+      "tags": [
+        "pdf"
+      ],
+      "timestamp": 1771710416895,
+      "id": "StackOverflow-1771710416895-0.9438672209837158"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why doesn&#39;t my executable app start and shows CITATION.rst error?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893691/why-doesnt-my-executable-app-start-and-shows-citation-rst-error",
+      "tags": [
+        "python",
+        "pyinstaller",
+        "photutils"
+      ],
+      "timestamp": 1771710416895,
+      "id": "StackOverflow-1771710416895-0.8535891871863253"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Optimizing Node.js worker threads memory pooling for heavy Monte Carlo slot simulations (RTP verification)",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79893699/optimizing-node-js-worker-threads-memory-pooling-for-heavy-monte-carlo-slot-simu",
+      "tags": [
+        "node.js",
+        "math",
+        "memory-management",
+        "montecarlo",
+        "worker-thread"
+      ],
+      "timestamp": 1771710416895,
+      "id": "StackOverflow-1771710416895-0.9103469560685666"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "SurfaceControlViewHost.setView keeps asking for system level permission",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893711/surfacecontrolviewhost-setview-keeps-asking-for-system-level-permission",
+      "tags": [
+        "android"
+      ],
+      "timestamp": 1771710416895,
+      "id": "StackOverflow-1771710416895-0.48420730628588693"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Pusher and push notifications",
+      "score": -2,
+      "url": "https://stackoverflow.com/questions/79893706/pusher-and-push-notifications",
+      "tags": [
+        "ios",
+        "swift",
+        "pusher"
+      ],
+      "timestamp": 1771710416895,
+      "id": "StackOverflow-1771710416895-0.1362275705450533"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Creating query in a Metabase",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79893717/creating-query-in-a-metabase",
+      "tags": [
+        "sql",
+        "metabase"
+      ],
+      "timestamp": 1771710416895,
+      "id": "StackOverflow-1771710416895-0.35991370912540344"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Event for HTML Prop change",
+      "score": -4,
+      "url": "https://stackoverflow.com/questions/79893681/event-for-html-prop-change",
+      "tags": [
+        "javascript",
+        "html",
+        "reactjs"
+      ],
+      "timestamp": 1771710416895,
+      "id": "StackOverflow-1771710416895-0.7735292580814348"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Class not seen as module (no module) when calling from library PiCo Micropython",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893636/class-not-seen-as-module-no-module-when-calling-from-library-pico-micropython",
+      "tags": [
+        "python",
+        "micropython",
+        "raspberry-pi-pico"
+      ],
+      "timestamp": 1771710416895,
+      "id": "StackOverflow-1771710416895-0.5916712346129618"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "High failure rate for Gaming Hosting business?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893682/high-failure-rate-for-gaming-hosting-business",
+      "tags": [
+        "stripe-payments",
+        "laravel-cashier"
+      ],
+      "timestamp": 1771710416895,
+      "id": "StackOverflow-1771710416895-0.7378971490965978"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "HumanAIGC/EMO",
+      "description": "Emote Portrait Alive: Generating Expressive Portrait Videos with Audio2Video Diffusion Model under Weak Conditions",
+      "stars": 7642,
+      "url": "https://github.com/HumanAIGC/EMO",
+      "timestamp": 1771710417821,
+      "id": "GitHub-1771710417821-0.9564806070610217"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Zejun-Yang/AniPortrait",
+      "description": "AniPortrait: Audio-Driven Synthesis of Photorealistic Portrait Animation",
+      "stars": 5019,
+      "url": "https://github.com/Zejun-Yang/AniPortrait",
+      "timestamp": 1771710417821,
+      "id": "GitHub-1771710417821-0.9155677121011294"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Netflix/maestro",
+      "description": "Maestro: Netflix’s Workflow Orchestrator",
+      "stars": 3722,
+      "url": "https://github.com/Netflix/maestro",
+      "timestamp": 1771710417821,
+      "id": "GitHub-1771710417821-0.2951412597742773"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "CosmosShadow/gptpdf",
+      "description": "Using GPT to parse PDF",
+      "stars": 3562,
+      "url": "https://github.com/CosmosShadow/gptpdf",
+      "timestamp": 1771710417821,
+      "id": "GitHub-1771710417821-0.48076651757417266"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zhengkyl/qrframe",
+      "description": "code-based qr code designer",
+      "stars": 3361,
+      "url": "https://github.com/zhengkyl/qrframe",
+      "timestamp": 1771710417821,
+      "id": "GitHub-1771710417821-0.6164387079535776"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "togethercomputer/MoA",
+      "description": "Together Mixture-Of-Agents (MoA) –  65.1% on AlpacaEval with OSS models",
+      "stars": 2855,
+      "url": "https://github.com/togethercomputer/MoA",
+      "timestamp": 1771710417821,
+      "id": "GitHub-1771710417821-0.38202530474783214"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "poundifdef/smoothmq",
+      "description": "An improved drop-in replacement for SQS",
+      "stars": 2280,
+      "url": "https://github.com/poundifdef/smoothmq",
+      "timestamp": 1771710417821,
+      "id": "GitHub-1771710417821-0.6474422634277983"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "qhjqhj00/MemoRAG",
+      "description": "Empowering RAG with a memory-based data interface for all-purpose applications!",
+      "stars": 2210,
+      "url": "https://github.com/qhjqhj00/MemoRAG",
+      "timestamp": 1771710417821,
+      "id": "GitHub-1771710417821-0.9713281676417567"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "dockur/windows-arm",
+      "description": "Windows for ARM in a Docker container.",
+      "stars": 2070,
+      "url": "https://github.com/dockur/windows-arm",
+      "timestamp": 1771710417821,
+      "id": "GitHub-1771710417821-0.4270453677832371"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "nimbusdotstorage/Nimbus",
+      "description": "The future of file storage",
+      "stars": 1977,
+      "url": "https://github.com/nimbusdotstorage/Nimbus",
+      "timestamp": 1771710417821,
+      "id": "GitHub-1771710417821-0.38663851795872306"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771768741988,
+      "id": "arXiv-1771768741988-0.21729626880704833"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771768741988,
+      "id": "arXiv-1771768741988-0.13031702676080537"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771768741988,
+      "id": "arXiv-1771768741988-0.5939856241233552"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771768741988,
+      "id": "arXiv-1771768741988-0.38845369506973415"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771768741988,
+      "id": "arXiv-1771768741988-0.7353926946277365"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771768741988,
+      "id": "arXiv-1771768741988-0.32744521502193313"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771768741988,
+      "id": "arXiv-1771768741988-0.10809599805653547"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771768741988,
+      "id": "arXiv-1771768741988-0.9079787284393996"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771768741988,
+      "id": "arXiv-1771768741988-0.24635336398953367"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771768741988,
+      "id": "arXiv-1771768741988-0.1295580818743114"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Can&#39;t start minecraft",
+      "score": -3,
+      "url": "https://stackoverflow.com/questions/79893983/cant-start-minecraft",
+      "tags": [
+        "linux",
+        "minecraft",
+        "forge",
+        "cachyos"
+      ],
+      "timestamp": 1771768742208,
+      "id": "StackOverflow-1771768742208-0.953773369113653"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "SQL query performance: one query with a large WHERE clause, or many smaller separate ones?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893963/sql-query-performance-one-query-with-a-large-where-clause-or-many-smaller-sepa",
+      "tags": [
+        "sql",
+        "sql-server"
+      ],
+      "timestamp": 1771768742208,
+      "id": "StackOverflow-1771768742208-0.9063279912911424"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Self hosted services only reachable on WiFi",
+      "score": -1,
+      "url": "https://stackoverflow.com/questions/79893975/self-hosted-services-only-reachable-on-wifi",
+      "tags": [
+        "server",
+        "networkx"
+      ],
+      "timestamp": 1771768742208,
+      "id": "StackOverflow-1771768742208-0.29739133271272866"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Planning on-premise ML infrastructure",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893969/planning-on-premise-ml-infrastructure",
+      "tags": [
+        "machine-learning",
+        "deployment",
+        "mlops"
+      ],
+      "timestamp": 1771768742208,
+      "id": "StackOverflow-1771768742208-0.1561899799135762"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Where to store data when testing and when in production?",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79893904/where-to-store-data-when-testing-and-when-in-production",
+      "tags": [
+        "python",
+        "linux",
+        "database",
+        "environment"
+      ],
+      "timestamp": 1771768742208,
+      "id": "StackOverflow-1771768742208-0.19157890735120686"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "how to get polymarket Bitcoin Up or Down - 5 Minutes price to beat",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893949/how-to-get-polymarket-bitcoin-up-or-down-5-minutes-price-to-beat",
+      "tags": [
+        "python"
+      ],
+      "timestamp": 1771768742208,
+      "id": "StackOverflow-1771768742208-0.33151975374710396"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Adding extension to built in layer of vscode",
+      "score": -3,
+      "url": "https://stackoverflow.com/questions/79893951/adding-extension-to-built-in-layer-of-vscode",
+      "tags": [
+        "visual-studio-code"
+      ],
+      "timestamp": 1771768742208,
+      "id": "StackOverflow-1771768742208-0.22068349908601048"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Communication between OnlyOffice (Docker) and local APP on IIS",
+      "score": -2,
+      "url": "https://stackoverflow.com/questions/79893954/communication-between-onlyoffice-docker-and-local-app-on-iis",
+      "tags": [
+        "docker",
+        "iis",
+        "reverse-proxy",
+        "arr",
+        "onlyoffice"
+      ],
+      "timestamp": 1771768742208,
+      "id": "StackOverflow-1771768742208-0.004141501004715442"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Cheap &amp; practical AI stack for a car marketplace website (agents/chat/search) — what would you use?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893917/cheap-practical-ai-stack-for-a-car-marketplace-website-agents-chat-search",
+      "tags": [
+        "artificial-intelligence"
+      ],
+      "timestamp": 1771768742208,
+      "id": "StackOverflow-1771768742208-0.540972077776855"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to transfer all the Power Shell Modules from one machine to another machine?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893934/how-to-transfer-all-the-power-shell-modules-from-one-machine-to-another-machine",
+      "tags": [
+        "azure",
+        "powershell",
+        "module"
+      ],
+      "timestamp": 1771768742208,
+      "id": "StackOverflow-1771768742208-0.5925074950147866"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Shubhamsaboo/awesome-llm-apps",
+      "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.",
+      "stars": 96530,
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "timestamp": 1771768743123,
+      "id": "GitHub-1771768743123-0.33439556150059246"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "RVC-Boss/GPT-SoVITS",
+      "description": "1 min voice data can also be used to train a good TTS model! (few shot voice cloning)",
+      "stars": 55178,
+      "url": "https://github.com/RVC-Boss/GPT-SoVITS",
+      "timestamp": 1771768743123,
+      "id": "GitHub-1771768743123-0.498331396677975"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zen-browser/desktop",
+      "description": "Welcome to a calmer internet",
+      "stars": 40238,
+      "url": "https://github.com/zen-browser/desktop",
+      "timestamp": 1771768743123,
+      "id": "GitHub-1771768743123-0.9138568360263508"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "feder-cr/Jobs_Applier_AI_Agent_AIHawk",
+      "description": "AIHawk aims to easy job hunt process by automating the job application process. Utilizing artificial intelligence, it enables users to apply for multiple jobs in a tailored way.",
+      "stars": 29360,
+      "url": "https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk",
+      "timestamp": 1771768743123,
+      "id": "GitHub-1771768743123-0.24273522583017826"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "karakeep-app/karakeep",
+      "description": "A self-hostable bookmark-everything app (links, notes and images) with AI-based automatic tagging and full text search",
+      "stars": 23576,
+      "url": "https://github.com/karakeep-app/karakeep",
+      "timestamp": 1771768743123,
+      "id": "GitHub-1771768743123-0.9915229277784858"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Flowseal/zapret-discord-youtube",
+      "description": null,
+      "stars": 22938,
+      "url": "https://github.com/Flowseal/zapret-discord-youtube",
+      "timestamp": 1771768743123,
+      "id": "GitHub-1771768743123-0.40535350339412113"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "huggingface/lerobot",
+      "description": "🤗 LeRobot: Making AI for Robotics more accessible with end-to-end learning",
+      "stars": 21712,
+      "url": "https://github.com/huggingface/lerobot",
+      "timestamp": 1771768743123,
+      "id": "GitHub-1771768743123-0.7415287679865816"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "vercel-labs/agent-skills",
+      "description": "Vercel's official collection of agent skills",
+      "stars": 20939,
+      "url": "https://github.com/vercel-labs/agent-skills",
+      "timestamp": 1771768743123,
+      "id": "GitHub-1771768743123-0.3779149924786176"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "openai/gpt-oss",
+      "description": "gpt-oss-120b and gpt-oss-20b are two open-weight language models by OpenAI",
+      "stars": 19807,
+      "url": "https://github.com/openai/gpt-oss",
+      "timestamp": 1771768743123,
+      "id": "GitHub-1771768743123-0.9314220189592102"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "nari-labs/dia",
+      "description": "A TTS model capable of generating ultra-realistic dialogue in one pass.",
+      "stars": 19122,
+      "url": "https://github.com/nari-labs/dia",
+      "timestamp": 1771768743123,
+      "id": "GitHub-1771768743123-0.8043644740904965"
     }
   ]
 }
