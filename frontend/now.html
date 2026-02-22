@@ -886,18 +886,38 @@
         state.isSpeaking = true;
         orb.classList.remove('thinking', 'listening');
         status.textContent = '🔊 Falando...';
+        
+        // 🔇 PAUSA reconhecimento para não ouvir a própria voz
+        if (state.recognition && state.isListening) {
+          console.log('🔇 Pausando reconhecimento (falando)...');
+          try {
+            state.recognition.stop();
+          } catch (e) {
+            console.log('   (já parado)');
+          }
+        }
       };
 
       utterance.onend = () => {
         console.log('✅ Fala concluída');
         state.isSpeaking = false;
         
-        // Volta ao modo de escuta contínua
+        // 🔊 REINICIA reconhecimento após falar
         if (state.continuousMode) {
           setTimeout(() => {
             orb.classList.add('listening');
-            status.textContent = '🎤 Escutando... Diga "AGORA" + sua pergunta';
-          }, 500);
+            status.textContent = 'NOW ouvindo... pode falar comigo';
+            
+            // Reinicia reconhecimento
+            if (state.recognition) {
+              console.log('🔊 Reiniciando reconhecimento...');
+              try {
+                state.recognition.start();
+              } catch (e) {
+                console.log('   (reconhecimento já ativo)');
+              }
+            }
+          }, 1000);  // Espera 1s após falar para evitar eco
         } else {
           orb.classList.remove('listening', 'thinking');
           status.textContent = 'Clique para ativar voz';
