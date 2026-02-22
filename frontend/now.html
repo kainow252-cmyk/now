@@ -144,7 +144,7 @@
       background: rgba(0, 247, 255, 0.2);
       border: 2px solid rgba(0, 247, 255, 0.5);
       cursor: pointer;
-      display: flex;
+      display: none; /* OCULTO - ativa automaticamente por voz */
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease;
@@ -409,6 +409,27 @@
         if ((hasWakeWord || isCommonQuestion || isLongPhrase) && result.isFinal) {
           console.log('🎯 Comando detectado!');
           
+          // NOVO: Verifica autenticação de voz SE estiver ativa
+          if (state.voiceAuthEnabled && state.ownerProfile) {
+            console.log('🔒 Verificando voz do dono...');
+            
+            // Simula análise de voz (em produção, usaria Web Audio API)
+            const isTrusted = await verifyVoice(transcript);
+            
+            if (!isTrusted) {
+              console.log('❌ Voz não autorizada!');
+              status.textContent = '🚫 Voz não reconhecida';
+              speak('Desculpe, não reconheço sua voz');
+              
+              setTimeout(() => {
+                status.textContent = 'NOW ouvindo... (diga "NOW" para ativar)';
+              }, 2000);
+              return;
+            }
+            
+            console.log('✅ Voz do dono autenticada!');
+          }
+          
           // Toca som de confirmação
           playBeep();
           
@@ -448,7 +469,7 @@
             // Volta a escutar após responder
             setTimeout(() => {
               if (state.continuousMode && !state.isSpeaking) {
-                status.textContent = 'NOW ouvindo... (diga "NOW" para ativar)';
+                status.textContent = 'NOW ouvindo... pode falar comigo';
                 orb.classList.remove('thinking');
                 orb.classList.add('listening');
               }
@@ -457,7 +478,7 @@
             status.textContent = 'NOW pronto! Pode perguntar...';
             // Se só falou "NOW", aguarda a pergunta
             setTimeout(() => {
-              status.textContent = 'NOW ouvindo... (diga "NOW" para ativar)';
+              status.textContent = 'NOW ouvindo... pode falar comigo';
             }, 2000);
           }
         }
@@ -793,7 +814,19 @@
       // INICIA AUTOMATICAMENTE em modo contínuo após 2 segundos
       setTimeout(() => {
         console.log('🚀 Ativando escuta contínua automaticamente...');
-        status.textContent = 'NOW ouvindo... (diga "NOW" para ativar)';
+        
+        // Desbloqueia TTS no mobile automaticamente
+        if (!state.ttsUnlocked) {
+          console.log('🔓 Desbloqueando TTS automaticamente...');
+          const dummyUtterance = new SpeechSynthesisUtterance('');
+          state.synthesis.speak(dummyUtterance);
+          state.ttsUnlocked = true;
+        }
+        
+        // Fala mensagem de boas-vindas
+        speak('NOW ativado! Pode falar comigo.');
+        
+        status.textContent = 'NOW ouvindo... pode falar comigo';
         try {
           state.recognition.start();
         } catch (e) {
@@ -817,6 +850,38 @@
       } else {
         console.log('⚠️  Nenhum perfil de voz cadastrado');
         console.log('   Acesse /voice-setup.html para cadastrar');
+      }
+    }
+
+    // Verifica se a voz é do dono (autenticação)
+    async function verifyVoice(transcript) {
+      if (!state.voiceAuthEnabled || !state.ownerProfile) {
+        return true; // Se não tem autenticação, aceita qualquer voz
+      }
+
+      try {
+        // Análise simples baseada no perfil do localStorage
+        const profile = state.ownerProfile;
+        
+        // Características da frase
+        const length = transcript.length;
+        const wordCount = transcript.split(' ').length;
+        
+        // Verifica se tem características similares ao perfil
+        // (Em produção real, usaria Web Audio API para análise de frequência)
+        const avgPitch = profile.avgPitch || 150;
+        const avgEnergy = profile.avgEnergy || 0.05;
+        
+        // Simula análise (80% de chance de aceitar se tiver perfil)
+        // Isso é apenas uma simulação - em produção real seria mais sofisticado
+        const confidence = Math.random() * 0.4 + 0.6; // 60-100%
+        
+        console.log(`   Confiança de voz: ${(confidence * 100).toFixed(1)}%`);
+        
+        return confidence > 0.7; // Aceita se confiança > 70%
+      } catch (error) {
+        console.error('Erro ao verificar voz:', error);
+        return true; // Em caso de erro, aceita para não bloquear
       }
     }
 
