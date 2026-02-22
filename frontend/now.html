@@ -307,6 +307,16 @@
   <div class="response-box" id="responseBox">
     <p id="responseText"></p>
   </div>
+  
+  <!-- Instrução inicial (some após primeiro clique) -->
+  <div id="clickInstruction" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+       background: rgba(0, 247, 255, 0.1); backdrop-filter: blur(10px); border: 2px solid rgba(0, 247, 255, 0.3);
+       padding: 30px 40px; border-radius: 20px; text-align: center; z-index: 1000; animation: pulse 2s infinite;
+       font-size: 20px; color: #00f7ff; font-weight: 300; max-width: 80%; box-shadow: 0 0 40px rgba(0, 247, 255, 0.2);">
+    <div style="font-size: 48px; margin-bottom: 20px;">👆</div>
+    <div style="margin-bottom: 10px; font-weight: 500;">Clique no ORB para ativar o áudio</div>
+    <div style="font-size: 14px; opacity: 0.7;">O sistema já está ouvindo, mas precisa de um clique para desbloquear o som</div>
+  </div>
 
   <div class="voice-button" id="voiceButton">
     <svg class="voice-icon" viewBox="0 0 24 24">
@@ -716,9 +726,17 @@
     function speak(text) {
       console.log('🔊 ========= SPEAK CHAMADO =========');
       console.log('🔊 Texto original:', text.substring(0, 100));
+      console.log('🔊 TTS desbloqueado?', state.ttsUnlocked);
       
       if (!text || text.trim().length === 0) {
         console.error('❌ Texto vazio! Não vai falar.');
+        return;
+      }
+      
+      // Se TTS não foi desbloqueado, apenas mostra no texto (não fala)
+      if (!state.ttsUnlocked) {
+        console.log('⚠️  TTS ainda bloqueado - aguardando primeiro clique');
+        console.log('   Resposta será mostrada na tela, mas não falada');
         return;
       }
       
@@ -942,26 +960,52 @@
       // Carrega perfil de voz
       loadVoiceProfile();
       
-      // INICIA AUTOMATICAMENTE em modo contínuo após 2 segundos
-      setTimeout(() => {
-        console.log('🚀 Ativando escuta contínua automaticamente...');
-        
-        // Desbloqueia TTS no mobile automaticamente
+      // AGUARDA PRIMEIRO CLIQUE para desbloquear áudio
+      const unlockAudio = () => {
         if (!state.ttsUnlocked) {
-          console.log('🔓 Desbloqueando TTS automaticamente...');
+          console.log('🔓 PRIMEIRO CLIQUE - Desbloqueando áudio...');
+          
+          // Remove instrução visual
+          const instruction = document.getElementById('clickInstruction');
+          if (instruction) {
+            instruction.style.transition = 'opacity 0.5s ease';
+            instruction.style.opacity = '0';
+            setTimeout(() => instruction.remove(), 500);
+          }
+          
+          // Desbloqueia TTS com utterance vazio
           const dummyUtterance = new SpeechSynthesisUtterance('');
           state.synthesis.speak(dummyUtterance);
           state.ttsUnlocked = true;
-        }
-        
-        status.textContent = 'NOW ouvindo... pode falar comigo';
-        try {
-          state.recognition.start();
           
-          // Fala mensagem DEPOIS de iniciar o reconhecimento
+          // Remove listeners após primeiro clique
+          document.removeEventListener('click', unlockAudio);
+          document.removeEventListener('touchstart', unlockAudio);
+          orb.removeEventListener('click', unlockAudio);
+          
+          // Atualiza status
+          status.textContent = 'NOW ouvindo... pode falar comigo';
+          
+          // AGORA pode falar
           setTimeout(() => {
             speak('NOW ativado! Pode falar comigo.');
-          }, 500);
+          }, 300);
+        }
+      };
+      
+      // Adiciona listeners para desbloquear no primeiro toque
+      document.addEventListener('click', unlockAudio, { once: true });
+      document.addEventListener('touchstart', unlockAudio, { once: true });
+      orb.addEventListener('click', unlockAudio, { once: true });
+      
+      // INICIA ESCUTA AUTOMATICAMENTE (mas NÃO fala até o primeiro clique)
+      setTimeout(() => {
+        console.log('🚀 Ativando escuta contínua automaticamente...');
+        status.textContent = '🎯 Clique no ORB para ativar o áudio';
+        
+        try {
+          state.recognition.start();
+          status.textContent = 'NOW ouvindo... (clique para ativar áudio)';
         } catch (e) {
           console.log('⚠️  Aguarde um momento...');
         }
