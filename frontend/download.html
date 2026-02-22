@@ -242,29 +242,77 @@
       <p class="version">Versão 1.0.0 - APK Android</p>
     </div>
 
+    <div class="warning-box" style="margin-bottom: 30px;">
+      <h3>⚠️ APK Ainda Não Disponível</h3>
+      <p style="color: #ccc; line-height: 1.8;">
+        O APK ainda não está compilado porque o <strong>GitHub Actions precisa ser ativado primeiro</strong>.<br><br>
+        <strong>📋 Escolha uma opção abaixo:</strong>
+      </p>
+    </div>
+
     <div class="download-box">
-      <h2 style="margin-bottom: 20px;">📱 Baixar APK para Android</h2>
-      <p style="color: #ccc; margin-bottom: 30px;">
-        Versão com TTS nativo - Voz 100% funcional!
+      <h2 style="margin-bottom: 20px;">🚀 Opção 1: Ativar Build Automático (10 min)</h2>
+      <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">
+        Clone o repositório no seu PC e ative o GitHub Actions.<br>
+        O APK será compilado automaticamente!
       </p>
       
-      <a href="https://github.com/kainow252-cmyk/now/releases/latest/download/app-debug.apk" 
+      <a href="https://github.com/kainow252-cmyk/now/tree/clean-now-ai" 
          class="download-btn"
-         id="downloadBtn">
-        <span class="download-icon">⬇️</span>
-        Baixar APK (Debug)
+         target="_blank">
+        <span class="download-icon">🌿</span>
+        Ver Repositório
+      </a>
+      
+      <div style="margin-top: 20px; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; text-align: left;">
+        <p style="color: #00f7ff; margin-bottom: 10px; font-weight: bold;">Comandos:</p>
+        <code style="display: block; background: #000; padding: 10px; border-radius: 5px; color: #0f0; margin-bottom: 5px;">
+          git clone https://github.com/kainow252-cmyk/now.git<br>
+          cd now && git checkout clean-now-ai<br>
+          mkdir -p .github/workflows<br>
+          cp build-apk-workflow.yml .github/workflows/build-apk.yml<br>
+          git add .github/workflows/build-apk.yml<br>
+          git commit -m "chore: Ativar build"<br>
+          git push origin clean-now-ai
+        </code>
+        <p style="color: #888; font-size: 14px; margin-top: 10px;">
+          Depois: Aguarde 8 minutos e baixe em <a href="https://github.com/kainow252-cmyk/now/releases" style="color: #00f7ff;">Releases</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="download-box">
+      <h2 style="margin-bottom: 20px;">🛠️ Opção 2: Compilar Localmente (30 min)</h2>
+      <p style="color: #ccc; margin-bottom: 20px;">
+        Compile o APK no seu computador com Android Studio
+      </p>
+      
+      <a href="https://developer.android.com/studio" 
+         class="download-btn"
+         target="_blank"
+         style="background: linear-gradient(135deg, #667eea, #764ba2);">
+        <span class="download-icon">🔧</span>
+        Baixar Android Studio
       </a>
       
       <p style="color: #888; font-size: 14px; margin-top: 20px;">
-        Tamanho: ~10 MB | Android 7.0+
+        Depois: Execute <code>./build-apk.sh</code> no projeto
+      </p>
+    </div>
+
+    <div class="download-box">
+      <h2 style="margin-bottom: 20px;">📞 Opção 3: Pedir Ajuda (1 min)</h2>
+      <p style="color: #ccc; margin-bottom: 20px;">
+        Abra uma Issue no GitHub solicitando o APK
       </p>
       
-      <div style="margin-top: 30px;">
-        <a href="https://github.com/kainow252-cmyk/now/releases" 
-           style="color: #00f7ff; text-decoration: none;">
-          Ver todas as versões →
-        </a>
-      </div>
+      <a href="https://github.com/kainow252-cmyk/now/issues/new" 
+         class="download-btn"
+         target="_blank"
+         style="background: linear-gradient(135deg, #ff6400, #ff0064);">
+        <span class="download-icon">💬</span>
+        Abrir Issue
+      </a>
     </div>
 
     <div class="info-box">
