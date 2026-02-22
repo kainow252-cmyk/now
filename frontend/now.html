@@ -531,7 +531,27 @@
     // Processa pergunta e obtém resposta
     async function processQuestion(question) {
       try {
-        console.log('📤 Enviando pergunta:', question);
+        console.log('📤 Processando pergunta:', question);
+        
+        // PRIMEIRO: Tenta resposta local IMEDIATA para perguntas simples
+        const q = question.toLowerCase();
+        const isSimpleQuestion = 
+          q.includes('hora') || q.includes('horas') ||
+          q.includes('data') || q.includes('dia') ||
+          q.includes('olá') || q.includes('oi') ||
+          q.includes('quem é você') || q.includes('o que você') ||
+          q.includes('como você funciona') ||
+          q.includes('ajuda') || q.includes('comandos');
+        
+        if (isSimpleQuestion) {
+          console.log('✅ Usando resposta local (rápida)');
+          const localAnswer = getLocalAnswer(question);
+          showResponse(localAnswer);
+          speak(localAnswer);
+          return;
+        }
+        
+        console.log('🌐 Buscando em APIs externas...');
         
         // Timeout de 10 segundos
         const controller = new AbortController();
@@ -797,13 +817,21 @@
       };
 
       utterance.onerror = (event) => {
-        console.error('❌ Erro ao falar:', event.error);
+        console.error('❌ Erro TTS:', event.error);
         state.isSpeaking = false;
         
-        // Volta a escutar mesmo com erro
+        // Ignora erros comuns do TTS
+        if (event.error === 'interrupted' || event.error === 'canceled') {
+          console.log('   (erro ignorado - normal)');
+        }
+        
+        // Volta a escutar silenciosamente
         if (state.continuousMode) {
-          orb.classList.add('listening');
-          status.textContent = '⚠️  Erro de voz. Escutando...';
+          setTimeout(() => {
+            orb.classList.remove('thinking');
+            orb.classList.add('listening');
+            status.textContent = 'NOW ouvindo... pode falar comigo';
+          }, 500);
         }
       };
 
