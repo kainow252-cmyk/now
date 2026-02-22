@@ -314,9 +314,20 @@
        padding: 30px 40px; border-radius: 20px; text-align: center; z-index: 1000; animation: pulse 2s infinite;
        font-size: 20px; color: #00f7ff; font-weight: 300; max-width: 80%; box-shadow: 0 0 40px rgba(0, 247, 255, 0.2);">
     <div style="font-size: 48px; margin-bottom: 20px;">🎤</div>
-    <div style="margin-bottom: 10px; font-weight: 500;">Fale algo ou clique no ORB</div>
-    <div style="font-size: 14px; opacity: 0.7;">O sistema está ouvindo! Diga qualquer coisa para ativar o áudio</div>
-    <div style="font-size: 12px; opacity: 0.5; margin-top: 15px;">Ex: "Que horas são?" ou "Olá"</div>
+    <div style="margin-bottom: 10px; font-weight: 500;">Fale algo ou clique no botão</div>
+    <div style="font-size: 14px; opacity: 0.7; margin-bottom: 20px;">O sistema está ouvindo! Diga qualquer coisa para ativar o áudio</div>
+    <button id="testVoiceButton" 
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.6)';" 
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.4)';"
+            ontouchstart="this.style.transform='scale(0.95)';"
+            ontouchend="this.style.transform='scale(1)';"
+            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            border: none; color: white; padding: 15px 30px; border-radius: 30px; font-size: 16px; 
+            font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease; margin-bottom: 15px; transform: scale(1);">
+      🔊 Testar Voz
+    </button>
+    <div style="font-size: 12px; opacity: 0.5;">Ex: "Que horas são?" ou "Olá"</div>
   </div>
 
   <div class="voice-button" id="voiceButton">
@@ -1024,6 +1035,15 @@
           }, 300);
         }
       };
+      
+      // Botão de teste de voz
+      const testVoiceBtn = document.getElementById('testVoiceButton');
+      if (testVoiceBtn) {
+        testVoiceBtn.addEventListener('click', () => {
+          console.log('🎤 BOTÃO TESTAR VOZ CLICADO');
+          unlockAudio();
+        });
+      }
       
       // Adiciona listeners para desbloquear no primeiro toque
       document.addEventListener('click', unlockAudio, { once: true });
