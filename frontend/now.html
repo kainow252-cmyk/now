@@ -400,17 +400,13 @@
             setTimeout(() => instruction.remove(), 500);
           }
           
-          // Desbloqueia TTS
-          const dummyUtterance = new SpeechSynthesisUtterance('');
-          state.synthesis.speak(dummyUtterance);
+          // 🔥 IMPORTANTE: Desbloqueia TTS IMEDIATAMENTE com fala REAL
+          // (não pode usar setTimeout - precisa ser síncrono com o evento de voz)
           state.ttsUnlocked = true;
+          console.log('✅ Áudio desbloqueado! Chamando speak() IMEDIATAMENTE...');
           
-          console.log('✅ Áudio desbloqueado! TTS agora funciona.');
-          
-          // Fala boas-vindas
-          setTimeout(() => {
-            speak('NOW ativado! Pode falar comigo.');
-          }, 300);
+          // Chama speak() em modo IMEDIATO (no mesmo contexto do evento de voz)
+          speak('NOW ativado! Pode falar comigo.', true);
         }
         
         // Update last heard
@@ -749,10 +745,11 @@
     }
 
     // Fala a resposta
-    function speak(text) {
+    function speak(text, immediate = false) {
       console.log('🔊 ========= SPEAK CHAMADO =========');
       console.log('🔊 Texto original:', text.substring(0, 100));
       console.log('🔊 TTS desbloqueado?', state.ttsUnlocked);
+      console.log('🔊 Modo imediato?', immediate);
       
       if (!text || text.trim().length === 0) {
         console.error('❌ Texto vazio! Não vai falar.');
@@ -792,8 +789,8 @@
         state.synthesis.resume();
       }
 
-      // Aguarda um momento para garantir que cancelou
-      setTimeout(() => {
+      // Função para criar e falar utterance
+      const createAndSpeak = () => {
         console.log('⏱️  Criando utterance...');
         const utterance = new SpeechSynthesisUtterance(cleanText);
         utterance.lang = 'pt-BR';
@@ -818,7 +815,16 @@
         } else {
           setVoiceAndSpeak(utterance, voices, text);
         }
-      }, 100);
+      };
+      
+      // Se imediato (primeira vez, contexto de user gesture), chama agora
+      // Senão, aguarda 100ms para garantir que cancelou
+      if (immediate) {
+        console.log('⚡ MODO IMEDIATO - Falando agora (contexto user gesture)');
+        createAndSpeak();
+      } else {
+        setTimeout(createAndSpeak, 100);
+      }
     }
 
     // Configura voz e fala
