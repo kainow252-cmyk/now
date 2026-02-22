@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOW AI - Assistente Inteligente</title>
+  
+  <!-- Capacitor Core (só carrega em ambiente nativo) -->
+  <script type="module" src="capacitor.js"></script>
+  <script type="module" src="capacitor-init.js"></script>
+  
   <style>
     * {
       margin: 0;
@@ -311,17 +316,26 @@
   <!-- SEM OVERLAY - Ativação 100% por voz -->
 
   <script>
+    // Detectar plataforma e criar APIs compatíveis
+    const isNative = window.CapacitorHelper ? window.CapacitorHelper.isNative : false;
+    const platform = window.CapacitorHelper ? window.CapacitorHelper.platform : 'web';
+    
+    console.log('🚀 NOW AI Iniciando...');
+    console.log('📱 Plataforma:', platform);
+    console.log('🏠 Ambiente:', isNative ? 'NATIVO (APK com voz garantida!)' : 'WEB (Navegador)');
+    
     // Estado da aplicação
     const state = {
       isListening: false,
       isSpeaking: false,
       continuousMode: true,  // NOVO: modo contínuo ativo
       recognition: null,
-      synthesis: window.speechSynthesis,
+      synthesis: window.CapacitorHelper ? window.CapacitorHelper.createCompatibleTTS() : window.speechSynthesis,
       lastSpeechTime: 0,
       voiceAuthEnabled: false,  // NOVO: autenticação por voz
       ownerProfile: null,  // NOVO: perfil do dono
-      ttsUnlocked: false  // NOVO: TTS desbloqueado no mobile
+      ttsUnlocked: isNative ? true : false,  // TTS já desbloqueado em APK nativo!
+      isNative: isNative  // Flag para identificar ambiente
     };
 
     // Elementos DOM
@@ -340,15 +354,21 @@
 
     // Inicializa reconhecimento de voz CONTÍNUO
     function initSpeechRecognition() {
-      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      
-      if (!SpeechRecognition) {
-        console.error('Speech Recognition não suportado');
-        status.textContent = 'Navegador não suporta reconhecimento de voz';
-        return;
-      }
+      // Criar reconhecimento compatível (nativo ou web)
+      if (window.CapacitorHelper) {
+        state.recognition = window.CapacitorHelper.createCompatibleRecognition();
+      } else {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        
+        if (!SpeechRecognition) {
+          console.error('Speech Recognition não suportado');
+          status.textContent = 'Navegador não suporta reconhecimento de voz';
+          return;
+        }
 
-      state.recognition = new SpeechRecognition();
+        state.recognition = new SpeechRecognition();
+      }
+      
       state.recognition.lang = 'pt-BR';
       state.recognition.continuous = true;  // CONTÍNUO!
       state.recognition.interimResults = true;  // Resultados parciais
@@ -729,20 +749,22 @@
     }
 
     // Fala a resposta
-    function speak(text, immediate = false) {
+    async function speak(text, immediate = false) {
       console.log('🔊 ========= SPEAK CHAMADO =========');
       console.log('🔊 Texto original:', text.substring(0, 100));
       console.log('🔊 TTS desbloqueado?', state.ttsUnlocked);
       console.log('🔊 Modo imediato?', immediate);
+      console.log('🔊 Ambiente:', state.isNative ? 'NATIVO' : 'WEB');
       
       if (!text || text.trim().length === 0) {
         console.error('❌ Texto vazio! Não vai falar.');
         return;
       }
       
-      // NOVO: Tenta falar SEMPRE, mesmo se bloqueado
-      // Se falhar (not-allowed), resposta já está na tela
-      if (!state.ttsUnlocked) {
+      // Em APK nativo, TTS SEMPRE funciona!
+      if (state.isNative) {
+        console.log('✅ APK NATIVO - TTS GARANTIDO!');
+      } else if (!state.ttsUnlocked) {
         console.log('⚠️  TTS não desbloqueado ainda - tentando mesmo assim...');
         console.log('   Se falhar, resposta ficará apenas na tela');
       }
@@ -757,6 +779,45 @@
         return;
       }
       
+      // ==========================================
+      // TTS NATIVO (APK) - SEMPRE FUNCIONA!
+      // ==========================================
+      if (state.synthesis.isNative) {
+        console.log('🎯 Usando TTS NATIVO (Capacitor)');
+        
+        await state.synthesis.speak(cleanText, {
+          lang: 'pt-BR',
+          rate: 0.9,
+          pitch: 1.2,
+          volume: 1.0,
+          onend: () => {
+            console.log('✅ Fala concluída (NATIVO)');
+            state.isSpeaking = false;
+            
+            // Restaurar escuta contínua
+            if (state.continuousMode) {
+              setTimeout(() => {
+                console.log('🔄 Reconhecimento reiniciado automaticamente (modo contínuo)');
+                try {
+                  state.recognition.start();
+                } catch (e) {
+                  console.log('ℹ️  Reconhecimento já está ativo');
+                }
+              }, 1000); // 1 segundo de delay anti-eco
+            }
+          },
+          onerror: (error) => {
+            console.error('❌ Erro TTS NATIVO:', error);
+            state.isSpeaking = false;
+          }
+        });
+        
+        return; // Sair da função
+      }
+      
+      // ==========================================
+      // TTS WEB (Navegador)
+      // ==========================================
       console.log('✓ speechSynthesis OK');
       console.log('   Speaking:', state.synthesis.speaking);
       console.log('   Paused:', state.synthesis.paused);

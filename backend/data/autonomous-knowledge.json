@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-02-22T13:59:03.123Z",
-  "totalItems": 270,
+  "lastUpdate": "2026-02-22T21:03:16.543Z",
+  "totalItems": 510,
   "knowledge": [
     {
       "category": "science",
@@ -2840,6 +2840,2575 @@
       "url": "https://github.com/nari-labs/dia",
       "timestamp": 1771768743123,
       "id": "GitHub-1771768743123-0.8043644740904965"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771769957052,
+      "id": "arXiv-1771769957052-0.5333372337436906"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771769957052,
+      "id": "arXiv-1771769957052-0.9745634180775773"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771769957052,
+      "id": "arXiv-1771769957052-0.7880153322172609"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771769957052,
+      "id": "arXiv-1771769957052-0.6238900047919351"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771769957052,
+      "id": "arXiv-1771769957052-0.1756433821188066"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771769957052,
+      "id": "arXiv-1771769957052-0.47342357526150325"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771769957052,
+      "id": "arXiv-1771769957052-0.592531175564617"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771769957052,
+      "id": "arXiv-1771769957052-0.9532939319200526"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771769957052,
+      "id": "arXiv-1771769957052-0.9087631158173455"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771769957052,
+      "id": "arXiv-1771769957052-0.32629147877828624"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "BeautifulSoup reorders HTML tag attributes alphabetically - how to preserve original order?",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894003/beautifulsoup-reorders-html-tag-attributes-alphabetically-how-to-preserve-orig",
+      "tags": [
+        "python",
+        "html",
+        "python-3.x",
+        "beautifulsoup",
+        "html-parsing"
+      ],
+      "timestamp": 1771769957247,
+      "id": "StackOverflow-1771769957247-0.2417177589414834"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Can&#39;t start minecraft",
+      "score": -3,
+      "url": "https://stackoverflow.com/questions/79893983/cant-start-minecraft",
+      "tags": [
+        "linux",
+        "minecraft",
+        "forge",
+        "cachyos"
+      ],
+      "timestamp": 1771769957247,
+      "id": "StackOverflow-1771769957247-0.8502376935502678"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "querySelector not working as expected from my plugin but working in console",
+      "score": -1,
+      "url": "https://stackoverflow.com/questions/79893986/queryselector-not-working-as-expected-from-my-plugin-but-working-in-console",
+      "tags": [
+        "javascript",
+        "dom",
+        "google-chrome-extension"
+      ],
+      "timestamp": 1771769957247,
+      "id": "StackOverflow-1771769957247-0.3838980822170972"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "SQL query performance: one query with a large WHERE clause, or many smaller separate ones?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893963/sql-query-performance-one-query-with-a-large-where-clause-or-many-smaller-sepa",
+      "tags": [
+        "sql",
+        "sql-server"
+      ],
+      "timestamp": 1771769957247,
+      "id": "StackOverflow-1771769957247-0.9550688637267588"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Self hosted services only reachable on WiFi",
+      "score": -1,
+      "url": "https://stackoverflow.com/questions/79893975/self-hosted-services-only-reachable-on-wifi",
+      "tags": [
+        "server",
+        "networkx"
+      ],
+      "timestamp": 1771769957247,
+      "id": "StackOverflow-1771769957247-0.9598345028057085"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Planning on-premise ML infrastructure",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893969/planning-on-premise-ml-infrastructure",
+      "tags": [
+        "machine-learning",
+        "deployment",
+        "mlops"
+      ],
+      "timestamp": 1771769957247,
+      "id": "StackOverflow-1771769957247-0.7227102186504619"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "OpenTelemetry filelog / fluentforward with Docker: Stdout logs visible but not filterable by service_name or container_id in Grafana",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893970/opentelemetry-filelog-fluentforward-with-docker-stdout-logs-visible-but-not-f",
+      "tags": [
+        "docker",
+        "logging",
+        "open-telemetry",
+        "fluent-bit",
+        "open-telemetry-collector"
+      ],
+      "timestamp": 1771769957247,
+      "id": "StackOverflow-1771769957247-0.627887716533494"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Where to store data when testing and when in production?",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79893904/where-to-store-data-when-testing-and-when-in-production",
+      "tags": [
+        "python",
+        "linux",
+        "database",
+        "environment"
+      ],
+      "timestamp": 1771769957247,
+      "id": "StackOverflow-1771769957247-0.8776240316607133"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "how to get polymarket Bitcoin Up or Down - 5 Minutes price to beat",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893949/how-to-get-polymarket-bitcoin-up-or-down-5-minutes-price-to-beat",
+      "tags": [
+        "python"
+      ],
+      "timestamp": 1771769957247,
+      "id": "StackOverflow-1771769957247-0.7667004486148916"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Adding extension to built in layer of vscode",
+      "score": -4,
+      "url": "https://stackoverflow.com/questions/79893951/adding-extension-to-built-in-layer-of-vscode",
+      "tags": [
+        "visual-studio-code"
+      ],
+      "timestamp": 1771769957247,
+      "id": "StackOverflow-1771769957247-0.24583627004675557"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Shubhamsaboo/awesome-llm-apps",
+      "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.",
+      "stars": 96533,
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "timestamp": 1771769958149,
+      "id": "GitHub-1771769958149-0.9685167136368624"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "modelcontextprotocol/servers",
+      "description": "Model Context Protocol Servers",
+      "stars": 79124,
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "timestamp": 1771769958149,
+      "id": "GitHub-1771769958150-0.04195293953420598"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stars": 57437,
+      "url": "https://github.com/obra/superpowers",
+      "timestamp": 1771769958149,
+      "id": "GitHub-1771769958150-0.2339445085643539"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "RVC-Boss/GPT-SoVITS",
+      "description": "1 min voice data can also be used to train a good TTS model! (few shot voice cloning)",
+      "stars": 55178,
+      "url": "https://github.com/RVC-Boss/GPT-SoVITS",
+      "timestamp": 1771769958149,
+      "id": "GitHub-1771769958150-0.36005192131210917"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zen-browser/desktop",
+      "description": "Welcome to a calmer internet",
+      "stars": 40238,
+      "url": "https://github.com/zen-browser/desktop",
+      "timestamp": 1771769958149,
+      "id": "GitHub-1771769958150-0.4657597620747431"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "CherryHQ/cherry-studio",
+      "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs",
+      "stars": 40028,
+      "url": "https://github.com/CherryHQ/cherry-studio",
+      "timestamp": 1771769958149,
+      "id": "GitHub-1771769958150-0.7195409029438073"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "feder-cr/Jobs_Applier_AI_Agent_AIHawk",
+      "description": "AIHawk aims to easy job hunt process by automating the job application process. Utilizing artificial intelligence, it enables users to apply for multiple jobs in a tailored way.",
+      "stars": 29360,
+      "url": "https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk",
+      "timestamp": 1771769958149,
+      "id": "GitHub-1771769958150-0.38866909427528595"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zama-ai/fhevm",
+      "description": "FHEVM, a full-stack framework for integrating Fully Homomorphic Encryption (FHE) with blockchain applications",
+      "stars": 25758,
+      "url": "https://github.com/zama-ai/fhevm",
+      "timestamp": 1771769958149,
+      "id": "GitHub-1771769958150-0.9702890083002949"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "NirDiamant/RAG_Techniques",
+      "description": "This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. RAG systems combine information retrieval with generative models to provide accurate and contextually rich responses.",
+      "stars": 25536,
+      "url": "https://github.com/NirDiamant/RAG_Techniques",
+      "timestamp": 1771769958149,
+      "id": "GitHub-1771769958150-0.5650624091443797"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "black-forest-labs/flux",
+      "description": "Official inference repo for FLUX.1 models",
+      "stars": 25221,
+      "url": "https://github.com/black-forest-labs/flux",
+      "timestamp": 1771769958149,
+      "id": "GitHub-1771769958150-0.55314861486866"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771771758390,
+      "id": "arXiv-1771771758390-0.35346535185898564"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771771758390,
+      "id": "arXiv-1771771758390-0.9912427860070703"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771771758390,
+      "id": "arXiv-1771771758390-0.5403728698930861"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771771758390,
+      "id": "arXiv-1771771758390-0.5882218931846532"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771771758390,
+      "id": "arXiv-1771771758390-0.5291893015249294"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771771758390,
+      "id": "arXiv-1771771758390-0.08565187640492522"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771771758390,
+      "id": "arXiv-1771771758390-0.3304658858334901"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771771758390,
+      "id": "arXiv-1771771758390-0.7525593646928013"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771771758390,
+      "id": "arXiv-1771771758390-0.5202621301022994"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771771758390,
+      "id": "arXiv-1771771758390-0.0578645818610064"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "BeautifulSoup reorders HTML tag attributes alphabetically - how to preserve original order?",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894003/beautifulsoup-reorders-html-tag-attributes-alphabetically-how-to-preserve-orig",
+      "tags": [
+        "python",
+        "html",
+        "python-3.x",
+        "beautifulsoup",
+        "html-parsing"
+      ],
+      "timestamp": 1771771758440,
+      "id": "StackOverflow-1771771758440-0.6998018291081054"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Instagram API: Reel uploads fail with code 2207076",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894004/instagram-api-reel-uploads-fail-with-code-2207076",
+      "tags": [
+        "facebook",
+        "instagram",
+        "instagram-graph-api"
+      ],
+      "timestamp": 1771771758440,
+      "id": "StackOverflow-1771771758440-0.920787732260355"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Can&#39;t start minecraft",
+      "score": -3,
+      "url": "https://stackoverflow.com/questions/79893983/cant-start-minecraft",
+      "tags": [
+        "linux",
+        "minecraft",
+        "forge",
+        "cachyos"
+      ],
+      "timestamp": 1771771758440,
+      "id": "StackOverflow-1771771758440-0.1516434542368068"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "querySelector not working as expected from my plugin but working in console",
+      "score": -1,
+      "url": "https://stackoverflow.com/questions/79893986/queryselector-not-working-as-expected-from-my-plugin-but-working-in-console",
+      "tags": [
+        "javascript",
+        "dom",
+        "google-chrome-extension"
+      ],
+      "timestamp": 1771771758440,
+      "id": "StackOverflow-1771771758440-0.9174177831467221"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "TLS Handshake Failures",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894002/tls-handshake-failures",
+      "tags": [
+        "nginx",
+        "ssl",
+        "openssl"
+      ],
+      "timestamp": 1771771758440,
+      "id": "StackOverflow-1771771758440-0.022748921931047716"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How can I set the source of an image dynamically in React native with expo?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893995/how-can-i-set-the-source-of-an-image-dynamically-in-react-native-with-expo",
+      "tags": [
+        "typescript",
+        "react-native",
+        "image",
+        "expo"
+      ],
+      "timestamp": 1771771758440,
+      "id": "StackOverflow-1771771758440-0.7684345448822969"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Continuous Feed Problem on Raspberry Pi 5 with Epson Thermal Printer and Official drivers",
+      "score": -2,
+      "url": "https://stackoverflow.com/questions/79893982/continuous-feed-problem-on-raspberry-pi-5-with-epson-thermal-printer-and-officia",
+      "tags": [
+        ".net",
+        "raspberry-pi",
+        "thermal-printer",
+        "point-of-sale"
+      ],
+      "timestamp": 1771771758440,
+      "id": "StackOverflow-1771771758440-0.9797420779850596"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Show Azure MySQL data as diagram?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893991/show-azure-mysql-data-as-diagram",
+      "tags": [
+        "azure-mysql-database"
+      ],
+      "timestamp": 1771771758440,
+      "id": "StackOverflow-1771771758440-0.37936846886820463"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "SQL query performance: one query with a large WHERE clause, or many smaller separate ones?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893963/sql-query-performance-one-query-with-a-large-where-clause-or-many-smaller-sepa",
+      "tags": [
+        "sql",
+        "sql-server"
+      ],
+      "timestamp": 1771771758440,
+      "id": "StackOverflow-1771771758440-0.15328273035253148"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Self hosted services only reachable on WiFi",
+      "score": -1,
+      "url": "https://stackoverflow.com/questions/79893975/self-hosted-services-only-reachable-on-wifi",
+      "tags": [
+        "server",
+        "networkx"
+      ],
+      "timestamp": 1771771758440,
+      "id": "StackOverflow-1771771758440-0.7072428405194644"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "FoundationVision/VAR",
+      "description": "[NeurIPS 2024 Best Paper Award][GPT beats diffusion🔥] [scaling laws in visual generation📈] Official impl. of \"Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction\". An *ultra-simple, user-friendly yet state-of-the-art* codebase for autoregressive image generation!",
+      "stars": 8621,
+      "url": "https://github.com/FoundationVision/VAR",
+      "timestamp": 1771771759417,
+      "id": "GitHub-1771771759417-0.48777960936242293"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "PennyroyalTea/gibberlink",
+      "description": "Two conversational AI agents switching from English to sound-level protocol after confirming they are both AI agents",
+      "stars": 4783,
+      "url": "https://github.com/PennyroyalTea/gibberlink",
+      "timestamp": 1771771759417,
+      "id": "GitHub-1771771759417-0.285271227747556"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "VectorSpaceLab/OmniGen",
+      "description": "OmniGen: Unified Image Generation. https://arxiv.org/pdf/2409.11340",
+      "stars": 4313,
+      "url": "https://github.com/VectorSpaceLab/OmniGen",
+      "timestamp": 1771771759417,
+      "id": "GitHub-1771771759417-0.15326834604653072"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Netflix/maestro",
+      "description": "Maestro: Netflix’s Workflow Orchestrator",
+      "stars": 3722,
+      "url": "https://github.com/Netflix/maestro",
+      "timestamp": 1771771759417,
+      "id": "GitHub-1771771759417-0.08706682568507595"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "SandAI-org/MAGI-1",
+      "description": "MAGI-1: Autoregressive Video Generation at Scale",
+      "stars": 3642,
+      "url": "https://github.com/SandAI-org/MAGI-1",
+      "timestamp": 1771771759417,
+      "id": "GitHub-1771771759417-0.21504450146251752"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "CosmosShadow/gptpdf",
+      "description": "Using GPT to parse PDF",
+      "stars": 3562,
+      "url": "https://github.com/CosmosShadow/gptpdf",
+      "timestamp": 1771771759417,
+      "id": "GitHub-1771771759417-0.5709727645962572"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "xcancloud/AngusTester",
+      "description": "🔥 An agile development and testing platform designed to empower small and medium-sized enterprises to build their own R&D systems, streamline workflows, and enhance operational efficiency.",
+      "stars": 3372,
+      "url": "https://github.com/xcancloud/AngusTester",
+      "timestamp": 1771771759417,
+      "id": "GitHub-1771771759417-0.011885958805198715"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zhengkyl/qrframe",
+      "description": "code-based qr code designer",
+      "stars": 3361,
+      "url": "https://github.com/zhengkyl/qrframe",
+      "timestamp": 1771771759417,
+      "id": "GitHub-1771771759417-0.11698514820322448"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "togethercomputer/MoA",
+      "description": "Together Mixture-Of-Agents (MoA) –  65.1% on AlpacaEval with OSS models",
+      "stars": 2855,
+      "url": "https://github.com/togethercomputer/MoA",
+      "timestamp": 1771771759417,
+      "id": "GitHub-1771771759417-0.0831883008132992"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "ml-explore/mlx-swift-examples",
+      "description": "Examples using MLX Swift",
+      "stars": 2422,
+      "url": "https://github.com/ml-explore/mlx-swift-examples",
+      "timestamp": 1771771759417,
+      "id": "GitHub-1771771759417-0.29511383325366447"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771773558255,
+      "id": "arXiv-1771773558255-0.6007299158045527"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771773558255,
+      "id": "arXiv-1771773558255-0.41727861417046674"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771773558255,
+      "id": "arXiv-1771773558255-0.5784992459290779"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771773558255,
+      "id": "arXiv-1771773558255-0.5162859146678198"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771773558255,
+      "id": "arXiv-1771773558255-0.2760347067561124"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771773558255,
+      "id": "arXiv-1771773558255-0.6799226312694779"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771773558255,
+      "id": "arXiv-1771773558255-0.4633285543997834"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771773558255,
+      "id": "arXiv-1771773558255-0.23793767601236815"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771773558255,
+      "id": "arXiv-1771773558255-0.24549704262796834"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771773558255,
+      "id": "arXiv-1771773558255-0.1479650921257052"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "querySelector not working as expected from my plugin but working in console",
+      "score": -1,
+      "url": "https://stackoverflow.com/questions/79893986/queryselector-not-working-as-expected-from-my-plugin-but-working-in-console",
+      "tags": [
+        "javascript",
+        "dom",
+        "google-chrome-extension"
+      ],
+      "timestamp": 1771773558661,
+      "id": "StackOverflow-1771773558661-0.8772785643462893"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "BeautifulSoup reorders HTML tag attributes alphabetically - how to preserve original order?",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894003/beautifulsoup-reorders-html-tag-attributes-alphabetically-how-to-preserve-orig",
+      "tags": [
+        "python",
+        "html",
+        "python-3.x",
+        "beautifulsoup",
+        "html-parsing"
+      ],
+      "timestamp": 1771773558661,
+      "id": "StackOverflow-1771773558661-0.382323937802997"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Instagram API: Reel uploads fail with code 2207076",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894004/instagram-api-reel-uploads-fail-with-code-2207076",
+      "tags": [
+        "facebook",
+        "instagram",
+        "instagram-graph-api"
+      ],
+      "timestamp": 1771773558661,
+      "id": "StackOverflow-1771773558661-0.05524677756749763"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to extract real estate listings from Tinora.com (Thailand) programmatically?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894016/how-to-extract-real-estate-listings-from-tinora-com-thailand-programmatically",
+      "tags": [
+        "state",
+        "real-time"
+      ],
+      "timestamp": 1771773558661,
+      "id": "StackOverflow-1771773558661-0.29324878980914004"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "MessageChatMemoryAdvisor stores raw JSON response when using JSON_OBJECT response format, causing context loss on conversation reload",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894013/messagechatmemoryadvisor-stores-raw-json-response-when-using-json-object-respons",
+      "tags": [
+        "spring",
+        "openai-api",
+        "spring-ai"
+      ],
+      "timestamp": 1771773558661,
+      "id": "StackOverflow-1771773558661-0.642877445391165"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Compare product prices from two websites using Python (BeautifulSoup + JSON)",
+      "score": -1,
+      "url": "https://stackoverflow.com/questions/79894012/compare-product-prices-from-two-websites-using-python-beautifulsoup-json",
+      "tags": [
+        "python",
+        "json",
+        "web-scraping",
+        "beautifulsoup",
+        "python-requests"
+      ],
+      "timestamp": 1771773558661,
+      "id": "StackOverflow-1771773558661-0.56354385603817"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "SQL query performance: one query with a large WHERE clause, or many smaller separate ones?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893963/sql-query-performance-one-query-with-a-large-where-clause-or-many-smaller-sepa",
+      "tags": [
+        "sql",
+        "sql-server"
+      ],
+      "timestamp": 1771773558661,
+      "id": "StackOverflow-1771773558661-0.15158296474290944"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Can&#39;t start minecraft",
+      "score": -4,
+      "url": "https://stackoverflow.com/questions/79893983/cant-start-minecraft",
+      "tags": [
+        "linux",
+        "minecraft",
+        "forge",
+        "cachyos"
+      ],
+      "timestamp": 1771773558661,
+      "id": "StackOverflow-1771773558661-0.22937614293632103"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "TLS Handshake Failures",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894002/tls-handshake-failures",
+      "tags": [
+        "nginx",
+        "ssl",
+        "openssl"
+      ],
+      "timestamp": 1771773558661,
+      "id": "StackOverflow-1771773558661-0.1210169804048109"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Show Azure MySQL data as diagram?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893991/show-azure-mysql-data-as-diagram",
+      "tags": [
+        "azure-mysql-database"
+      ],
+      "timestamp": 1771773558661,
+      "id": "StackOverflow-1771773558661-0.5335366338682972"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Netflix/maestro",
+      "description": "Maestro: Netflix’s Workflow Orchestrator",
+      "stars": 3722,
+      "url": "https://github.com/Netflix/maestro",
+      "timestamp": 1771773559408,
+      "id": "GitHub-1771773559408-0.5810948622780236"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "CosmosShadow/gptpdf",
+      "description": "Using GPT to parse PDF",
+      "stars": 3562,
+      "url": "https://github.com/CosmosShadow/gptpdf",
+      "timestamp": 1771773559408,
+      "id": "GitHub-1771773559408-0.8039842627597333"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zhengkyl/qrframe",
+      "description": "code-based qr code designer",
+      "stars": 3361,
+      "url": "https://github.com/zhengkyl/qrframe",
+      "timestamp": 1771773559408,
+      "id": "GitHub-1771773559408-0.5069509562252865"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "togethercomputer/MoA",
+      "description": "Together Mixture-Of-Agents (MoA) –  65.1% on AlpacaEval with OSS models",
+      "stars": 2855,
+      "url": "https://github.com/togethercomputer/MoA",
+      "timestamp": 1771773559408,
+      "id": "GitHub-1771773559408-0.8557401406716214"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "poundifdef/smoothmq",
+      "description": "An improved drop-in replacement for SQS",
+      "stars": 2280,
+      "url": "https://github.com/poundifdef/smoothmq",
+      "timestamp": 1771773559408,
+      "id": "GitHub-1771773559408-0.7459453214544853"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "qhjqhj00/MemoRAG",
+      "description": "Empowering RAG with a memory-based data interface for all-purpose applications!",
+      "stars": 2210,
+      "url": "https://github.com/qhjqhj00/MemoRAG",
+      "timestamp": 1771773559408,
+      "id": "GitHub-1771773559408-0.9345035007502329"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "nimbusdotstorage/Nimbus",
+      "description": "The future of file storage",
+      "stars": 1977,
+      "url": "https://github.com/nimbusdotstorage/Nimbus",
+      "timestamp": 1771773559408,
+      "id": "GitHub-1771773559408-0.17113929707962638"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "echohive42/AI-reads-books-page-by-page",
+      "description": "AI reads books: Page-by-Page PDF Knowledge Extractor & Summarizer. script performs an intelligent page-by-page analysis of PDF books, methodically extracting knowledge points and generating progressive summaries at specified intervals",
+      "stars": 1574,
+      "url": "https://github.com/echohive42/AI-reads-books-page-by-page",
+      "timestamp": 1771773559408,
+      "id": "GitHub-1771773559408-0.26587599557438013"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "dindin0497/SeeIt",
+      "description": null,
+      "stars": 1553,
+      "url": "https://github.com/dindin0497/SeeIt",
+      "timestamp": 1771773559408,
+      "id": "GitHub-1771773559408-0.03789501191375244"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "regolith-labs/ore-cli",
+      "description": "Command line interface for ORE cryptocurrency mining.",
+      "stars": 1507,
+      "url": "https://github.com/regolith-labs/ore-cli",
+      "timestamp": 1771773559408,
+      "id": "GitHub-1771773559408-0.9710840830737086"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771775358272,
+      "id": "arXiv-1771775358272-0.9635658299224801"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771775358272,
+      "id": "arXiv-1771775358272-0.7716792578438985"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771775358272,
+      "id": "arXiv-1771775358272-0.2164313813128742"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771775358272,
+      "id": "arXiv-1771775358272-0.7352168927093066"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771775358272,
+      "id": "arXiv-1771775358272-0.37269649850791153"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771775358272,
+      "id": "arXiv-1771775358272-0.9693817028150045"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771775358272,
+      "id": "arXiv-1771775358272-0.8344888029991102"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771775358272,
+      "id": "arXiv-1771775358272-0.6982893493466882"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771775358272,
+      "id": "arXiv-1771775358272-0.08211153112535374"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771775358272,
+      "id": "arXiv-1771775358272-0.7955227402879279"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "querySelector not working as expected from my plugin but working in console",
+      "score": -1,
+      "url": "https://stackoverflow.com/questions/79893986/queryselector-not-working-as-expected-from-my-plugin-but-working-in-console",
+      "tags": [
+        "javascript",
+        "dom",
+        "google-chrome-extension"
+      ],
+      "timestamp": 1771775358543,
+      "id": "StackOverflow-1771775358543-0.6555362313292055"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "BeautifulSoup reorders HTML tag attributes alphabetically - how to preserve original order?",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894003/beautifulsoup-reorders-html-tag-attributes-alphabetically-how-to-preserve-orig",
+      "tags": [
+        "python",
+        "html",
+        "python-3.x",
+        "beautifulsoup",
+        "html-parsing"
+      ],
+      "timestamp": 1771775358543,
+      "id": "StackOverflow-1771775358543-0.27825286020739104"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Instagram API: Reel uploads fail with code 2207076",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894004/instagram-api-reel-uploads-fail-with-code-2207076",
+      "tags": [
+        "facebook",
+        "instagram",
+        "instagram-graph-api"
+      ],
+      "timestamp": 1771775358543,
+      "id": "StackOverflow-1771775358543-0.24979124921183504"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Compare product prices from two websites using Python (BeautifulSoup + JSON)",
+      "score": -2,
+      "url": "https://stackoverflow.com/questions/79894012/compare-product-prices-from-two-websites-using-python-beautifulsoup-json",
+      "tags": [
+        "python",
+        "json",
+        "web-scraping",
+        "beautifulsoup",
+        "python-requests"
+      ],
+      "timestamp": 1771775358543,
+      "id": "StackOverflow-1771775358543-0.37452532684458917"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "MessageChatMemoryAdvisor stores raw JSON response when using JSON_OBJECT response format, causing context loss on conversation reload",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894013/messagechatmemoryadvisor-stores-raw-json-response-when-using-json-object-respons",
+      "tags": [
+        "spring",
+        "openai-api",
+        "spring-ai"
+      ],
+      "timestamp": 1771775358543,
+      "id": "StackOverflow-1771775358543-0.317088269276095"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Deploying Django backend and React frontend completely free — production-ready options?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894009/deploying-django-backend-and-react-frontend-completely-free-production-ready-o",
+      "tags": [
+        "reactjs",
+        "django",
+        "deployment",
+        "hosting"
+      ],
+      "timestamp": 1771775358543,
+      "id": "StackOverflow-1771775358543-0.43300215903840633"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "SQL query performance: one query with a large WHERE clause, or many smaller separate ones?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893963/sql-query-performance-one-query-with-a-large-where-clause-or-many-smaller-sepa",
+      "tags": [
+        "sql",
+        "sql-server"
+      ],
+      "timestamp": 1771775358543,
+      "id": "StackOverflow-1771775358543-0.3687932945843748"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Can&#39;t start minecraft",
+      "score": -4,
+      "url": "https://stackoverflow.com/questions/79893983/cant-start-minecraft",
+      "tags": [
+        "linux",
+        "minecraft",
+        "forge",
+        "cachyos"
+      ],
+      "timestamp": 1771775358543,
+      "id": "StackOverflow-1771775358543-0.2701327156236504"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "TLS Handshake Failures",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894002/tls-handshake-failures",
+      "tags": [
+        "nginx",
+        "ssl",
+        "openssl"
+      ],
+      "timestamp": 1771775358543,
+      "id": "StackOverflow-1771775358543-0.1540078204767914"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Show Azure MySQL data as diagram?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893991/show-azure-mysql-data-as-diagram",
+      "tags": [
+        "azure-mysql-database"
+      ],
+      "timestamp": 1771775358543,
+      "id": "StackOverflow-1771775358543-0.038936307533613546"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "levihsu/OOTDiffusion",
+      "description": "[AAAI 2025] Official implementation of \"OOTDiffusion: Outfitting Fusion based Latent Diffusion for Controllable Virtual Try-on\"",
+      "stars": 6516,
+      "url": "https://github.com/levihsu/OOTDiffusion",
+      "timestamp": 1771775359455,
+      "id": "GitHub-1771775359455-0.21342981989793808"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Netflix/maestro",
+      "description": "Maestro: Netflix’s Workflow Orchestrator",
+      "stars": 3722,
+      "url": "https://github.com/Netflix/maestro",
+      "timestamp": 1771775359455,
+      "id": "GitHub-1771775359455-0.731797399006384"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "CosmosShadow/gptpdf",
+      "description": "Using GPT to parse PDF",
+      "stars": 3562,
+      "url": "https://github.com/CosmosShadow/gptpdf",
+      "timestamp": 1771775359455,
+      "id": "GitHub-1771775359455-0.07606978647036167"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zhengkyl/qrframe",
+      "description": "code-based qr code designer",
+      "stars": 3361,
+      "url": "https://github.com/zhengkyl/qrframe",
+      "timestamp": 1771775359455,
+      "id": "GitHub-1771775359455-0.8625033446061023"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "stepfun-ai/Step-Video-T2V",
+      "description": null,
+      "stars": 3173,
+      "url": "https://github.com/stepfun-ai/Step-Video-T2V",
+      "timestamp": 1771775359455,
+      "id": "GitHub-1771775359455-0.6785089234016295"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "togethercomputer/MoA",
+      "description": "Together Mixture-Of-Agents (MoA) –  65.1% on AlpacaEval with OSS models",
+      "stars": 2855,
+      "url": "https://github.com/togethercomputer/MoA",
+      "timestamp": 1771775359455,
+      "id": "GitHub-1771775359455-0.20282998800999663"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "poundifdef/smoothmq",
+      "description": "An improved drop-in replacement for SQS",
+      "stars": 2280,
+      "url": "https://github.com/poundifdef/smoothmq",
+      "timestamp": 1771775359455,
+      "id": "GitHub-1771775359455-0.7493448413646826"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "qhjqhj00/MemoRAG",
+      "description": "Empowering RAG with a memory-based data interface for all-purpose applications!",
+      "stars": 2210,
+      "url": "https://github.com/qhjqhj00/MemoRAG",
+      "timestamp": 1771775359455,
+      "id": "GitHub-1771775359455-0.8564415383266091"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "nimbusdotstorage/Nimbus",
+      "description": "The future of file storage",
+      "stars": 1977,
+      "url": "https://github.com/nimbusdotstorage/Nimbus",
+      "timestamp": 1771775359455,
+      "id": "GitHub-1771775359455-0.3154217248476865"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "data-infra/cube-studio",
+      "description": "cube studio开源云原生一站式机器学习/深度学习/大模型AI平台/MaaS/mlops/人工智能平台/训推平台，算法全链路流程，算力租赁平台，拖拉拽任务流pipeline编排，多机多卡分布式训练，超参搜索，推理服务，VGPU虚拟化，云边端协同，边缘计算，自动化标注平台，deepseek等大模型sft微调/奖励模型/强化学习训练，vllm/ollama/mindie大模型多机推理，私有知识库llmops智能体，AI模型市场，支持国产异构算力调度,昇腾/寒武纪/海光/摩尔/沐曦等，支持ib/roce/RDMA，支持pytorch/deepspeed/colossalai/ray等分布式",
+      "stars": 1905,
+      "url": "https://github.com/data-infra/cube-studio",
+      "timestamp": 1771775359455,
+      "id": "GitHub-1771775359455-0.7033415136662555"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771780888903,
+      "id": "arXiv-1771780888903-0.25983722797088515"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771780888903,
+      "id": "arXiv-1771780888903-0.1469604759873402"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771780888903,
+      "id": "arXiv-1771780888903-0.26013256866233636"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771780888903,
+      "id": "arXiv-1771780888903-0.18590394061251136"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771780888903,
+      "id": "arXiv-1771780888903-0.03043668473752703"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771780888903,
+      "id": "arXiv-1771780888903-0.4435773314099325"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771780888903,
+      "id": "arXiv-1771780888903-0.4742999147555995"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771780888903,
+      "id": "arXiv-1771780888903-0.5351927265937815"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771780888903,
+      "id": "arXiv-1771780888903-0.8531302477372831"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771780888903,
+      "id": "arXiv-1771780888903-0.5462441261376207"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to make my code use .venv, and not global pip packages?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894076/how-to-make-my-code-use-venv-and-not-global-pip-packages",
+      "tags": [
+        "python",
+        "visual-studio-code",
+        "pip"
+      ],
+      "timestamp": 1771780889121,
+      "id": "StackOverflow-1771780889121-0.8108253023275296"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "I use vscode in Mac, Why it gives random-not real errors while it same code works in my Windows vscode",
+      "score": -4,
+      "url": "https://stackoverflow.com/questions/79894066/i-use-vscode-in-mac-why-it-gives-random-not-real-errors-while-it-same-code-work",
+      "tags": [
+        "c++"
+      ],
+      "timestamp": 1771780889121,
+      "id": "StackOverflow-1771780889121-0.7154202402480043"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to render transparent custom bitmap text in VGA Mode 13h (x86 16-bit Real Mode) without BIOS interrupts?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894064/how-to-render-transparent-custom-bitmap-text-in-vga-mode-13h-x86-16-bit-real-mo",
+      "tags": [
+        "assembly",
+        "x86-16",
+        "osdev",
+        "vga"
+      ],
+      "timestamp": 1771780889121,
+      "id": "StackOverflow-1771780889121-0.481924297245546"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Restore pullup pins became LOW",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894052/restore-pullup-pins-became-low",
+      "tags": [
+        "python",
+        "raspberry-pi",
+        "gpio",
+        "raspberry-pi4"
+      ],
+      "timestamp": 1771780889121,
+      "id": "StackOverflow-1771780889121-0.8167612689676529"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Compare product prices from two websites using Python (BeautifulSoup + JSON)",
+      "score": -4,
+      "url": "https://stackoverflow.com/questions/79894012/compare-product-prices-from-two-websites-using-python-beautifulsoup-json",
+      "tags": [
+        "python",
+        "json",
+        "web-scraping",
+        "beautifulsoup",
+        "python-requests"
+      ],
+      "timestamp": 1771780889121,
+      "id": "StackOverflow-1771780889121-0.47069499744795373"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Coupling/Decoupling domain exceptions from HTTP semantics",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894020/coupling-decoupling-domain-exceptions-from-http-semantics",
+      "tags": [
+        "java",
+        "spring",
+        "spring-boot",
+        "domain-driven-design",
+        "clean-architecture"
+      ],
+      "timestamp": 1771780889121,
+      "id": "StackOverflow-1771780889121-0.3866162055949234"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why can&#39;t I use Iterable as a type for overloading a singledispatchmethod?",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894038/why-cant-i-use-iterable-as-a-type-for-overloading-a-singledispatchmethod",
+      "tags": [
+        "python",
+        "python-3.x",
+        "single-dispatch"
+      ],
+      "timestamp": 1771780889121,
+      "id": "StackOverflow-1771780889121-0.872168394621105"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "SQL query performance: one query with a large WHERE clause, or many smaller separate ones?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893963/sql-query-performance-one-query-with-a-large-where-clause-or-many-smaller-sepa",
+      "tags": [
+        "sql",
+        "sql-server"
+      ],
+      "timestamp": 1771780889121,
+      "id": "StackOverflow-1771780889121-0.6490547785488214"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to bold SPECIFIC TEXTS using &quot;TEXTJOIN&quot; or &quot;CONCAT&quot; formula",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894025/how-to-bold-specific-texts-using-textjoin-or-concat-formula",
+      "tags": [
+        "excel",
+        "vba",
+        "excel-formula"
+      ],
+      "timestamp": 1771780889121,
+      "id": "StackOverflow-1771780889121-0.9903556727401093"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Dependency installation using pip",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894028/dependency-installation-using-pip",
+      "tags": [
+        "python"
+      ],
+      "timestamp": 1771780889121,
+      "id": "StackOverflow-1771780889121-0.7390169979182495"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Shubhamsaboo/awesome-llm-apps",
+      "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.",
+      "stars": 96545,
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "timestamp": 1771780889988,
+      "id": "GitHub-1771780889988-0.9623530762821833"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "modelcontextprotocol/servers",
+      "description": "Model Context Protocol Servers",
+      "stars": 79131,
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "timestamp": 1771780889988,
+      "id": "GitHub-1771780889988-0.5389667463413066"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stars": 57510,
+      "url": "https://github.com/obra/superpowers",
+      "timestamp": 1771780889988,
+      "id": "GitHub-1771780889988-0.8372228936959678"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "RVC-Boss/GPT-SoVITS",
+      "description": "1 min voice data can also be used to train a good TTS model! (few shot voice cloning)",
+      "stars": 55185,
+      "url": "https://github.com/RVC-Boss/GPT-SoVITS",
+      "timestamp": 1771780889988,
+      "id": "GitHub-1771780889988-0.8271208461730606"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zen-browser/desktop",
+      "description": "Welcome to a calmer internet",
+      "stars": 40237,
+      "url": "https://github.com/zen-browser/desktop",
+      "timestamp": 1771780889988,
+      "id": "GitHub-1771780889988-0.15591134224769676"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "CherryHQ/cherry-studio",
+      "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs",
+      "stars": 40036,
+      "url": "https://github.com/CherryHQ/cherry-studio",
+      "timestamp": 1771780889988,
+      "id": "GitHub-1771780889988-0.11655389215227285"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "feder-cr/Jobs_Applier_AI_Agent_AIHawk",
+      "description": "AIHawk aims to easy job hunt process by automating the job application process. Utilizing artificial intelligence, it enables users to apply for multiple jobs in a tailored way.",
+      "stars": 29361,
+      "url": "https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk",
+      "timestamp": 1771780889988,
+      "id": "GitHub-1771780889988-0.1477276235506273"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zama-ai/fhevm",
+      "description": "FHEVM, a full-stack framework for integrating Fully Homomorphic Encryption (FHE) with blockchain applications",
+      "stars": 25757,
+      "url": "https://github.com/zama-ai/fhevm",
+      "timestamp": 1771780889988,
+      "id": "GitHub-1771780889988-0.6363509422535203"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Fission-AI/OpenSpec",
+      "description": "Spec-driven development (SDD) for AI coding assistants.",
+      "stars": 25076,
+      "url": "https://github.com/Fission-AI/OpenSpec",
+      "timestamp": 1771780889988,
+      "id": "GitHub-1771780889988-0.5009710821495381"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "firecrawl/open-lovable",
+      "description": "🔥 Clone and recreate any website as a modern React app in seconds",
+      "stars": 24218,
+      "url": "https://github.com/firecrawl/open-lovable",
+      "timestamp": 1771780889988,
+      "id": "GitHub-1771780889988-0.5831219812956412"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771782688871,
+      "id": "arXiv-1771782688871-0.5428709534485474"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771782688871,
+      "id": "arXiv-1771782688871-0.9187710231825594"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771782688871,
+      "id": "arXiv-1771782688871-0.3268598552679294"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771782688871,
+      "id": "arXiv-1771782688871-0.6071527171725788"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771782688871,
+      "id": "arXiv-1771782688871-0.29955834356398303"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771782688871,
+      "id": "arXiv-1771782688871-0.855770593891326"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771782688871,
+      "id": "arXiv-1771782688871-0.737114807153991"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771782688871,
+      "id": "arXiv-1771782688871-0.2902580713529226"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771782688871,
+      "id": "arXiv-1771782688871-0.4414752162868638"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771782688871,
+      "id": "arXiv-1771782688871-0.49407080057732156"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Long breadcrumb should be right-aligned when scrolled",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894082/long-breadcrumb-should-be-right-aligned-when-scrolled",
+      "tags": [
+        "html",
+        "css"
+      ],
+      "timestamp": 1771782689169,
+      "id": "StackOverflow-1771782689169-0.4324006297649765"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to make my code use .venv, and not global pip packages?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894076/how-to-make-my-code-use-venv-and-not-global-pip-packages",
+      "tags": [
+        "python",
+        "visual-studio-code",
+        "pip"
+      ],
+      "timestamp": 1771782689169,
+      "id": "StackOverflow-1771782689169-0.2782297543903567"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "I use vscode in Mac, Why it gives random-not real errors while it same code works in my Windows vscode",
+      "score": -4,
+      "url": "https://stackoverflow.com/questions/79894066/i-use-vscode-in-mac-why-it-gives-random-not-real-errors-while-it-same-code-work",
+      "tags": [
+        "c++"
+      ],
+      "timestamp": 1771782689169,
+      "id": "StackOverflow-1771782689169-0.2920377716822491"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why can&#39;t I use Iterable as a type for overloading a singledispatchmethod?",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894038/why-cant-i-use-iterable-as-a-type-for-overloading-a-singledispatchmethod",
+      "tags": [
+        "python",
+        "python-3.x",
+        "single-dispatch"
+      ],
+      "timestamp": 1771782689169,
+      "id": "StackOverflow-1771782689169-0.02941656601469278"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to render transparent custom bitmap text in VGA Mode 13h (x86 16-bit Real Mode) without BIOS interrupts?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894064/how-to-render-transparent-custom-bitmap-text-in-vga-mode-13h-x86-16-bit-real-mo",
+      "tags": [
+        "assembly",
+        "x86-16",
+        "osdev",
+        "vga"
+      ],
+      "timestamp": 1771782689169,
+      "id": "StackOverflow-1771782689169-0.6399289288517853"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Next.js Project Structure",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894075/next-js-project-structure",
+      "tags": [
+        "typescript",
+        "next.js"
+      ],
+      "timestamp": 1771782689169,
+      "id": "StackOverflow-1771782689169-0.7260935444877528"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Restore pullup pins became LOW",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894052/restore-pullup-pins-became-low",
+      "tags": [
+        "python",
+        "raspberry-pi",
+        "gpio",
+        "raspberry-pi4"
+      ],
+      "timestamp": 1771782689169,
+      "id": "StackOverflow-1771782689170-0.16566803322723933"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Coupling/Decoupling domain exceptions from HTTP semantics",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894020/coupling-decoupling-domain-exceptions-from-http-semantics",
+      "tags": [
+        "java",
+        "spring",
+        "spring-boot",
+        "domain-driven-design",
+        "clean-architecture"
+      ],
+      "timestamp": 1771782689169,
+      "id": "StackOverflow-1771782689170-0.8291211462519434"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Compare product prices from two websites using Python (BeautifulSoup + JSON)",
+      "score": -5,
+      "url": "https://stackoverflow.com/questions/79894012/compare-product-prices-from-two-websites-using-python-beautifulsoup-json",
+      "tags": [
+        "python",
+        "json",
+        "web-scraping",
+        "beautifulsoup",
+        "python-requests"
+      ],
+      "timestamp": 1771782689169,
+      "id": "StackOverflow-1771782689170-0.5079990011367328"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to bold SPECIFIC TEXTS using &quot;TEXTJOIN&quot; or &quot;CONCAT&quot; formula",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894025/how-to-bold-specific-texts-using-textjoin-or-concat-formula",
+      "tags": [
+        "excel",
+        "vba",
+        "excel-formula"
+      ],
+      "timestamp": 1771782689169,
+      "id": "StackOverflow-1771782689170-0.28876556438957324"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Netflix/maestro",
+      "description": "Maestro: Netflix’s Workflow Orchestrator",
+      "stars": 3722,
+      "url": "https://github.com/Netflix/maestro",
+      "timestamp": 1771782690086,
+      "id": "GitHub-1771782690086-0.3967538692258932"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "CosmosShadow/gptpdf",
+      "description": "Using GPT to parse PDF",
+      "stars": 3562,
+      "url": "https://github.com/CosmosShadow/gptpdf",
+      "timestamp": 1771782690086,
+      "id": "GitHub-1771782690086-0.046039480577825254"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zhengkyl/qrframe",
+      "description": "code-based qr code designer",
+      "stars": 3361,
+      "url": "https://github.com/zhengkyl/qrframe",
+      "timestamp": 1771782690086,
+      "id": "GitHub-1771782690086-0.5323828338052716"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "poundifdef/smoothmq",
+      "description": "An improved drop-in replacement for SQS",
+      "stars": 2280,
+      "url": "https://github.com/poundifdef/smoothmq",
+      "timestamp": 1771782690086,
+      "id": "GitHub-1771782690086-0.05445928054229987"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "qhjqhj00/MemoRAG",
+      "description": "Empowering RAG with a memory-based data interface for all-purpose applications!",
+      "stars": 2210,
+      "url": "https://github.com/qhjqhj00/MemoRAG",
+      "timestamp": 1771782690086,
+      "id": "GitHub-1771782690086-0.7070390212974644"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "nimbusdotstorage/Nimbus",
+      "description": "The future of file storage",
+      "stars": 1977,
+      "url": "https://github.com/nimbusdotstorage/Nimbus",
+      "timestamp": 1771782690086,
+      "id": "GitHub-1771782690086-0.5174284263191944"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "echohive42/AI-reads-books-page-by-page",
+      "description": "AI reads books: Page-by-Page PDF Knowledge Extractor & Summarizer. script performs an intelligent page-by-page analysis of PDF books, methodically extracting knowledge points and generating progressive summaries at specified intervals",
+      "stars": 1574,
+      "url": "https://github.com/echohive42/AI-reads-books-page-by-page",
+      "timestamp": 1771782690086,
+      "id": "GitHub-1771782690086-0.6826228647095556"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "dindin0497/SeeIt",
+      "description": null,
+      "stars": 1553,
+      "url": "https://github.com/dindin0497/SeeIt",
+      "timestamp": 1771782690086,
+      "id": "GitHub-1771782690086-0.41368368422506796"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "regolith-labs/ore-cli",
+      "description": "Command line interface for ORE cryptocurrency mining.",
+      "stars": 1507,
+      "url": "https://github.com/regolith-labs/ore-cli",
+      "timestamp": 1771782690086,
+      "id": "GitHub-1771782690088-0.5860687872328367"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "openai/SWELancer-Benchmark",
+      "description": "This repo contains the dataset and code for the paper \"SWE-Lancer: Can Frontier LLMs Earn $1 Million from Real-World Freelance Software Engineering?\"",
+      "stars": 1439,
+      "url": "https://github.com/openai/SWELancer-Benchmark",
+      "timestamp": 1771782690086,
+      "id": "GitHub-1771782690088-0.4257389991888858"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771784488855,
+      "id": "arXiv-1771784488855-0.6809765494574995"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771784488855,
+      "id": "arXiv-1771784488855-0.3217472513045423"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771784488855,
+      "id": "arXiv-1771784488855-0.6692221571432184"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771784488855,
+      "id": "arXiv-1771784488855-0.14681361457369202"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771784488855,
+      "id": "arXiv-1771784488855-0.9942163751748481"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771784488855,
+      "id": "arXiv-1771784488855-0.0773606043602475"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771784488855,
+      "id": "arXiv-1771784488855-0.6342434059272455"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771784488855,
+      "id": "arXiv-1771784488855-0.8152420973125143"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771784488855,
+      "id": "arXiv-1771784488855-0.42425288188244625"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771784488855,
+      "id": "arXiv-1771784488855-0.5735041121826516"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Instantiating an object with a function pointer, with its arguments filtered by type",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894091/instantiating-an-object-with-a-function-pointer-with-its-arguments-filtered-by",
+      "tags": [
+        "c++",
+        "templates",
+        "c++17"
+      ],
+      "timestamp": 1771784489170,
+      "id": "StackOverflow-1771784489170-0.19353041786546732"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Long breadcrumb should be right-aligned when scrolled",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894082/long-breadcrumb-should-be-right-aligned-when-scrolled",
+      "tags": [
+        "html",
+        "css"
+      ],
+      "timestamp": 1771784489170,
+      "id": "StackOverflow-1771784489170-0.15033056491835284"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to make my code use .venv, and not global pip packages?",
+      "score": -1,
+      "url": "https://stackoverflow.com/questions/79894076/how-to-make-my-code-use-venv-and-not-global-pip-packages",
+      "tags": [
+        "python",
+        "visual-studio-code",
+        "pip"
+      ],
+      "timestamp": 1771784489170,
+      "id": "StackOverflow-1771784489170-0.09277824822397474"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to render transparent custom bitmap text in VGA Mode 13h (x86 16-bit Real Mode) without BIOS interrupts?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894064/how-to-render-transparent-custom-bitmap-text-in-vga-mode-13h-x86-16-bit-real-mo",
+      "tags": [
+        "assembly",
+        "x86-16",
+        "osdev",
+        "vga"
+      ],
+      "timestamp": 1771784489170,
+      "id": "StackOverflow-1771784489170-0.38667730393547517"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "I use vscode in Mac, Why it gives random-not real errors while it same code works in my Windows vscode",
+      "score": -6,
+      "url": "https://stackoverflow.com/questions/79894066/i-use-vscode-in-mac-why-it-gives-random-not-real-errors-while-it-same-code-work",
+      "tags": [
+        "c++",
+        "macos",
+        "visual-studio-code"
+      ],
+      "timestamp": 1771784489170,
+      "id": "StackOverflow-1771784489170-0.8926853620107926"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Why can&#39;t I use Iterable as a type for overloading a singledispatchmethod?",
+      "score": 1,
+      "url": "https://stackoverflow.com/questions/79894038/why-cant-i-use-iterable-as-a-type-for-overloading-a-singledispatchmethod",
+      "tags": [
+        "python",
+        "python-3.x",
+        "single-dispatch"
+      ],
+      "timestamp": 1771784489170,
+      "id": "StackOverflow-1771784489170-0.11009557281287874"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Next.js Project Structure",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894075/next-js-project-structure",
+      "tags": [
+        "typescript",
+        "next.js"
+      ],
+      "timestamp": 1771784489170,
+      "id": "StackOverflow-1771784489170-0.8384344792209937"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Restore pullup pins became LOW",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894052/restore-pullup-pins-became-low",
+      "tags": [
+        "python",
+        "raspberry-pi",
+        "gpio",
+        "raspberry-pi4"
+      ],
+      "timestamp": 1771784489170,
+      "id": "StackOverflow-1771784489170-0.223100298815339"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "General aptitude question which got me confused",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894053/general-aptitude-question-which-got-me-confused",
+      "tags": [
+        "math",
+        "list-comprehension",
+        "reasoning",
+        "aptitude"
+      ],
+      "timestamp": 1771784489170,
+      "id": "StackOverflow-1771784489170-0.9545395504146537"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "SQL query performance: one query with a large WHERE clause, or many smaller separate ones?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79893963/sql-query-performance-one-query-with-a-large-where-clause-or-many-smaller-sepa",
+      "tags": [
+        "sql",
+        "sql-server"
+      ],
+      "timestamp": 1771784489170,
+      "id": "StackOverflow-1771784489170-0.3547030200936261"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Netflix/maestro",
+      "description": "Maestro: Netflix’s Workflow Orchestrator",
+      "stars": 3722,
+      "url": "https://github.com/Netflix/maestro",
+      "timestamp": 1771784489981,
+      "id": "GitHub-1771784489981-0.3677939105374408"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "CosmosShadow/gptpdf",
+      "description": "Using GPT to parse PDF",
+      "stars": 3562,
+      "url": "https://github.com/CosmosShadow/gptpdf",
+      "timestamp": 1771784489981,
+      "id": "GitHub-1771784489981-0.9653344097501508"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zhengkyl/qrframe",
+      "description": "code-based qr code designer",
+      "stars": 3361,
+      "url": "https://github.com/zhengkyl/qrframe",
+      "timestamp": 1771784489981,
+      "id": "GitHub-1771784489981-0.9049779543045995"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "poundifdef/smoothmq",
+      "description": "An improved drop-in replacement for SQS",
+      "stars": 2280,
+      "url": "https://github.com/poundifdef/smoothmq",
+      "timestamp": 1771784489981,
+      "id": "GitHub-1771784489981-0.6308248871667983"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "qhjqhj00/MemoRAG",
+      "description": "Empowering RAG with a memory-based data interface for all-purpose applications!",
+      "stars": 2210,
+      "url": "https://github.com/qhjqhj00/MemoRAG",
+      "timestamp": 1771784489981,
+      "id": "GitHub-1771784489981-0.12845187177848372"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "nimbusdotstorage/Nimbus",
+      "description": "The future of file storage",
+      "stars": 1977,
+      "url": "https://github.com/nimbusdotstorage/Nimbus",
+      "timestamp": 1771784489981,
+      "id": "GitHub-1771784489981-0.7224719791777907"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "echohive42/AI-reads-books-page-by-page",
+      "description": "AI reads books: Page-by-Page PDF Knowledge Extractor & Summarizer. script performs an intelligent page-by-page analysis of PDF books, methodically extracting knowledge points and generating progressive summaries at specified intervals",
+      "stars": 1574,
+      "url": "https://github.com/echohive42/AI-reads-books-page-by-page",
+      "timestamp": 1771784489981,
+      "id": "GitHub-1771784489981-0.6818264977150004"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "dindin0497/SeeIt",
+      "description": null,
+      "stars": 1553,
+      "url": "https://github.com/dindin0497/SeeIt",
+      "timestamp": 1771784489981,
+      "id": "GitHub-1771784489981-0.961209401688569"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "ShineChen1024/MagicClothing",
+      "description": "Official implementation of Magic Clothing: Controllable Garment-Driven Image Synthesis",
+      "stars": 1540,
+      "url": "https://github.com/ShineChen1024/MagicClothing",
+      "timestamp": 1771784489981,
+      "id": "GitHub-1771784489981-0.3966551111496104"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "regolith-labs/ore-cli",
+      "description": "Command line interface for ORE cryptocurrency mining.",
+      "stars": 1507,
+      "url": "https://github.com/regolith-labs/ore-cli",
+      "timestamp": 1771784489981,
+      "id": "GitHub-1771784489981-0.7981824128929049"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Sink-Aware Pruning for Diffusion Language Models",
+      "url": "http://arxiv.org/abs/2602.17664v1",
+      "timestamp": 1771794195507,
+      "id": "arXiv-1771794195507-0.7980401988945034"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "url": "http://arxiv.org/abs/2602.17663v1",
+      "timestamp": 1771794195507,
+      "id": "arXiv-1771794195507-0.5116993798424778"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "MARS: Margin-Aware Reward-Modeling with Self-Refinement",
+      "url": "http://arxiv.org/abs/2602.17658v1",
+      "timestamp": 1771794195507,
+      "id": "arXiv-1771794195507-0.5537398771614703"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+      "url": "http://arxiv.org/abs/2602.17645v1",
+      "timestamp": 1771794195507,
+      "id": "arXiv-1771794195507-0.037262323642374806"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "FAMOSE: A ReAct Approach to Automated Feature Discovery",
+      "url": "http://arxiv.org/abs/2602.17641v1",
+      "timestamp": 1771794195507,
+      "id": "arXiv-1771794195507-0.7067938077885982"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "url": "http://arxiv.org/abs/2602.17634v1",
+      "timestamp": 1771794195507,
+      "id": "arXiv-1771794195507-0.2351660138410805"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning",
+      "url": "http://arxiv.org/abs/2602.17633v1",
+      "timestamp": 1771794195507,
+      "id": "arXiv-1771794195507-0.7683785317778384"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "url": "http://arxiv.org/abs/2602.17632v1",
+      "timestamp": 1771794195507,
+      "id": "arXiv-1771794195507-0.40321750926998456"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "Stable Asynchrony: Variance-Controlled Off-Policy RL for LLMs",
+      "url": "http://arxiv.org/abs/2602.17616v1",
+      "timestamp": 1771794195507,
+      "id": "arXiv-1771794195507-0.06629725706759682"
+    },
+    {
+      "category": "science",
+      "source": "arXiv",
+      "title": "ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization",
+      "url": "http://arxiv.org/abs/2505.02819v4",
+      "timestamp": 1771794195507,
+      "id": "arXiv-1771794195507-0.331134216402617"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "trying to get away from AI as hard as possible but losing it sometimes",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894174/trying-to-get-away-from-ai-as-hard-as-possible-but-losing-it-sometimes",
+      "tags": [
+        "c",
+        "linux",
+        "assembly",
+        "bsd"
+      ],
+      "timestamp": 1771794195609,
+      "id": "StackOverflow-1771794195609-0.6325118419800111"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to click several buttons for each row on UiPath",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894163/how-to-click-several-buttons-for-each-row-on-uipath",
+      "tags": [
+        "uipath",
+        "uipath-studio"
+      ],
+      "timestamp": 1771794195609,
+      "id": "StackOverflow-1771794195609-0.46333044940152623"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Best approach for server-side license key verification with HWID binding in C#",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894176/best-approach-for-server-side-license-key-verification-with-hwid-binding-in-c",
+      "tags": [
+        "c#",
+        "authentication",
+        "desktop-application",
+        "hardware",
+        "licensing"
+      ],
+      "timestamp": 1771794195609,
+      "id": "StackOverflow-1771794195609-0.10202238589193469"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to programmatically switch DatePicker and TimePicker to display in `Calendar`-mode (or `Clock`-mode, resp.) or `Spinner`-Mode?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894171/how-to-programmatically-switch-datepicker-and-timepicker-to-display-in-calendar",
+      "tags": [
+        "android"
+      ],
+      "timestamp": 1771794195609,
+      "id": "StackOverflow-1771794195609-0.06498247204665208"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Can one program change a Python file *in RAM* that is open by another program?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894150/can-one-program-change-a-python-file-in-ram-that-is-open-by-another-program",
+      "tags": [
+        "python",
+        "file",
+        "security",
+        "ram"
+      ],
+      "timestamp": 1771794195609,
+      "id": "StackOverflow-1771794195609-0.4314675800419461"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "How to improve business credit score in Australia?",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894148/how-to-improve-business-credit-score-in-australia",
+      "tags": [
+        "finance"
+      ],
+      "timestamp": 1771794195609,
+      "id": "StackOverflow-1771794195609-0.06489818463715546"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Ublock: How to block a pop-up with a very huge string and multiple wildcards",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894156/ublock-how-to-block-a-pop-up-with-a-very-huge-string-and-multiple-wildcards",
+      "tags": [
+        "syntax",
+        "adblock",
+        "browser-addons",
+        "ublock-origin"
+      ],
+      "timestamp": 1771794195609,
+      "id": "StackOverflow-1771794195609-0.40819848635521283"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "PHPNative: New Android application",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894147/phpnative-new-android-application",
+      "tags": [
+        "php",
+        "laravel"
+      ],
+      "timestamp": 1771794195609,
+      "id": "StackOverflow-1771794195609-0.13749639494985044"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Strange result with pointer arithmetic in C",
+      "score": 0,
+      "url": "https://stackoverflow.com/questions/79894129/strange-result-with-pointer-arithmetic-in-c",
+      "tags": [
+        "c",
+        "pointers",
+        "pointer-arithmetic"
+      ],
+      "timestamp": 1771794195609,
+      "id": "StackOverflow-1771794195609-0.5883626778732955"
+    },
+    {
+      "category": "tech",
+      "source": "StackOverflow",
+      "title": "Accessing constant variables from a lambda in Visual Studio 2026",
+      "score": 2,
+      "url": "https://stackoverflow.com/questions/79894122/accessing-constant-variables-from-a-lambda-in-visual-studio-2026",
+      "tags": [
+        "c++",
+        "visual-c++",
+        "lambda",
+        "constants",
+        "void-pointers"
+      ],
+      "timestamp": 1771794195609,
+      "id": "StackOverflow-1771794195609-0.06605895109077187"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "PennyroyalTea/gibberlink",
+      "description": "Two conversational AI agents switching from English to sound-level protocol after confirming they are both AI agents",
+      "stars": 4783,
+      "url": "https://github.com/PennyroyalTea/gibberlink",
+      "timestamp": 1771794196543,
+      "id": "GitHub-1771794196543-0.4510492035194895"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "CosmosShadow/gptpdf",
+      "description": "Using GPT to parse PDF",
+      "stars": 3562,
+      "url": "https://github.com/CosmosShadow/gptpdf",
+      "timestamp": 1771794196543,
+      "id": "GitHub-1771794196543-0.660873507473247"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "xcancloud/AngusTester",
+      "description": "🔥 An agile development and testing platform designed to empower small and medium-sized enterprises to build their own R&D systems, streamline workflows, and enhance operational efficiency.",
+      "stars": 3372,
+      "url": "https://github.com/xcancloud/AngusTester",
+      "timestamp": 1771794196543,
+      "id": "GitHub-1771794196543-0.1972615607794712"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "zhengkyl/qrframe",
+      "description": "code-based qr code designer",
+      "stars": 3361,
+      "url": "https://github.com/zhengkyl/qrframe",
+      "timestamp": 1771794196543,
+      "id": "GitHub-1771794196543-0.782056966512906"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "Everlyn-Labs/Everlyn-1",
+      "description": "The first open autoregressive foundational video AI model.",
+      "stars": 2891,
+      "url": "https://github.com/Everlyn-Labs/Everlyn-1",
+      "timestamp": 1771794196543,
+      "id": "GitHub-1771794196543-0.2053541908266252"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "poundifdef/smoothmq",
+      "description": "An improved drop-in replacement for SQS",
+      "stars": 2280,
+      "url": "https://github.com/poundifdef/smoothmq",
+      "timestamp": 1771794196543,
+      "id": "GitHub-1771794196543-0.7862886441521157"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "qhjqhj00/MemoRAG",
+      "description": "Empowering RAG with a memory-based data interface for all-purpose applications!",
+      "stars": 2210,
+      "url": "https://github.com/qhjqhj00/MemoRAG",
+      "timestamp": 1771794196543,
+      "id": "GitHub-1771794196543-0.4554880304540505"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "facebookresearch/chameleon",
+      "description": "Repository for Meta Chameleon, a mixed-modal early-fusion foundation model from FAIR.",
+      "stars": 2083,
+      "url": "https://github.com/facebookresearch/chameleon",
+      "timestamp": 1771794196543,
+      "id": "GitHub-1771794196543-0.7060805601377609"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "nimbusdotstorage/Nimbus",
+      "description": "The future of file storage",
+      "stars": 1977,
+      "url": "https://github.com/nimbusdotstorage/Nimbus",
+      "timestamp": 1771794196543,
+      "id": "GitHub-1771794196543-0.6919744543232857"
+    },
+    {
+      "category": "tech",
+      "source": "GitHub",
+      "name": "hitsz-ids/airda",
+      "description": "airda(Air Data Agent)是面向数据分析的多智能体，能够理解数据开发和数据分析需求、理解数据、生成面向数据查询、数据可视化、机器学习等任务的SQL和Python代码",
+      "stars": 1722,
+      "url": "https://github.com/hitsz-ids/airda",
+      "timestamp": 1771794196543,
+      "id": "GitHub-1771794196543-0.2224514768860808"
     }
   ]
 }

@@ -1,0 +1,40 @@
+{
+  "appId": "com.now.ai",
+  "appName": "NOW AI",
+  "webDir": "frontend",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https",
+    "allowNavigation": [
+      "3000-*.sandbox.novita.ai",
+      "localhost"
+    ]
+  },
+  "android": {
+    "buildOptions": {
+      "keystorePath": "",
+      "keystorePassword": "",
+      "keystoreAlias": "",
+      "keystoreAliasPassword": "",
+      "releaseType": "APK"
+    }
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#0a0a0a",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": false
+    },
+    "TextToSpeech": {
+      "language": "pt-BR",
+      "rate": 0.9,
+      "pitch": 1.2,
+      "volume": 1.0
+    },
+    "SpeechRecognition": {
+      "language": "pt-BR",
+      "popup": false
+    }
+  }
+}
