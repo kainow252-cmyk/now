@@ -308,14 +308,15 @@
     <p id="responseText"></p>
   </div>
   
-  <!-- Instrução inicial (some após primeiro clique) -->
+  <!-- Instrução inicial (some após primeira voz ou clique) -->
   <div id="clickInstruction" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
        background: rgba(0, 247, 255, 0.1); backdrop-filter: blur(10px); border: 2px solid rgba(0, 247, 255, 0.3);
        padding: 30px 40px; border-radius: 20px; text-align: center; z-index: 1000; animation: pulse 2s infinite;
        font-size: 20px; color: #00f7ff; font-weight: 300; max-width: 80%; box-shadow: 0 0 40px rgba(0, 247, 255, 0.2);">
-    <div style="font-size: 48px; margin-bottom: 20px;">👆</div>
-    <div style="margin-bottom: 10px; font-weight: 500;">Clique no ORB para ativar o áudio</div>
-    <div style="font-size: 14px; opacity: 0.7;">O sistema já está ouvindo, mas precisa de um clique para desbloquear o som</div>
+    <div style="font-size: 48px; margin-bottom: 20px;">🎤</div>
+    <div style="margin-bottom: 10px; font-weight: 500;">Fale algo ou clique no ORB</div>
+    <div style="font-size: 14px; opacity: 0.7;">O sistema está ouvindo! Diga qualquer coisa para ativar o áudio</div>
+    <div style="font-size: 12px; opacity: 0.5; margin-top: 15px;">Ex: "Que horas são?" ou "Olá"</div>
   </div>
 
   <div class="voice-button" id="voiceButton">
@@ -386,6 +387,31 @@
       state.recognition.onresult = async (event) => {
         const result = event.results[event.results.length - 1];
         const transcript = result[0].transcript.toLowerCase();
+        
+        // 🎯 DESBLOQUEIA TTS NA PRIMEIRA VOZ DETECTADA
+        if (!state.ttsUnlocked && transcript.length > 2) {
+          console.log('🔓 VOZ DETECTADA - Desbloqueando áudio automaticamente!');
+          
+          // Remove instrução visual
+          const instruction = document.getElementById('clickInstruction');
+          if (instruction) {
+            instruction.style.transition = 'opacity 0.5s ease';
+            instruction.style.opacity = '0';
+            setTimeout(() => instruction.remove(), 500);
+          }
+          
+          // Desbloqueia TTS
+          const dummyUtterance = new SpeechSynthesisUtterance('');
+          state.synthesis.speak(dummyUtterance);
+          state.ttsUnlocked = true;
+          
+          console.log('✅ Áudio desbloqueado! TTS agora funciona.');
+          
+          // Fala boas-vindas
+          setTimeout(() => {
+            speak('NOW ativado! Pode falar comigo.');
+          }, 300);
+        }
         
         // Update last heard
         lastHeard.textContent = `"${transcript}" ${result.isFinal ? '✓' : '...'}`;
